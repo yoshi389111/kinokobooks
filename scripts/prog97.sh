@@ -7,6 +7,6 @@ pandoc -f markdown -t epub3-auto_identifiers \
  --toc-depth=1 \
  --epub-cover-image=./prog.png \
  --epub-stylesheet=../epub.css \
- -o ../../epub/prog.epub \
+ -o ../../epub/prog97.epub \
  prog000.txt prog*.md
 
