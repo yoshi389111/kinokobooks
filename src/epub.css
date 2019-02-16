@@ -1,0 +1,81 @@
+/* epub css */
+body {
+    margin: 5%;
+    text-align: justify;
+    font-size: medium;
+    line-height: 1.6;
+}
+code { font-family: monospace; }
+h1 {
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: left;
+    text-indent: 0em;
+    font-size: 1.1em;
+}
+h2 {
+    font-family: sans-serif;
+    text-align: left;
+    text-indent: 0em;
+    font-size: 1.1em;
+}
+h3 {
+    font-family: sans-serif;
+    text-align: left;
+    text-indent: 0em;
+    font-size: 1em;
+}
+h4 {
+    font-family: sans-serif;
+    text-align: left;
+}
+h5 {
+    font-family: sans-serif;
+    text-align: left;
+}
+h6 {
+    font-family: sans-serif;
+    text-align: left;
+}
+h1.title { }
+h2.author { }
+h3.date { }
+ol.toc { padding: 0; margin-left: 1em; }
+ol.toc li { list-style-type: none; margin: 0; padding: 0; }
+p{
+    font-family: serif;
+    text-indent: 0;
+    margin: 0.6em 0;
+}
+strong{
+    font-family: sans-serif;
+    font-weight: normal;
+}
+table {
+    border-collapse: collapse;
+    border-style: solid;
+    border-width: 1px;
+}
+th {
+    font-family: sans-serif;
+    padding: 0 0.5em;
+    border-style: solid;
+    border-width: 1px;
+}
+td {
+    padding: 0 0.5em;
+    border-style: none solid;
+    border-width: 1px;
+}
+li { font-family: serif; }
+dt { font-family: sans-serif; }
+dd { font-family: serif; }
+div.author {
+    font-family: sans-serif;
+}
+div.cite_author {
+    text-align: right;
+    font-family: serif;
+}
+figure { width: 90% }
+img { width: 100% }
