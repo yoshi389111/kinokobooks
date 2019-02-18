@@ -5,14 +5,14 @@
 　本書籍は、以下を底本としています（敬称略）。
 
 * 「プログラマが知るべき97のこと」
-  * 原題「97 Things Every Programmer Should Know」
-  * Kevlin Henney 編
-  * 和田 卓人 監修
-  * 夏目 大 訳
-  * 株式会社オライリー・ジャパン 発行
-  * 株式会社オーム社 発売
-  * ISBN978-4-87311-479-8
-  * 2013年4月19日 初版第8刷
+    * 原題「97 Things Every Programmer Should Know」
+    * Kevlin Henney 編
+    * 和田 卓人 監修
+    * 夏目 大 訳
+    * 株式会社オライリー・ジャパン 発行
+    * 株式会社オーム社 発売
+    * ISBN978-4-87311-479-8
+    * 2013年4月19日 初版第8刷
 
 　またエッセイの文字起こしには、以下のサイトを参考にさせていただきました。
 
@@ -51,9 +51,9 @@
 この画像は CC-by-2.0（表示 2.0 一般）でライセンスされています。
 
 * File:Shiitakegrowing.jpg
-  * Author frankenstoen from Portland, Oregon
-  * This file is licensed under the Creative Commons Attribution 2.0 Generic license.
-  * https://creativecommons.org/licenses/by/2.0/
+    * Author frankenstoen from Portland, Oregon
+    * This file is licensed under the Creative Commons Attribution 2.0 Generic license.
+    * https://creativecommons.org/licenses/by/2.0/
 
 ## 最後に{-}
 
