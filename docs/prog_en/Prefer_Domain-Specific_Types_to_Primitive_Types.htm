@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Prefer Domain-Specific Types to Primitive Types - Programmer 97-things</title>
+<meta property="og:title" content="Prefer Domain-Specific Types to Primitive Types">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Prefer_Domain-Specific_Types_to_Primitive_Types.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Prefer Domain-Specific Types to Primitive Types</h1>
+</header>
+
+<p>On 23rd September 1999 the $327.6 million Mars Climate Orbiter was lost while entering orbit around Mars due to a software error back on Earth. The error was later called the <i>metric mix-up</i>. The ground station software was working in pounds while the spacecraft expected newtons, leading the ground station to underestimate the power of the spacecraft's thrusters by a factor of 4.45.
+</p>
+<p>This is one of many examples of software failures that could have been prevented if stronger and more domain-specific typing had been applied. It is also an example of the rationale behind many features in the Ada language, one of whose primary design goals was to implement embedded safety-critical software. Ada has strong typing with static checking for both primitive types and user-defined types:
+</p>
+<pre>type Velocity_In_Knots is new Float range 0.0 .. 500.00;
+
+type Distance_In_Nautical_Miles is new Float range 0.0 .. 3000.00;
+
+Velocity: Velocity_In_Knots;
+
+Distance: Distance_In_Nautical_Miles;
+
+Some_Number: Float;
+
+Some_Number:= Distance + Velocity; -- Will be caught by the compiler as a type error.
+</pre>
+<p>Developers in less demanding domains might also benefit from applying more domain-specific typing, where they might otherwise continue to use the primitive data types offered by the language and its libraries, such as strings and floats. In Java, C++, Python, and other modern languages the abstract data type is known as <code>class</code>. Using classes such as <code>Velocity_In_Knots</code> and <code>Distance_In_Nautical_Miles</code> adds a lot of value with respect to code quality:
+</p>
+<ol><li> The code becomes more readable as it expresses concepts of a domain, not just <code>Float</code> or <code>String</code>.
+</li>
+<li> The code becomes more testable as the code encapsulates behavior that is easily testable.
+</li>
+<li> The code facilitates reuse across applications and systems.
+</li></ol>
+<p>The approach is equally valid for users of both statically and dynamically typed languages. The only difference is that developers using statically typed languages get some help from the compiler while those embracing dynamically typed languages are more likely to rely on their unit tests. The style of checking may be different, but the motivation and style of expression is not.
+</p>
+<p>The moral is to start exploring domain-specific types for the purpose of developing quality software.
+</p>
+<footer>
+<p class="author">By Einar Landre
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

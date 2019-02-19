@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>The Linker Is not a Magical Program - Programmer 97-things</title>
+<meta property="og:title" content="The Linker Is not a Magical Program">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/The_Linker_Is_not_a_Magical_Program.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">The Linker Is not a Magical Program</h1>
+</header>
+
+<p>Depressingly often (happened to me again just before I wrote this), the view many programmers have of the process of going from source code to a statically linked executable in a compiled language is:
+</p>
+<ol><li> Edit source code
+</li>
+<li> Compile source code into object files
+</li>
+<li> Something magical happens
+</li>
+<li> Run executable
+</li></ol>
+<p>Step 3 is, of course, the linking step. Why would I say such an outrageous thing? I've been doing tech support for decades, and I get the following questions again and again:
+</p>
+<ol><li> The linker says <code>def</code> is defined more than once.
+</li>
+<li> The linker says <code>abc</code> is an unresolved symbol.
+</li>
+<li> Why is my executable so large?
+</li></ol>
+<p>Followed by "What do I do now?" usually with the phrases "seems to" and "somehow" mixed in, and an aura of utter bafflement. It's the "seems to" and "somehow" that indicate that the linking process is viewed as a magical process, presumably understandable only by wizards and warlocks. The process of compiling does not elicit these kinds of phrases, implying that programmers generally understand how compilers work, or at least what they do.
+</p>
+<p>A linker is a very stupid, pedestrian, straightforward program. All it does is concatenate together the code and data sections of the object files, connect the references to symbols with their definitions, pull unresolved symbols out of the library, and write out an executable. That's it. No spells! No magic! The tedium in writing a linker is usually all about decoding and generating the usually ridiculously overcomplicated file formats, but that doesn't change the essential nature of a linker.
+</p>
+<p>So let's say the linker is saying <code>def is defined more than once</code>. Many programming languages, such as C, C++, and D, have both declarations and definitions. Declarations normally go into header files, like:
+</p>
+<pre>extern int iii;
+</pre>
+<p>which generates an external reference to the symbol <code>iii</code>. A definition, on the other hand, actually sets aside storage for the symbol, usually appears in the implementation file, and looks like this:
+</p>
+<pre>int iii = 3;
+</pre>
+<p>How many definitions can there be for each symbol? As in the film <i>Highlander</i>, there can be only one. So, what if a definition of <code>iii</code> appears in more than one implementation file?
+</p>
+<pre>// File a.c
+int iii = 3;
+</pre>
+<pre>// File b.c
+double iii(int x) { return 3.7; }
+</pre>
+<p>The linker will complain about <code>iii</code> being multiply defined.
+</p>
+<p>Not only can there be only one, there must be one. If <code>iii</code> only appears as a declaration, but never a definition, the linker will complain about <code>iii</code> being an unresolved symbol.
+</p>
+<p>To determine why an executable is the size it is, take a look at the map file that linkers optionally generate. A map file is nothing more than a list of all the symbols in the executable along with their addresses. This tells you what modules were linked in from the library, and the sizes of each module. Now you can see where the bloat is coming from. Often there will be library modules that you have no idea why were linked in. To figure it out, temporarily remove the suspicious module from the library, and relink. The undefined symbol error then generated will indicate who is referencing that module.
+</p>
+<p>Although it is not always immediately obvious why you get a particular linker message, there is nothing magical about linkers. The mechanics are straightforward; it's the details you have to figure out in each case.
+</p>
+<footer>
+<p class="author">By Walter Bright
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

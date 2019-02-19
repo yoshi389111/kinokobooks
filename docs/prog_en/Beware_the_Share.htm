@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Beware the Share - Programmer 97-things</title>
+<meta property="og:title" content="Beware the Share">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Beware_the_Share.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Beware the Share</h1>
+</header>
+
+<p>It was my first project at the company. I'd just finished my degree and was anxious to prove myself, staying late every day going through the existing code. As I worked through my first feature I took extra care to put in place everything I had learned &mdash; commenting, logging, pulling out shared code into libraries where possible, the works. The code review that I had felt <i>so</i> ready for came as a rude awakening &mdash; reuse was frowned upon!
+</p>
+<p>How could this be? All through college reuse was held up as the epitome of quality software engineering. All the articles I had read, the textbooks, the seasoned software professionals who taught me. Was it all wrong?
+</p>
+<p>It turns out that I was missing something critical.
+</p>
+<p>Context.
+</p>
+<p>The fact that two wildly different parts of the system performed some logic in the same way meant less than I thought. Up until I had pulled out those libraries of shared code, these parts were not dependent on each other. Each could evolve independently. Each could change its logic to suit the needs of the system's changing business environment. Those four lines of similar code were accidental &mdash; a temporal anomaly, a coincidence. That is, until I came along.
+</p>
+<p>The libraries of shared code I created tied the shoelaces of each foot to each other. Steps by one business domain could not be made without first synchronizing with the other. Maintenance costs in those independent functions used to be negligible, but the common library required an order of magnitude more testing.
+</p>
+<p>While I'd decreased the absolute number of lines of code in the system, I had increased the number of dependencies. The context of these dependencies is critical &mdash; had they been localized, it may have been justified and had some positive value. When these dependencies aren't held in check, their tendrils entangle the larger concerns of the system even though the code itself looks just fine.
+</p>
+<p>These mistakes are insidious in that, at their core, they sound like a good idea. When applied in the right context, these techniques are valuable. In the wrong context, they increase cost rather than value. When coming into an existing code base with no knowledge of the context where the various parts will be used, I'm much more careful these days about what is shared.
+</p>
+<p>Beware the share. Check your context. Only then, proceed.
+</p>
+<footer>
+<p class="author">By Udi Dahan
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>

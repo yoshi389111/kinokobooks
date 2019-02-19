@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Before You Refactor - Programmer 97-things</title>
+<meta property="og:title" content="Before You Refactor">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Before_You_Refactor.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Before You Refactor</h1>
+</header>
+
+<p>At some point every programmer will need to refactor existing code. But before you do so please think about the following, as this could save you and others a great deal of time (and pain):
+</p>
+<ul><li> <i>The best approach for restructuring starts by taking stock of the existing codebase and the tests written against that code.</i> This will help you understand the strengths and weaknesses of the code as it currently stands, so you can ensure that you retain the strong points while avoiding the mistakes. We all think we can do better than the existing system... until we end up with something no better &mdash; or even worse &mdash; than the previous incarnation because we failed to learn from the existing system's mistakes.
+</li></ul>
+<ul><li> <i>Avoid the temptation to rewrite everything.</i> It is best to reuse as much code as possible. No matter how ugly the code is, it has already been tested, reviewed, etc. Throwing away the old code &mdash; especially if it was in production &mdash; means that you are throwing away months (or years) of tested, battle-hardened code that may have had certain workarounds and bug fixes you aren't aware of. If you don't take this into account, the new code you write may end up showing the same mysterious bugs that were fixed in the old code. This will waste a lot of time, effort, and knowledge gained over the years.
+</li></ul>
+<ul><li> <i>Many incremental changes are better than one massive change.</i> Incremental changes allows you to gauge the impact on the system more easily through feedback, such as from tests. It is no fun to see a hundred test failures after you make a change. This can lead to frustration and pressure that can in turn result in bad decisions. A couple of test failures is easy to deal with and provides a more manageable approach.
+</li></ul>
+<ul><li> <i>After each iteration, it is important to ensure that the existing tests pass.</i> Add new tests if the existing tests are not sufficient to cover the changes you made. Do not throw away the tests from the old code without due consideration. On the surface some of these tests may not appear to be applicable to your new design, but it would be well worth the effort to dig deep down into the reasons why this particular test was added.
+</li></ul>
+<ul><li> <i>Personal preferences and ego shouldn't get in the way.</i> If something isn't broken, why fix it? That the style or the structure of the code does not meet your personal preference is not a valid reason for restructuring. Thinking you could do a better job than the previous programmer is not a valid reason either.
+</li></ul>
+<ul><li> <i>New technology is insufficient reason to refactor.</i> One of the worst reasons to refactor is because the current code is way behind all the cool technology we have today, and we believe that a new language or framework can do things a lot more elegantly. Unless a cost&ndash;benefit analysis shows that a new language or framework will result in significant improvements in functionality, maintainability, or productivity, it is best to leave it as it is.
+</li></ul>
+<ul><li> <i>Remember that humans make mistakes.</i> Restructuring will not always guarantee that the new code will be better &mdash; or even as good as &mdash; the previous attempt. I have seen and been a part of several failed restructuring attempts. It wasn't pretty, but it was human.
+</li></ul>
+
+<footer>
+<p class="author">By Rajith Attapattu
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

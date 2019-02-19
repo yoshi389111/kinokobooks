@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Message Passing Leads to Better Scalability in Parallel Systems - Programmer 97-things</title>
+<meta property="og:title" content="Message Passing Leads to Better Scalability in Parallel Systems">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Message_Passing_Leads_to_Better_Scalability_in_Parallel_Systems.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Message Passing Leads to Better Scalability in Parallel Systems</h1>
+</header>
+
+<p>Programmers are taught from the very outset of their study of computing that concurrency &mdash; and especially parallelism, a special subset of concurrency &mdash; is hard, that only the very best can ever hope to get it right, and even they get it wrong. There is invariably great focus on threads, semaphores, monitors, and how hard it is to get concurrent access to variables to be thread-safe.
+</p>
+<p>True, there are many difficult problems, and they can be very hard to solve. But what is the root of the problem? Shared memory. Almost all the problems of concurrency that people go on and on about relate to the use of shared mutable memory: race conditions, deadlock, livelock, etc. The answer seems obvious: Either forgo concurrency or eschew shared memory!
+</p>
+<p>Forgoing concurrency is almost certainly not an option. Computers have more and more cores on an almost quarterly basis, so harnessing true parallelism becomes more and more important. We can no longer rely on ever increasing processor clock speeds to improve application performance. Only by exploiting parallelism will the performance of applications improve. Obviously, not improving performance is an option, but it is unlikely to be acceptable to users.
+</p>
+<p>So can we eschew shared memory? Definitely.
+</p>
+<p>Instead of using threads and shared memory as our programming model, we can use processes and message passing. <i>Process</i> here just means a protected independent state with executing code, not necessarily an operating system process. Languages such as Erlang (and occam before it) have shown that processes are a very successful mechanism for programming concurrent and parallel systems. Such systems do not have all the synchronization stresses that shared memory, multi-threaded systems have. Moreover there is a formal model &mdash; Communicating Sequential Processes (CSP) &mdash; that can be applied as part of the engineering of such systems.
+</p>
+<p>We can go further and introduce dataflow systems as a way of computing. In a dataflow system there is no explicitly programmed control flow. Instead a directed graph of operators, connected by data paths, is set up and then data fed into the system.  Evaluation is controlled by the readiness of data within the system. Definitely no synchronization problems.
+</p>
+<p>Having said all this, languages such as C, C++, Java, Python, and Groovy are the principal languages of systems development and all of these are presented to programmers as languages for developing shared memory, multi-threaded systems. So what can be done? The answer is to use &mdash; or, if they don't exist, create &mdash; libraries and frameworks that provide process models and message passing, avoiding all use of shared mutable memory.
+</p>
+<p>All in all, not programming with shared memory, but instead using message passing, is likely to be the most successful way of implementing systems that harness the parallelism that is now endemic in computer hardware. Bizarrely perhaps, although processes predate threads as a unit of concurrency, the future seems to be in using threads to implement processes.
+</p>
+<footer>
+<p class="author">By Russel Winder
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

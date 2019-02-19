@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Coding with Reason - Programmer 97-things</title>
+<meta property="og:title" content="Coding with Reason">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Coding_with_Reason.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Coding with Reason</h1>
+</header>
+
+<p>Trying to reason about software correctness by hand results in a formal proof that is longer than the code and is more likely to contain errors than the code. Automated tools are preferable, but not always possible. What follows describes a middle path: reasoning semi-formally about correctness.
+</p>
+<p>The underlying approach is to divide all the code under consideration into short sections &mdash; from a single line, such as a function call, to blocks of less than ten lines &mdash; and arguing about their correctness.  The arguments need only be strong enough to convince your devil's advocate peer programmer.
+</p>
+<p>A section should be chosen so that at each endpoint the <i>state of the program</i> (namely, the program counter and the values of all "living" objects) satisfies an easily described property, and that the functionality of that section (state transformation) is easy to describe as a single task &mdash; these will make reasoning simpler. Such endpoint properties generalize concepts like <i>precondition</i> and <i>postcondition</i> for functions, and <i>invariant</i> for loops and classes (with respect to their instances). Striving for sections to be as independent of one another as possible simplifies reasoning and is indispensable when these sections are to be modified.
+</p>
+<p>Many of the coding practices that are well known (although perhaps less well followed) and considered 'good' make reasoning easier. Hence, just by <i>intending</i> to reason about your code, you already start thinking toward a better style and structure. Unsurprisingly, most of these practices can be checked by static code analyzers:
+</p>
+<ol><li> Avoid using <code>goto</code> statements, as they make remote sections highly interdependent.
+</li>
+<li> Avoid using modifiable global variables, as they make all sections that use them dependent.
+</li>
+<li> Each variable should have the smallest possible scope. For example, a local object can be declared right before its first usage.
+</li>
+<li> Make objects <i>immutable</i> whenever relevant.
+</li>
+<li> Make the code readable by using spacing, both horizontal and vertical. For example, aligning related structures and using an empty line to separate two sections.
+</li>
+<li> Make the code self-documenting by choosing descriptive (but relatively short) names for objects, types, functions, etc.
+</li>
+<li> If you need a nested section, make it a function.
+</li>
+<li> Make your functions short and focused on a single task. The old <i>24-line limit</i> still applies. Although screen size and resolution have changed, nothing has changed in human cognition since the 1960s.
+</li>
+<li> Functions should have few parameters (four is a good upper bound). This does not restrict the data communicated to functions: Grouping related parameters into a single object benefits from <i>object invariants</i> and saves reasoning, such as their coherence and consistency.
+</li>
+<li> More generally, each unit of code, from a block to a library, should have a <i>narrow interface</i>. Less communication reduces the reasoning required. This means that <i>getters</i> that return internal state are a liability &mdash; don't ask an object for information to work with. Instead, ask the object to do the work with the information it already has. In other words, <i>encapsulation</i> is all &mdash; and only &mdash; about <i>narrow interfaces</i>.
+</li>
+<li> In order to preserve class <i>invariants</i>, usage of <i>setters</i> should be discouraged, as <i>setters</i> tend to allow invariants that govern an object's state to be broken.
+</li></ol>
+<p>As well as reasoning about its correctness, arguing about your code gives you understanding of it. Communicate the insights you gain for everyone's benefit.
+</p>
+<footer>
+<p class="author">By Yechiel Kimchi
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

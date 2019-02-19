@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Know Your Limits - Programmer 97-things</title>
+<meta property="og:title" content="Know Your Limits">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Know_Your_Limits.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Know Your Limits</h1>
+</header>
+
+<p><i>"Man's got to know his limitations." &mdash; <a href="http://www.youtube.com/watch?v=t2JnCXvm_Qc" class="external text" title="http://www.youtube.com/watch?v=t2JnCXvm_Qc" rel="nofollow">Dirty Harry</a></i>
+</p>
+<p>Your resources are limited.  You only have so much time and money to do your work, including the time and money needed to keep your knowledge, skills, and tools up-to-date.  You can only work so hard, so fast, so smart, and so long.  Your tools are only so powerful.  Your target machines are only so powerful.  So you have to respect the limits of your resources.
+</p>
+<p>How to respect those limits?  Know yourself, know your people, know your budgets, and know your stuff.  Especially, as a software engineer, know the space and time complexity of your data structures and algorithms, and the architecture and performance characteristics of your systems. Your job is to create an optimal marriage of software and systems.
+</p>
+
+<figure>
+<a href="../images/Clearly.jpeg"><img alt="Some important complexity classes" src="../images/Clearly.jpeg" border="0" width="50%"></a>
+<figcaption>Some important complexity classes</figcaption>
+</figure>
+
+
+<p>Space and time complexity are given as the function <i>O(f(n))</i> which for <i>n</i> equal the size of the input is the asymptotic space or time required as <i>n</i> grows to infinity.  Important complexity classes for <i>f(n)</i> include <i>ln(n)</i>,  <i>n</i>, <i>n ln(n)</i>, <i>n<sup>e</sup></i>, and <i>e<sup>n</sup></i>.  As graphing these functions clearly shows, as <i>n</i> gets bigger <i>O(ln(n))</i> is ever so much smaller than <i>O(n)</i> and <i>O(n ln(n))</i>, which are ever so much smaller than <i>O(n<sup>e</sup>)</i> and <i>O(e<sup>n</sup>)</i>.  As Sean Parent puts it, for achievable <i>n</i> all complexity classes amount to near-constant, near-linear, or near-infinite.
+</p>
+
+<table align="right">
+<tr><th align="left"></th><td style="color:#e76700;"> access time</td><td align="right" style="color:#e76700;">  &nbsp;capacity</td></tr>
+<tr><th align="left">register</th><td align="right"> &lt; 1 ns</td><td align="right">64  b</td><td> &nbsp;&nbsp;</td></tr>
+<tr><th align="left">cache line</th><td align="right"></td><td align="right">64  B</td></tr>
+<tr><th align="right">L1 cache</th><td align="right"> 1 ns</td><td align="right">64 KB</td></tr>
+<tr><th align="right">L2 cache</th><td align="right"> 4 ns</td><td align="right">8 MB</td></tr>
+<tr><th align="left">RAM</th><td align="right">20 ns</td><td align="right">32 GB</td></tr>
+<tr><th align="left">disk</th><td align="right">10 ms</td><td align="right">10 TB</td></tr>
+<tr><th align="left">LAN</th><td align="right">20 ms</td><td align="right">&gt; 1 PB</td></tr>
+<tr><th align="left">Internet</th><td align="right">100 ms</td><td align="right">&gt; 1 ZB</td></tr>
+</table>
+
+<p>Complexity analysis is in terms of an abstract machine, but software runs on real machines.  Modern computer systems are organized as hierarchies of physical and virtual machines, including language runtimes, operating systems, CPUs, cache memory, random-access memory, disk drives, and networks.  The first table shows the limits on random access time and storage capacity for a typical networked server.
+</p>
+<p>Note that capacity and speed vary by several orders of magnitude.  Caching and lookahead are used heavily at every level of our systems to hide this variation, but they only work when access is predictable.  When cache misses are frequent the system will be thrashing.  For example, to randomly inspect every byte on a hard drive could take 32 years.  Even to randomly inspect every byte in RAM could take 11 minutes.  Random access is not predictable.  What is?  That depends on the system, but re-accessing recently used items and accessing items sequentially are usually a win.
+</p>
+<p>Algorithms and data structures vary in how effectively they use caches.  For instance:
+</p>
+<ul><li> Linear search makes good use of lookahead, but requires <i>O(n)</i> comparisons.
+</li>
+<li> Binary search of a sorted array requires only <i>O(log(n))</i> comparisons.
+</li>
+<li> Search of a van Emde Boas tree is <i>O(log(n))</i> and cache-oblivious.
+</li></ul>
+
+<table align="right">
+<caption align="top" style="color:#e76700;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search time (ns)</caption>
+<tr><th align="right"> 8</th><td align="right"> 50</td><td align="right"> 90</td><td align="right"> 40</td></tr>
+<tr><th align="right"> 64</th><td align="right"> 180</td><td align="right"> 150</td><td align="right"> 70</td></tr>
+<tr><th align="right"> 512</th><td align="right"> 1200</td><td align="right"> 230</td><td align="right"> 100</td></tr>
+<tr><th align="right"> 4096</th><td align="right"> 17000</td><td align="right"> 320</td><td align="right"> 160</td></tr>
+<tr><td></td><th>linear</th><th>binary</th><th>vEB</th></tr>
+</table>
+
+<p>How to choose?  In the last analysis, by measuring.  The second table shows the time required to search arrays of 64-bit integers via these three methods.  On my computer:
+</p>
+<ul><li> Linear search is competitive for small arrays, but loses exponentially for larger arrays.
+</li>
+<li> van Emde Boas wins hands down, thanks to its predictable access pattern. 
+</li></ul>
+<p><i>"You pays your money and you takes your choice." &mdash; <a href="http://www.nytimes.com/1988/02/28/magazine/on-language-you-pays-yer-money.html?pagewanted=all" class="external text" title="http://www.nytimes.com/1988/02/28/magazine/on-language-you-pays-yer-money.html?pagewanted=all" rel="nofollow">Punch</a></i>
+
+</p>
+<p><br/>
+</p>
+<footer>
+<p class="author">By Greg Colvin
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

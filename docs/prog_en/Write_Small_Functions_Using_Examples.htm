@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Write Small Functions Using Examples - Programmer 97-things</title>
+<meta property="og:title" content="Write Small Functions Using Examples">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Write_Small_Functions_Using_Examples.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Write Small Functions Using Examples</h1>
+</header>
+
+<p>We would like to write code that is correct, and have evidence on hand that it is correct. It can help with both issues to think about the "size" of a function. Not in the sense of the amount of code that implements a function &mdash; although that is interesting &mdash; but rather the size of the mathematical function that our code manifests.
+</p>
+<p>For example, in the game of Go there is a condition called <i>atari</i> in which a player's stones may be captured by their opponent: A stone with two or more free spaces adjacent to it (called <i>liberties</i>) is not in atari. It can be tricky to count how many liberties a stone has, but determining atari is easy if that is known. We might begin by writing a function like this: 
+</p>
+<pre>boolean atari(int libertyCount)
+    libertyCount &lt; 2
+</pre>
+<p>This is larger than it looks. A mathematical function can be understood as a set, some subset of the Cartesian product of the sets that are its domain (here, <code>int</code>) and range (here, <code>boolean</code>). If those sets of values were the same size as in Java then there would be <code>2L*(Integer.MAX_VALUE+(-1L*Integer.MIN_VALUE)+1L)</code> or 8,589,934,592 members in the set <code>int</code>&times;<code>boolean</code>. Half of these are members of the subset that is our function, so to provide complete evidence that our function is correct we would need to check around 4.3&times;10<sup>9</sup> examples. 
+</p>
+<p>This is the essence of the claim that tests cannot prove the absence of bugs. Tests can demonstrate the presence of features, though. But still we have this issue of size. 
+</p>
+<p>The problem domain helps us out. The nature of Go means that number of liberties of a stone is not any <code>int</code>, but exactly one of {1,2,3,4}. So we could alternatively write:
+</p>
+<pre>LibertyCount = {1,2,3,4} 
+boolean atari(LibertyCount libertyCount)
+    libertyCount == 1
+</pre>
+<p>This is much more tractable: The function computed is now a set with at most eight members. In fact, four checked examples would constitute evidence of complete certainty that the function is correct. This is one reason why it's a good idea to use types closely related to the problem domain to write programs, rather than native types. Using domain-inspired types can often make our functions much smaller. One way to find out what those types should be is to find the examples to check in problem domain terms, before writing the function. 
+</p>
+<footer>
+<p class="author">By Keith Braithwaite
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

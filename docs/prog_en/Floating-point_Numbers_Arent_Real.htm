@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Floating-point Numbers Aren't Real - Programmer 97-things</title>
+<meta property="og:title" content="Floating-point Numbers Aren't Real">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Floating-point_Numbers_Arent_Real.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Floating-point Numbers Aren't Real</h1>
+</header>
+
+<p>Floating-point numbers are not "real numbers" in the mathematical sense, even though they are called <i>real</i> in some programming languages, such as Pascal and Fortran. Real numbers have infinite precision and are therefore continuous and non-lossy; floating-point numbers have limited precision, so they are finite, and they resemble "badly-behaved" integers, because they're not evenly spaced throughout their range.
+</p>
+<p>To illustrate, assign 2147483647 (the largest signed 32-bit integer) to a 32-bit <code>float</code> variable (<code>x</code>, say), and print it. You'll see 2147483648. Now print <code>x - 64</code>. Still 2147483648. Now print <code>x-65</code> and you'll get 2147483520! Why? Because the spacing between adjacent floats in that range is 128, and floating-point operations round to the nearest floating-point number.
+</p>
+<p>IEEE floating-point numbers are fixed-precision numbers based on base-two scientific notation: 1.d<sub>1</sub>d<sub>2</sub>...d<sub>p-1</sub> &#xd7; 2<sup>e</sup>, where <i>p</i> is the precision (24 for <code>float</code>, 53 for <code>double</code>). The spacing between two consecutive numbers is 2<sup>1-p+e</sup>, which can be safely approximated by &#x03b5;|x|, where &#x03b5; is the <i>machine epsilon</i> (2<sup>1-p</sup>).
+</p>
+<p>Knowing the spacing in the neighborhood of a floating-point number can help you avoid classic numerical blunders. For example, if you're performing an iterative calculation, such as searching for the root of an equation, there's no sense in asking for greater precision than the number system can give in the neighborhood of the answer. Make sure that the tolerance you request is no smaller than the spacing there; otherwise you'll loop forever.
+</p>
+<p>Since floating-point numbers are approximations of real numbers, there is inevitably a little error present. This error, called <i>roundoff</i>, can lead to surprising results. When you subtract nearly equal numbers, for example, the most significant digits cancel each other out, so what was the least significant digit (where the roundoff error resides) gets promoted to the most significant position in the floating-point result, essentially contaminating any further related computations (a phenomenon known as <i>smearing</i>). You need to look closely at your algorithms to prevent such <i>catastrophic cancellation</i>. To illustrate, consider solving the equation <i>x<sup>2</sup> - 100000x + 1 = 0</i> with the quadratic formula. Since the operands in the expression <i>-b + sqrt(b<sup>2</sup> - 4)</i> are nearly equal in magnitude, you can instead compute the root <i>r<sub>1</sub> = -b - sqrt(b<sup>2</sup> - 4)</i>, and then obtain <i>r<sub>2</sub> = 1/r<sub>1</sub></i>, since for any quadratic equation, <i>ax<sup>2</sup> + bx + c = 0</i>, the roots satisfy <i>r<sub>1</sub>r<sub>2</sub> = c/a</i>.
+</p>
+<p>Smearing can occur in even more subtle ways. Suppose a library naively computes <i>e<sup>x</sup></i> by the formula <i>1 + x + x<sup>2</sup>/2 + x<sup>3</sup>/3! + ...</i>. This works fine for positive <i>x</i>, but consider what happens when <i>x</i> is a large negative number. The even-powered terms result in large positive numbers, and subtracting the odd-powered magnitudes will not even affect the result. The problem here is that the roundoff in the large, positive terms is in a digit position of much greater significance than the true answer. The answer diverges toward positive infinity! The solution here is also simple: for negative <i>x</i>, compute <i>e<sup>x</sup> = 1/e<sup>|x|</sup></i>.
+</p>
+<p>It should go without saying that you shouldn't use floating-point numbers for financial applications &mdash; that's what decimal classes in languages like Python and C# are for. Floating-point numbers are intended for efficient scientific computation. But efficiency is worthless without accuracy, so remember the source of rounding errors and code accordingly!
+</p>
+<footer>
+<p class="author">By Chuck Allison
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>The Golden Rule of API Design - Programmer 97-things</title>
+<meta property="og:title" content="The Golden Rule of API Design">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/The_Golden_Rule_of_API_Design.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">The Golden Rule of API Design</h1>
+</header>
+
+<p>API design is tough, particularly in the large.  If you are designing an API that is going to have hundreds or thousands of users, you have to think about how you might change it in the future and whether your changes might break client code.  Beyond that, you have to think about how users of your API affect you. If one of your API classes uses one of its own methods internally, you have to remember that a user could subclass your class and override it, and that could be disastrous.  You wouldn't be able to change that method because some of your users have given it a different meaning.  Your future internal implementation choices are at the mercy of your users.
+</p>
+<p>API developers solve this problem in various ways, but the easiest way is to lock down the API. If you are working in Java you might be tempted to make most of your classes and methods <code>final</code>.  In C#, you might make your classes and methods <code>sealed</code>. Regardless of the language you are using, you might be tempted to present your API through a singleton or use <code>static</code> factory methods so that you can guard it from people who might override behavior and use your code in ways which may constrain your choices later. This all seems reasonable, but is it really?
+</p>
+<p>Over the past decade, we've gradually realized that unit testing is an extremely important part of practice, but that lesson has not completely permeated the industry.  The evidence is all around us.  Take an arbitrary untested class that uses a third-party API and try to write unit tests for it.  Most of the time, you'll run into trouble.  You'll find that the code using the API is stuck to it like glue.  There's no way to impersonate the API classes so that you can sense your code's interactions with them, or supply return values for testing.  
+</p>
+<p>Over time, this will get better, but only if we start to see testing as a real use case when we design APIs.  Unfortunately, it's a little bit more involved than just testing our code.  That's where the <b>Golden Rule of API Design</b> fits in: <i>It's not enough to write tests for an API you develop; you have to write unit tests for code that uses your API. When you do, you learn first-hand the hurdles that your users will have to overcome when they try to test their code independently.</i>
+</p>
+<p>There is no one way to make it easy for developers to test code which uses your API.  <code>static</code>, <code>final</code>, and <code>sealed</code> are not inherently bad constructs.  They can be useful at times. But it is important to be aware of the testing issue and, to do that, you have to experience it yourself.  Once you have, you can approach it as you would any other design challenge.
+</p>
+<footer>
+<p class="author">By Michael Feathers
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Use the Right Algorithm and Data Structure - Programmer 97-things</title>
+<meta property="og:title" content="Use the Right Algorithm and Data Structure">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Use_the_Right_Algorithm_and_Data_Structure.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Use the Right Algorithm and Data Structure</h1>
+</header>
+
+<p><i>A big bank with many branch offices complained that the new computers it had bought for the tellers were too slow. This was in the time before everyone used electronic banking and ATMs were not as widespread as they are now. People would visit the bank far more often, and the slow computers were making the people queue up. Consequently, the bank threatened to break its contract with the vendor.</i>
+</p>
+<p><i>The vendor sent a performance analysis and tuning specialist to determine the cause of the delays. He soon found one specific program running on the terminal consuming almost all the CPU capacity. Using a profiling tool, he zoomed in on the program and he could see the function that was the culprit. The source code read:</i>
+</p>
+<pre>for (i=0; i&lt;strlen(s); ++i) {
+  if (... s[i] ...) ...
+}
+</pre>
+<p><i>And string <code>s</code> was, on average, thousands of characters long. The code (written by the bank) was quickly changed, and the bank tellers lived happily ever after....</i>
+</p>
+<p><br/>
+Shouldn't the programmer have done better than to use code that needlessly scaled quadratically? 
+</p>
+<p>Each call to <code>strlen</code> traversed every one of the many thousand characters in the string to find its terminating null character. The string, however, never changed. By determining its length in advance, the programmer could have saved thousands of calls to <code>strlen</code> (and millions of loop executions):
+</p>
+<pre>n=strlen(s);
+for (i=0; i&lt;n; ++i) {
+  if (... s[i] ...) ...
+}
+</pre>
+<p>Everyone knows the adage "first make it work, then make it work fast" to avoid the pitfalls of micro-optimization. But the example above would almost make you believe that the programmer followed the Machiavellian adagio "first make it work slowly."
+</p>
+<p>This thoughtlessness is something you may come across more than once. And it is not just a "don't reinvent the wheel" thing. Sometimes novice programmers just start typing away without really thinking and suddenly they have 'invented' bubble sort. They may even be bragging about it.
+</p>
+<p>The other side of choosing the right algorithm is the choice of data structure. It can make a big difference: Using a linked list for a collection of a million items you want to search through &mdash; compared to a hashed data structure or a binary tree &mdash; will have a big impact on the user's appreciation of your programming.
+</p>
+<p>Programmers should not reinvent the wheel, and should use existing libraries where possible. But to be able to avoid problems like the bank's, they should also be educated about algorithms and how they scale. Is it just the eye candy in modern text editors that make them just as slow as old-school programs like WordStar in the 1980s? Many say reuse in programming is paramount. Above all, however, programmers should know when, what, and how to reuse. To be able to do that they should have knowledge of the problem domain and of algorithms and data structures.
+</p>
+<p>A good programmer should also know when to use an abominable algorithm.  For example, if the problem domain dictates there can never be more than five items (like the number of dice in a Yahtzee game), you know that you <i>always</i> have to sort at most five items.  In that case, bubble sort might actually be the most efficient way to sort the items. Every dog has its day.
+</p>
+<p>So, read some good books &mdash; and make sure you understand them. And if you really read Donald Knuth's <i>the Art of Computer Programming</i> well, you might even be lucky: Find a mistake by the author and earn one of Don Knuth's hexadecimal dollar ($2.56) checks.
+</p>
+<footer>
+<p class="author">By JC van Winkel
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

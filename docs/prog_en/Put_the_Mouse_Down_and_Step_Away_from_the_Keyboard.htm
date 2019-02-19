@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Put the Mouse Down and Step Away from the Keyboard - Programmer 97-things</title>
+<meta property="og:title" content="Put the Mouse Down and Step Away from the Keyboard">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Put_the_Mouse_Down_and_Step_Away_from_the_Keyboard.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Put the Mouse Down and Step Away from the Keyboard</h1>
+</header>
+
+<p>You've been focused for hours on some gnarly problem and there's no solution in sight. So you get up to stretch your legs, or to hit the vending machines, and on the way back the answer suddenly becomes obvious.
+</p>
+<p>Does this scenario sound familiar? Ever wonder why it happens? The trick is that while you're coding, the logical part of your brain is active and the creative side is shut out. It can't present anything to you until the logical side takes a break.
+</p>
+<p>Here's a real-life example: I was cleaning up some legacy code and ran into an 'interesting' method. It was designed to verify that a string contained a valid time using the format <i>hh:mm:ss xx</i>, where <i>hh</i> represents the hour, <i>mm</i> represents minutes, <i>ss</i> represents seconds, and <i>xx</i> is either <i>AM</i> or <i>PM</i>.
+</p>
+<p>The method used the following code to convert two characters (representing the hour) into a number, and verify it was within the proper range:
+</p>
+<pre>try {
+    Integer.parseInt(time.substring(0, 2));
+} catch (Exception x) {
+    return false;
+}
+
+if (Integer.parseInt(time.substring(0, 2)) &gt; 12) {
+    return false;
+}
+</pre>
+<p>The same code appeared twice more, with appropriate changes to the character offset and upper limit, to test the minutes and seconds. The method ended with these lines to check for <i>AM</i> and <i>PM</i>:
+</p>
+<pre>if (!time.substring(9, 11).equals("AM") &amp;
+   &nbsp;!time.substring(9, 11).equals("PM")) {
+    return false;
+}
+</pre>
+<p>If none of this series of comparisons failed, returning <code>false</code>, the method returned <code>true</code>.
+</p>
+<p>If the preceding code seems wordy and difficult to follow, don't worry. I thought so too &mdash; which meant I'd found something worth cleaning up. I refactored it and wrote a few unit tests, just to make sure it still worked.
+</p>
+<p>When I finished, I felt pleased with the results. The new version was easy to read, half the size, and more accurate because the original code tested only the upper boundary for the hours, minutes, and seconds.
+</p>
+<p>While getting ready for work the next day, an idea popped in my head: Why not validate the string using a regular expression? After a few minutes typing, I had a working implementation in just one line of code. Here it is:
+</p>
+<pre>public static boolean validateTime(String time) {
+    return time.matches("(0[1-9]|1[0-2]):[0-5][0-9]:[0-5][0-9] ([AP]M)");
+}
+</pre>
+<p>The point of this story is not that I eventually replaced over thirty lines of code with just one. The point is that until I got away from the computer, I thought my first attempt was the best solution to the problem.
+</p>
+<p>So the next time you hit a nasty problem, do yourself a favor. Once you really understand the problem go do something involving the creative side of your brain &mdash; sketch out the problem, listen to some music, or just take a walk outside. Sometimes the best thing you can do to solve a problem is to put the mouse down and step away from the keyboard.
+</p>
+<footer>
+<p class="author">By BurkHufnagel
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

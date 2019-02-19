@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Thinking in States - Programmer 97-things</title>
+<meta property="og:title" content="Thinking in States">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Thinking_in_States.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Thinking in States</h1>
+</header>
+
+<p>People in the real world have a weird relationship with state. This morning I stopped by the local store to prepare for another day of converting caffeine to code. Since my favorite way of doing that is by drinking latte, and I couldn't find any milk, I asked the clerk.
+</p>
+<p>"Sorry, we're super-duper, mega-out of milk."
+</p>
+<p>To a programmer, that's an odd statement. You're either out of milk or you're not. There is no scale when it comes to being out of milk. Perhaps she was trying to tell me that they'd be out of milk for a week, but the outcome was the same &mdash; espresso day for me.
+</p>
+<p>In most real-world situations, people's relaxed attitude to state is not an issue. Unfortunately, however, many programmers are quite vague about state too &mdash; and that is a problem.
+</p>
+<p>Consider a simple webshop that only accepts credit cards and does not invoice customers, with an <code>Order</code> class containing this method:
+</p>
+<pre> public boolean isComplete() {
+     return isPaid() &amp;&amp; hasShipped();
+ }
+</pre>
+<p>Reasonable, right? Well, even if the expression is nicely extracted into a method instead of copy'n'pasted everywhere, the expression shouldn't exist at all. The fact that it does highlights a problem. Why? Because an order can't be shipped before it's paid. Thereby, <code>hasShipped</code> can't be true unless <code>isPaid</code> is true, which makes part of the expression redundant. You may still want <code>isComplete</code> for clarity in the code, but then it should look like this:
+</p>
+<pre> public boolean isComplete() {
+     return hasShipped();
+ }
+</pre>
+<p>In my work, I see both missing checks and redundant checks all the time. This example is tiny, but when you add cancellation and repayment, it'll become more complex and the need for good state handling increases. In this case, an order can only be in one of three distinct states:
+</p>
+<ul><li> <i>In progress</i>: Can add or remove items. Can't ship.
+</li>
+<li> <i>Paid</i>: Can't add or remove items. Can be shipped.
+</li>
+<li> <i>Shipped</i>: Done. No more changes accepted.
+</li></ul>
+<p>These states are important and you need to check that you're in the expected state before doing operations, and that you only move to a legal state from where you are. In short, you have to protect your objects carefully, in the right places.
+</p>
+<p>But how do you begin thinking in states? Extracting expressions to meaningful methods is a very good start, but it is just a start. The foundation is to understand state machines. I know you may have bad memories from CS class, but leave them behind. State machines are not particularly hard. Visualize them to make them simple to understand and easy to talk about. Test-drive your code to unravel valid and invalid states and transitions and to keep them correct. Study the State pattern. When you feel comfortable, read up on Design by Contract. It helps you ensure a valid state by validating incoming data and the object itself on entry and exit of each public method.
+</p>
+<p>If your state is incorrect, there's a bug and you risk trashing data if you don't abort. If you find the state checks to be noise, learn how to use a tool, code generation, weaving, or aspects to hide them. Regardless of which approach you pick, thinking in states will make your code simpler and more robust.
+</p>
+<footer>
+<p class="author">By Niclas Nilsson
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

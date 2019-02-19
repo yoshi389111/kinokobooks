@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Encapsulate Behavior, not Just State - Programmer 97-things</title>
+<meta property="og:title" content="Encapsulate Behavior, not Just State">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Encapsulate_Behavior_not_Just_State.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Encapsulate Behavior, not Just State</h1>
+</header>
+
+<p>In systems theory, containment is one of the most useful constructs when dealing with large and complex system structures. In the software industry the value of containment or encapsulation is well understood. Containment is supported by programming language constructs such as subroutines and functions, modules and packages, classes, and so on.
+</p>
+<p>Modules and packages address the larger scale needs for encapsulation, while classes, subroutines, and functions address the more fine-grained aspects of the matter. Over the years I have discovered that classes seem to be one of the hardest encapsulation constructs for developers to get right. It's not uncommon to find a class with a single 3000-line main method, or a class with only <i>set</i> and <i>get</i> methods for its primitive attributes. These examples demonstrate that the developers involved have not fully understood object-oriented thinking, having failed to take advantage of the power of objects as modeling constructs. For developers familiar with the terms POJO (Plain Old Java Object) and POCO (Plain Old C# Object or Plain Old CLR Object), this was the intent in going back to the basics of OO as a modeling paradigm &mdash; the objects are plain and simple, but not dumb.
+</p>
+<p>An object encapsulates both state and behavior, where the behavior is defined by the actual state. Consider a door object. It has four states: closed, open, closing, opening. It provides two operations: open and close. Depending on the state, the open and close operations will behave differently. This inherent property of an object makes the design process conceptually simple. It boils down to two simple tasks: allocation and delegation of responsibility to the different objects including the inter-object interaction protocols.
+</p>
+<p>How this works in practice is best illustrated with an example. Let's say we have three classes: <code>Customer</code>, <code>Order</code>, and <code>Item</code>. A <code>Customer</code> object is the natural placeholder for the credit limit and credit validation rules. An <code>Order</code> object knows about its associated <code>Customer</code>, and its <code>addItem</code> operation delegates the actual credit check by calling <code>customer.validateCredit(item.price())</code>. If the postcondition for the method fails, an exception can be thrown and the purchase aborted.
+</p>
+<p>Less experienced object oriented developers might decide to wrap all the business rules into an object very often referred to as <code>OrderManager</code> or <code>OrderService</code>. In these designs, <code>Order</code>, <code>Customer</code>, and <code>Item</code> are treated as little more than record types. All logic is factored out of the classes and tied together in one large, procedural method with a lot of internal <i>if-then-else</i> constructs. These methods are easily broken and are almost impossible to maintain. The reason? The encapsulation is broken.
+</p>
+<p>So in the end, don't break the encapsulation, and use the power of your programming language to maintain it.
+</p>
+<footer>
+<p class="author">By Einar Landre
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

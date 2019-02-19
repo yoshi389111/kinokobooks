@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Inter-Process Communication Affects Application Response Time - Programmer 97-things</title>
+<meta property="og:title" content="Inter-Process Communication Affects Application Response Time">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Inter-Process_Communication_Affects_Application_Response_Time.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Inter-Process Communication Affects Application Response Time</h1>
+</header>
+
+<p>Response time is critical to software usability. Few things are as frustrating as waiting for some software system to respond, especially when our interaction with the software involves repeated cycles of stimulus and response. We feel as if the software is wasting our time and affecting our productivity. However, the causes of poor response time are less well appreciated, especially in modern applications. Much performance management literature still focuses on data structures and algorithms, issues that can make a difference in some cases but are far less likely to dominate performance in modern multi-tier enterprise applications.
+</p>
+<p>When performance is a problem in such applications, my experience has been that examining data structures and algorithms isn't the right place to look for improvements. Response time depends most strongly on the number of remote inter-process communications (IPCs) conducted in response to a stimulus. While there can be other local bottlenecks, the number of remote inter-process communications usually dominates. Each remote inter-process communication contributes some non-negligible latency to the overall response time, and these individual contributions add up, especially when they are incurred in sequence.
+</p>
+<p>A prime example is <i>ripple loading</i> in an application using object&ndash;relational mapping. Ripple loading describes the sequential execution of many database calls to select the data needed for building a graph of objects (see <a href="http://martinfowler.com/eaaCatalog/lazyLoad.html" class="external text" title="http://martinfowler.com/eaaCatalog/lazyLoad.html" rel="nofollow">Lazy Load</a> in Martin Fowler's <i>Patterns of Enterprise Application Architecture</i>). When the database client is a middle-tier application server rendering a web page, these database calls are usually executed sequentially in a single thread. Their individual latencies accumulate, contributing to the overall response time. Even if each database call takes only 10ms, a page requiring 1000 calls (which is not uncommon) will exhibit at least a 10-second response time. Other examples include web-service invocation, HTTP requests from a web browser, distributed object invocation, request&ndash;reply messaging, and data-grid interaction over custom network protocols. The more remote IPCs needed to respond to a stimulus, the greater the response time will be.
+</p>
+<p>There are a few relatively obvious and well-known strategies for reducing the number of remote inter-process communications per stimulus. One strategy is to apply the principle of parsimony, optimizing the interface between processes so that exactly the right data for the purpose at hand is exchanged with the minimum amount of interaction. Another strategy is to parallelize the inter-process communications where possible, so that the overall response time becomes driven mainly by the longest-latency IPC. A third strategy is to cache the results of previous IPCs, so that future IPCs may be avoided by hitting local cache instead.
+</p>
+<p>When you're designing an application, be mindful of the number of inter-process communications in response to each stimulus. When analyzing applications that suffer from poor performance, I have often found IPC-to-stimulus ratios of thousands-to-one. Reducing this ratio, whether by caching or parallelizing or some other technique, will pay off much more than changing data structure choice or tweaking a sorting algorithm.
+</p>
+<footer>
+<p class="author">By Randy Stafford
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Don't Touch that Code! - Programmer 97-things</title>
+<meta property="og:title" content="Don't Touch that Code!">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Dont_Touch_that_Code.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Don't Touch that Code!</h1>
+</header>
+
+<p>It has happened to everyone of us at some point. Your code was rolled on to the staging server for system testing and the testing manager writes back that she has hit a problem. Your first reaction is "Quick, let me fix that &mdash; I know what's wrong." 
+</p>
+<p>In the bigger sense, though, what is wrong is that as a developer you think you should have access to the staging server.
+</p>
+<p>In most web-based development environments the architecture can be broken down like this:
+</p>
+<ul><li> Local development and unit testing on the developer's machine
+</li>
+<li> Development server where manual or automated integration testing is done
+</li>
+<li> Staging server where the QA team and the users do acceptance testing
+</li>
+<li> Production server
+</li></ul>
+<p>Yes, there are other servers and services sprinkled in there, like source code control and ticketing, but you get the idea. Using this model, a developer &mdash; even a senior developer &mdash; should never have access beyond the development server. Most development is done on a developer's local machine using their favorite blend of IDEs, virtual machines, and an appropriate amount of black magic sprinkled over it for good luck.
+</p>
+<p>Once checked into SCC, whether automatically or manually, it should be rolled over to the development server where it can be tested and tweaked if necessary to make sure everything works together. From this point on, though, the developer is a spectator to the process.
+</p>
+<p>The staging manager should package and roll the code to the staging server for the QA team. Just like developers should have no need to access anything beyond the development server, the QA team and the users have no need to touch anything on the development server. If it's ready for acceptance testing, cut a release and roll, don't ask the user to "Just look at something real quick" on the development server. Remember, unless you are coding the project by yourself, other people have code there and they may not be ready for the user to see it. The release manager is the only person who should have access to both.
+</p>
+<p>Under no circumstances &mdash; ever, at all &mdash; should a developer have access to a production server. If there is a problem, your support staff should either fix it or request that you fix it. After it's checked into SCC they will roll a patch from there. Some of the biggest programming disasters I've been a part of have taken place because someone <i>*cough*</i>me<i>*cough*</i> violated this last rule. If it's broke, production is not the place to fix it.
+</p>
+<footer>
+<p class="author">By Cal Evans
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

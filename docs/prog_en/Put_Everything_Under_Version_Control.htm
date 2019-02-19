@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Put Everything Under Version Control - Programmer 97-things</title>
+<meta property="og:title" content="Put Everything Under Version Control">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Put_Everything_Under_Version_Control.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Put Everything Under Version Control</h1>
+</header>
+
+<p>Put everything in all your projects under version control. The resources you need are there: free tools, like Subversion, Git, Mercurial, and CVS; plentiful disk space; cheap and powerful servers; ubiquitous networking; and even project-hosting services.  After you've installed the version control software all you need in order to put your work in its repository is to issue the appropriate command in a clean directory containing your code. And there are just two new basic operations to learn: you <i>commit</i> your code changes to the repository and you <i>update</i> your working version of the project with the repository's version.
+</p>
+<p>Once your project is under version control you can obviously track its history, see who wrote what code, and refer to a file or project version through a unique identifier. More importantly you can make bold code changes without fear &mdash; no more commented-out code just in case you need it in the future, because the old version lives safely in the repository. You can (and should) <i>tag</i> a software release with a symbolic name so that you can easily revisit in the future the exact version of the software your customer runs. You can create <i>branches</i> of parallel development: Most projects have an active development branch and one or more maintenance branches for released versions that are actively supported.
+</p>
+<p>A version-control system minimizes friction between developers. When programmers work on independent software parts these get integrated almost by magic. When they step on each others' toes the system notices and allows them to sort out the conflicts. With some additional setup the system can notify all developers for each committed change, establishing a common understanding of the project's progress.
+</p>
+<p>When you set up your project, don't be stingy: place <i>all</i> the project's assets under version control.  Apart from the source code, include the documentation, tools, build scripts, test cases, artwork, and even libraries.  With the complete project safely tucked into the (regularly backed up) repository the damage of losing your disk or data is minimized. Setting up for development on a new machine involves simply checking out the project from the repository. This simplifies distributing, building, and testing the code on different platforms: On each machine a single update command will ensure that the software is the current version.
+</p>
+<p>Once you've seen the beauty of working with a version control system, following a couple of rules will make you and your team even more effective:
+</p>
+<ul><li> Commit each logical change in a separate operation. Lumping many changes together in a single commit will make it difficult to disentangle them in the future. This is especially important when you make project-wide refactorings or style changes, which can easily obscure other modifications.
+</li></ul>
+<ul><li> Accompany each commit with an explanatory message. At a minimum describe succinctly what you've changed, but if you also want to record the change's rationale this is the best place to store it.
+</li></ul>
+<ul><li> Finally, avoid committing code that will break a project's build, otherwise you'll become unpopular with the project's other developers.
+</li></ul>
+<p>Life under a version control system is too good to ruin it with easily avoidable missteps.
+</p>
+<footer>
+<p class="author">By Diomidis Spinellis
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

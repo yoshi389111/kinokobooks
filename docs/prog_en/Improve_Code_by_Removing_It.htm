@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Improve Code by Removing It - Programmer 97-things</title>
+<meta property="og:title" content="Improve Code by Removing It">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Improve_Code_by_Removing_It.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Improve Code by Removing It</h1>
+</header>
+
+<p><i>Less is more.</i> It's a quite trite little maxim, but sometimes it really is true.
+</p>
+<p>One of the improvements I've made to our codebase over the last few weeks is to remove chunks of it.
+</p>
+<p>We'd written the software following XP tenets, including YAGNI (that is, You Aren't Gonna Need It). Human nature being what it is, we inevitably fell short in a few places.
+</p>
+<p>I observed that the product was taking too long to execute certain tasks &mdash; simple tasks that should have been near instantaneous. This was because they were overimplemented; festooned with extra bells and whistles that were not required, but at the time had seemed like a good idea.
+</p>
+<p>So I've simplified the code, improved the product performance, and reduced the level of global code entropy simply by removing the offending features from the codebase. Helpfully, my unit tests tell me that I haven't broken anything else during the operation.
+</p>
+<p>A simple and thoroughly satisfying experience.
+</p>
+<p>So why did the unnecessary code end up there in the first place? Why did one programmer feel the need to write extra code, and how did it get past review or the pairing process? Almost certainly something like:
+</p>
+<ul><li> It was a fun bit of extra stuff, and the programmer wanted to write it. <i>(Hint: Write code because it adds value, not because it amuses you.)</i>
+</li>
+<li> Someone thought that it might be needed in the future, so felt it was best to code it now. <i>(Hint: That isn't YAGNI. If you don't need it right now, don't write it right now.)</i>
+</li>
+<li> It didn't appear to be that big an "extra," so it was easier to implement it rather than go back to the customer to see whether it was really required. <i>(Hint: It always takes longer to write and to maintain extra code. And the customer is actually quite approachable. A small extra bit of code snowballs over time into a large piece of work that needs maintenance.)</i>
+</li>
+<li> The programmer invented extra requirements that were neither documented nor discussed that justified the extra feature. The requirement was actually bogus. <i>(Hint: Programmers do not set system requirements; the customer does.)</i>
+</li></ul>
+<p>What are you working on right now? Is it all needed?
+</p>
+<footer>
+<p class="author">By Pete Goodliffe
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

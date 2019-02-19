@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Don't Nail Your Program into the Upright Position - Programmer 97-things</title>
+<meta property="og:title" content="Don't Nail Your Program into the Upright Position">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Dont_Nail_Your_Program_into_the_Upright_Position.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Don't Nail Your Program into the Upright Position</h1>
+</header>
+
+<p>I once wrote a spoof C++ quiz, in which I satirically suggested the following strategy for exception handling:
+</p>
+<dl><dd> By dint of plentiful <code>try...catch</code> constructs throughout our code base, we are sometimes able to prevent our applications from aborting. We think of the resultant state as "nailing the corpse in the upright position."
+</dd></dl>
+<p>Despite my levity, I was actually summarizing a lesson I received at the knee of Dame Bitter Experience herself.
+</p>
+<p>It was a base application class in our own, homemade C++ library. It had suffered the pokings of many programmers' fingers over the years: Nobody's hands were clean. It contained code to deal with all escaped exceptions from everything else. Taking our lead from Yossarian in <i>Catch-22</i>, we decided, or rather felt (<i>decided</i> implies more thought than went into the construction of this monster) that an instance of this class should live forever or die in the attempt. 
+</p>
+<p>To this end, we intertwined multiple exception handlers. We mixed in Windows' structured exception handling with the native kind (remember <code>__try...__except</code> in C++? Me neither). When things threw unexpectedly, we tried calling them again, pressing the parameters harder. Looking back, I like to think that when writing an inner <code>try...catch</code> handler within the <code>catch</code> clause of another, some sort of awareness crept over me that I might have accidentally taken a slip road from the motorway of good practice into the aromatic but insalubrious lane of lunacy. However, this is probably retrospective wisdom.
+</p>
+<p>Needless to say, whenever something went wrong in applications based on this class, they vanished like Mafia victims at the dockside, leaving behind no useful trail of bubbles to indicate what the hell happened, notwithstanding the dump routines that were supposedly called to record the disaster. Eventually &mdash; a long eventually &mdash; we took stock of what we had done, and experienced shame. We replaced the whole mess with a minimal and robust reporting mechanism. But this was many crashes down the line.
+</p>
+<p>I wouldn't bother you with this &mdash; for surely nobody else could ever be as stupid as we were &mdash; but for an online argument I had recently with a bloke whose academic job title declared he should know better. We were discussing Java code in a remote transaction. If the code failed, he argued, it should catch and block the exception <i>in situ</i>. ("And then do <i>what</i> with it?" I asked. "Cook it for supper?")
+</p>
+<p>He quoted the UI designers' rule: NEVER LET THE USER SEE AN EXCEPTION REPORT, rather as though this settled the matter, what with it being in caps and everything. I wonder if he was responsible for the code in one of those blue-screened ATMs whose photos decorate the feebler blogs, and had been permanently traumatized.
+</p>
+<p>Anyway, if you should meet him, nod and smile and take no notice, as you sidle towards the door.
+</p>
+<footer>
+<p class="author">By Verity Stob
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

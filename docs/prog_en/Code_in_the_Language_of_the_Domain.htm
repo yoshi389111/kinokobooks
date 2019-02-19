@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Code in the Language of the Domain - Programmer 97-things</title>
+<meta property="og:title" content="Code in the Language of the Domain">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Code_in_the_Language_of_the_Domain.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Code in the Language of the Domain</h1>
+</header>
+
+<p>Picture two codebases. In one you come across:
+</p>
+<pre>if (portfolioIdsByTraderId.get(trader.getId())
+  .containsKey(portfolio.getId())) {...}
+</pre>
+<p>You scratch your head, wondering what this code might be for. It seems to be getting an ID from a trader object, using that to get a map out of a, well, map-of-maps apparently, and then seeing if another ID from a portfolio object exists in the inner map. You scratch your head some more. You look for the declaration of <code>portfolioIdsByTraderId</code> and discover this:
+</p>
+<pre>Map&lt;int, Map&lt;int, int&gt;&gt; portfolioIdsByTraderId;
+</pre>
+<p>Gradually you realise it might be something to do with whether a trader has access to a particular portfolio. And of course you will find the same lookup fragment &mdash; or more likely a similar-but-subtly-different code fragment &mdash; whenever something cares whether a trader has access to a particular portfolio.
+</p>
+<p>In the other codebase you come across this:
+</p>
+<pre>if (trader.canView(portfolio)) {...}
+</pre>
+<p>No head scratching. You don't need to know how a trader knows. Perhaps there is one of these maps-of-maps tucked away somewhere inside. But that's the <code>trader</code>'s business, not yours.
+</p>
+<p>Now which of those codebases would you rather be working in?
+</p>
+<p>Once upon a time we only had very basic data structures: bits and bytes and characters (really just bytes but we would pretend they were letters and punctuation). Decimals were a bit tricky because our base 10 numbers don't work very well in binary, so we had several sizes of floating-point types. Then came arrays and strings (really just different arrays). Then we had stacks and queues and hashes and linked lists and skip lists and lots of other exciting data structures <i>that don't exist in the real world</i>. "Computer science" was about spending lots of effort mapping the real world into our restrictive data structures. The real gurus could even remember how they had done it.
+</p>
+<p>Then we got user-defined types! OK, this isn't news, but it does change the game somewhat. If your domain contains concepts like traders and portfolios, you can model them with types called, say, <code>Trader</code> and <code>Portfolio</code>. But, more importantly than this, you can model <i>relationships between them</i> using domain terms too.
+</p>
+<p>If you don't code using domain terms you are creating a tacit (read: secret) understanding that <i>this</i> <code>int</code> over here means the way to identify a trader, whereas <i>that</i> <code>int</code> over there means the way to identify a portfolio. (Best not to get them mixed up!) And if you represent a business concept ("Some traders are not allowed to view some portfolios &mdash; it's illegal") with an algorithmic snippet, say an existence relationship in a map of keys, you aren't doing the audit and compliance guys any favors.
+</p>
+<p>The next programmer along might not be in on the secret, so why not make it explicit? Using a key as a lookup to another key that performs an existence check is not terribly obvious. How is someone supposed to intuit that's where the business rules preventing conflict of interest are implemented?
+</p>
+<p>Making domain concepts explicit in your code means other programmers can gather the <i>intent</i> of the code much more easily than by trying to retrofit an algorithm into what they understand about a domain. It also means that when the domain model evolves &mdash; which it will as your understanding of the domain grows &mdash; you are in a good position to evolve the code. Coupled with good encapsulation, the chances are good that the rule will exist in only one place, and that you can change it without any of the dependent code being any the wiser.
+</p>
+<p>The programmer who comes along a few months later to work on the code will thank you. The programmer who comes along a few months later might be you.
+</p>
+<footer>
+<p class="author">By Dan North
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

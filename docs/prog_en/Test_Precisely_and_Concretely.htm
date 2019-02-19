@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Test Precisely and Concretely - Programmer 97-things</title>
+<meta property="og:title" content="Test Precisely and Concretely">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Test_Precisely_and_Concretely.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Test Precisely and Concretely</h1>
+</header>
+
+<p>It is important to test for the desired, essential behavior of a unit of code, rather than test for the incidental behavior of its particular implementation. But this should not be taken or mistaken as an excuse for vague tests. Tests need to be both accurate <i>and</i> precise.
+</p>
+<p>Something of a tried, tested, and testing classic, sorting routines offer an illustrative example. Implementing a sorting algorithm is not necessarily an everyday task for a programmer, but sorting is such a familiar idea that most people believe they know what to expect from it. This casual familiarity, however, can make it harder to see past certain assumptions.
+</p>
+<p>When programmers are asked "What would you test for?" by far and away the most common response is "The result of sorting is a sorted sequence of elements." While this is true, it is not the whole truth. When prompted for a more precise condition, many programmers add that the resulting sequence should be the same length as the original. Although correct, this is still not enough. For example, given the following sequence:
+</p>
+<dl><dd>3 1 4 1 5 9
+</dd></dl>
+<p>The following sequence satisfies a postcondition of being sorted in non-descending order and having the same length as the original sequence:
+</p>
+<dl><dd>3 3 3 3 3 3
+</dd></dl>
+<p>Although it satisfies the spec, it is also most certainly not what was meant! This example is based on an error taken from real production code (fortunately caught before it was released), where a simple slip of a keystroke or a momentary lapse of reason led to an elaborate mechanism for populating the whole result with the first element of the given array.
+</p>
+<p>The full postcondition is that the result is sorted <i>and</i> that it holds a permutation of the original values. This appropriately constrains the required behavior. That the result length is the same as the input length comes out in the wash and doesn't need restating.
+</p>
+<p>Even stating the postcondition in the way described is not enough to give you a good test. A good test should be readable. It should be comprehensible and simple enough that you can see readily that it is correct (or not). Unless you already have code lying around for checking that a sequence is sorted and that one sequence contains a permutation of values in another, it is quite likely that the test code will be more complex than the code under test. As Tony Hoare observed:
+</p>
+<dl><dd>There are two ways of constructing a software design: One way is to make it so simple that there are <i>obviously</i> no deficiencies and the other is to make it so complicated that there are no <i>obvious</i> deficiencies.
+</dd></dl>
+<p>Using concrete examples eliminates this accidental complexity and opportunity for accident. For example, given the following sequence:
+</p>
+<dl><dd>3 1 4 1 5 9
+</dd></dl>
+<p>The result of sorting is the following:
+</p>
+<dl><dd>1 1 3 4 5 9
+</dd></dl>
+<p>No other answer will do. Accept no substitutes.
+</p>
+<p>Concrete examples helps to illustrate general behavior in an accessible and unambiguous way. The result of adding an item to an empty collection is not simply that it is not empty: It is that the collection now has a single item. And that the single item held is the item added. Two or more items would qualify as not empty. And would also be wrong. A single item of a different value would also be wrong. The result of adding a row to a table is not simply that the table is one row bigger. It also entails that the row's key can be used to recover the row added. And so on.
+</p>
+<p>In specifying behavior, tests should not simply be accurate: They must also be precise.
+</p>
+<footer>
+<p class="author">By Kevlin Henney
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

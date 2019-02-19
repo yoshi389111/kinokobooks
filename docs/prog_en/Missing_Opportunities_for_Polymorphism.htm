@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Missing Opportunities for Polymorphism - Programmer 97-things</title>
+<meta property="og:title" content="Missing Opportunities for Polymorphism">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Missing_Opportunities_for_Polymorphism.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Missing Opportunities for Polymorphism</h1>
+</header>
+
+<p>Polymorphism is one of the grand ideas that is fundamental to OO. The word, taken from Greek, means many (<i>poly</i>) forms (<i>morph</i>). In the context of programming polymorphism refers to many forms of a particular class of objects or method. But polymorphism isn't simply about alternate implementations. Used carefully, polymorphism creates tiny localized execution contexts that let us work without the need for verbose <i>if-then-else</i> blocks. Being in a context allows us to do the right thing directly, whereas being outside of that context forces us to reconstruct it so that we can then do the right thing. With careful use of alternate implementations, we can capture context that can help us produce less code that is more readable. This is best demonstrated with some code, such as the following (unrealistically) simple shopping cart:
+</p>
+<pre>public class ShoppingCart {
+    private ArrayList&lt;Item&gt; cart = new ArrayList&lt;Item&gt;();
+    public void add(Item item) { cart.add(item); }
+    public Item takeNext() { return cart.remove(0);  }
+    public boolean isEmpty() { return cart.isEmpty(); }
+}
+</pre>
+<p>Let's say our webshop offers items that can be downloaded and items that need to be shipped. Let's build another object that supports these operations:
+</p>
+<pre>public class Shipping {
+    public boolean ship(Item item, SurfaceAddress address) { ... }
+    public boolean ship(Item item, EMailAddress address { ... }
+}
+</pre>
+<p>When a client has completed checkout we need to ship the goods:
+</p>
+<pre>while (!cart.isEmpty()) {
+    shipping.ship(cart.takeNext(), <i>???</i>);
+}
+</pre>
+<p>The <i><code>???</code></i> parameter isn't some new fancy elvis operator, it's asking should I email or snail-mail the item? The context needed to answer this question no longer exists. We have could captured the method of shipment in a <code>boolean</code> or <code>enum</code> and then use an <i>if-then-else</i> to fill in the missing parameter. Another solution would be create two classes that both extend Item. Let's call these <code>DownloadableItem</code> and <code>SurfaceItem</code>. Now let's write some code. I'll promote <code>Item</code> to be an interface that supports a single method, <code>ship</code>. To ship the contents of the cart, we will call <code>item.ship(shipper)</code>. Classes <code>DownloadableItem</code> and <code>SurfaceItem</code> will both implement <code>ship</code>.
+</p>
+<pre>public class DownloadableItem implements Item {
+    public boolean ship(Shipping shipper) {
+        shipper.ship(this, customer.getEmailAddress());
+    }
+}
+
+public class SurfaceItem implements Item {
+    public boolean ship(Shipping shipper) {
+        shipper.ship(this, customer.getSurfaceAddress());
+    }
+}
+</pre>
+<p>In this example we've delegated the responsibility of working with <code>Shipping</code> to each <code>Item</code>. Since each item knows hows it's best shipped, this arrangement allows us to get on with it without the need for an <i>if-then-else</i>. The code also demonstrates a use of two patterns that often play well together: Command and Double Dispatch. Effective use of these patterns relies on careful use of polymorphism. When that happens there will be a reduction in the number of <i>if-then-else</i> blocks in our code.
+</p>
+<p>While there are cases where it's much more practical to use <i>if-then-else</i> instead of polymorphism, it is more often the case that a more polymorphic coding style will yield a smaller, more readable and less fragile code base. The number of missed opportunities is a simple count of the <i>if-then-else</i> statements in our code.
+</p>
+<footer>
+<p class="author">By Kirk Pepperdine
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>

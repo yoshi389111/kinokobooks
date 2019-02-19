@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Don't Be Cute with Your Test Data - Programmer 97-things</title>
+<meta property="og:title" content="Don't Be Cute with Your Test Data">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_en/Dont_Be_Cute_with_Your_Test_Data.htm">
+<meta property="og:site_name" content="97 Things Every Programmer Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1 class="firstHeading">Don't Be Cute with Your Test Data</h1>
+</header>
+
+<p><i>It was getting late. I was throwing in some placeholder data to test the page layout I'd been working on.</i>
+</p>
+<p><i>I appropriated the members of The Clash for the names of users. Company names? Song titles by the Sex Pistols would do. Now I needed some stock ticker symbols &mdash; just some four letter words in capital letters.</i>
+</p>
+<p><i>I used <b>those</b> four letter words.</i>
+</p>
+<p><i>It seemed harmless. Just something to amuse myself, and maybe the other developers the next day before I wired up the real data source.</i>
+</p>
+<p><i>The following morning, a project manager took some screenshots for a presentation.</i>
+</p>
+<p><br/>
+</p>
+<p>Programming history is littered with these kinds of war stories. Things that developers and designers did "that no one else would see" which unexpectedly became visible.
+</p>
+<p>The leak type can vary but, when it happens, it can be deadly to the person, team, or company responsible. Examples include:
+</p>
+<ul><li> During a status meeting, a client clicks on an button which is as yet unimplemented. They are told: "Don't click that again, you moron."
+</li></ul>
+<ul><li> A programmer maintaining a legacy system has been told to add an error dialog, and decides to use the output of existing behind-the-scenes logging to power it. Users are suddenly faced with messages such as "Holy database commit failure, Batman!" when something breaks.
+</li></ul>
+<ul><li> Someone mixes up the test and live administration interfaces, and does some "funny" data entry. Customers spot a $1m "Bill Gates-shaped personal massager" on sale in your online store.
+</li></ul>
+<p>To appropriate the old saying that "a lie can travel halfway around the world while the truth is putting on its shoes," in this day and age a screw-up can be Dugg, Twittered, and Flibflarbed before anyone in the developer's timezone is awake to do anything about it.
+</p>
+<p>Even your source code isn't necessarily free of scrutiny. In 2004, when a tarball of the Windows 2000 source code made its way onto file sharing networks, some folks merrily grepped through it for profanity, insults, and <a href="http://www.kuro5hin.org/story/2004/2/15/71552/7795" class="external text" title="http://www.kuro5hin.org/story/2004/2/15/71552/7795" rel="nofollow">other funny content</a>. (The comment <code>// TERRIBLE HORRIBLE NO GOOD VERY BAD HACK</code> has, I will admit, become appropriated by me from time to time since!)
+</p>
+<p>In summary, when writing any text in your code &mdash; whether comments, logging, dialogs, or test data &mdash; always ask yourself how it will look if it becomes public. It will save some red faces all round.
+</p>
+<footer>
+<p class="author">By Rod Begbie
+</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a>
+</p>
+
+</footer>
+</article>
+</body>
+</html>
