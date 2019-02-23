@@ -114,13 +114,13 @@ body h6 {
 
 body h1 {
   font-size: 2em;
-  border-bottom: 1px solid #eaecef;
+  border-bottom: 1px solid #ccc;
   padding-bottom: .3em;
 }
 
 body h2 {
   font-size: 1.5em;
-  border-bottom: 1px solid #eaecef;
+  border-bottom: 1px solid #ccc;
   padding-bottom: .3em;
 }
 
@@ -235,8 +235,6 @@ body ul ul ol {
 
 body ol,
 body ul {
-  margin-bottom: 0;
-  margin-top: 0;
   padding-left: 2em;
 }
 
@@ -319,4 +317,13 @@ body img[align=left] {
 article {
   display: block;
   width: 100%;
+}
+
+header {
+  margin-bottom: 12pt;
+}
+
+footer {
+  border-top: 1px solid #ccc;
+  margin-top: 12pt;
 }
