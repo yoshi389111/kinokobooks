@@ -20,8 +20,8 @@
 
 <p>I once wrote a spoof C++ quiz, in which I satirically suggested the following strategy for exception handling:
 </p>
-<dl><dd> By dint of plentiful <code>try...catch</code> constructs throughout our code base, we are sometimes able to prevent our applications from aborting. We think of the resultant state as "nailing the corpse in the upright position."
-</dd></dl>
+<blockquote> By dint of plentiful <code>try...catch</code> constructs throughout our code base, we are sometimes able to prevent our applications from aborting. We think of the resultant state as "nailing the corpse in the upright position."
+</blockquote>
 <p>Despite my levity, I was actually summarizing a lesson I received at the knee of Dame Bitter Experience herself.
 </p>
 <p>It was a base application class in our own, homemade C++ library. It had suffered the pokings of many programmers' fingers over the years: Nobody's hands were clean. It contained code to deal with all escaped exceptions from everything else. Taking our lead from Yossarian in <i>Catch-22</i>, we decided, or rather felt (<i>decided</i> implies more thought than went into the construction of this monster) that an instance of this class should live forever or die in the attempt. 

@@ -327,3 +327,7 @@ footer {
   border-top: 1px solid #ccc;
   margin-top: 12pt;
 }
+
+td.right, th.right { text-align: right; }
+td.left, th.left { text-align: left; }
+img.half { width: 50%; }

@@ -18,15 +18,15 @@
 <h1 class="firstHeading">Know Your Limits</h1>
 </header>
 
-<p><i>"Man's got to know his limitations." &mdash; <a href="http://www.youtube.com/watch?v=t2JnCXvm_Qc" class="external text" title="http://www.youtube.com/watch?v=t2JnCXvm_Qc" rel="nofollow">Dirty Harry</a></i>
-</p>
+<blockquote><i>"Man's got to know his limitations." &mdash; <a href="http://www.youtube.com/watch?v=t2JnCXvm_Qc" class="external text" title="http://www.youtube.com/watch?v=t2JnCXvm_Qc" rel="nofollow">Dirty Harry</a></i>
+</blockquote>
 <p>Your resources are limited.  You only have so much time and money to do your work, including the time and money needed to keep your knowledge, skills, and tools up-to-date.  You can only work so hard, so fast, so smart, and so long.  Your tools are only so powerful.  Your target machines are only so powerful.  So you have to respect the limits of your resources.
 </p>
 <p>How to respect those limits?  Know yourself, know your people, know your budgets, and know your stuff.  Especially, as a software engineer, know the space and time complexity of your data structures and algorithms, and the architecture and performance characteristics of your systems. Your job is to create an optimal marriage of software and systems.
 </p>
 
 <figure>
-<a href="../images/Clearly.jpeg"><img alt="Some important complexity classes" src="../images/Clearly.jpeg" border="0" width="50%"></a>
+<a href="../images/Clearly.jpeg"><img alt="Some important complexity classes" src="../images/Clearly.jpeg" class="half"></a>
 <figcaption>Some important complexity classes</figcaption>
 </figure>
 
@@ -34,16 +34,16 @@
 <p>Space and time complexity are given as the function <i>O(f(n))</i> which for <i>n</i> equal the size of the input is the asymptotic space or time required as <i>n</i> grows to infinity.  Important complexity classes for <i>f(n)</i> include <i>ln(n)</i>,  <i>n</i>, <i>n ln(n)</i>, <i>n<sup>e</sup></i>, and <i>e<sup>n</sup></i>.  As graphing these functions clearly shows, as <i>n</i> gets bigger <i>O(ln(n))</i> is ever so much smaller than <i>O(n)</i> and <i>O(n ln(n))</i>, which are ever so much smaller than <i>O(n<sup>e</sup>)</i> and <i>O(e<sup>n</sup>)</i>.  As Sean Parent puts it, for achievable <i>n</i> all complexity classes amount to near-constant, near-linear, or near-infinite.
 </p>
 
-<table align="right">
-<tr><th align="left"></th><td style="color:#e76700;"> access time</td><td align="right" style="color:#e76700;">  &nbsp;capacity</td></tr>
-<tr><th align="left">register</th><td align="right"> &lt; 1 ns</td><td align="right">64  b</td><td> &nbsp;&nbsp;</td></tr>
-<tr><th align="left">cache line</th><td align="right"></td><td align="right">64  B</td></tr>
-<tr><th align="right">L1 cache</th><td align="right"> 1 ns</td><td align="right">64 KB</td></tr>
-<tr><th align="right">L2 cache</th><td align="right"> 4 ns</td><td align="right">8 MB</td></tr>
-<tr><th align="left">RAM</th><td align="right">20 ns</td><td align="right">32 GB</td></tr>
-<tr><th align="left">disk</th><td align="right">10 ms</td><td align="right">10 TB</td></tr>
-<tr><th align="left">LAN</th><td align="right">20 ms</td><td align="right">&gt; 1 PB</td></tr>
-<tr><th align="left">Internet</th><td align="right">100 ms</td><td align="right">&gt; 1 ZB</td></tr>
+<table>
+<tr><th></th><th> access time</th><th>  &nbsp;capacity</th></tr>
+<tr><th class="left">register</th><td class="right"> &lt; 1 ns</td><td class="right">64 b</td></tr>
+<tr><th class="left">cache line</th><td class="right"></td><td class="right">64 B</td></tr>
+<tr><th class="right">L1 cache</th><td class="right"> 1 ns</td><td class="right">64 KB</td></tr>
+<tr><th class="right">L2 cache</th><td class="right"> 4 ns</td><td class="right">8 MB</td></tr>
+<tr><th class="left">RAM</th><td class="right">20 ns</td><td class="right">32 GB</td></tr>
+<tr><th class="left">disk</th><td class="right">10 ms</td><td class="right">10 TB</td></tr>
+<tr><th class="left">LAN</th><td class="right">20 ms</td><td class="right">&gt; 1 PB</td></tr>
+<tr><th class="left">Internet</th><td class="right">100 ms</td><td class="right">&gt; 1 ZB</td></tr>
 </table>
 
 <p>Complexity analysis is in terms of an abstract machine, but software runs on real machines.  Modern computer systems are organized as hierarchies of physical and virtual machines, including language runtimes, operating systems, CPUs, cache memory, random-access memory, disk drives, and networks.  The first table shows the limits on random access time and storage capacity for a typical networked server.
@@ -59,12 +59,12 @@
 <li> Search of a van Emde Boas tree is <i>O(log(n))</i> and cache-oblivious.
 </li></ul>
 
-<table align="right">
-<caption align="top" style="color:#e76700;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search time (ns)</caption>
-<tr><th align="right"> 8</th><td align="right"> 50</td><td align="right"> 90</td><td align="right"> 40</td></tr>
-<tr><th align="right"> 64</th><td align="right"> 180</td><td align="right"> 150</td><td align="right"> 70</td></tr>
-<tr><th align="right"> 512</th><td align="right"> 1200</td><td align="right"> 230</td><td align="right"> 100</td></tr>
-<tr><th align="right"> 4096</th><td align="right"> 17000</td><td align="right"> 320</td><td align="right"> 160</td></tr>
+<table>
+<caption class="top">Search time (ns)</caption>
+<tr><th class="right"> 8</th><td class="right"> 50</td><td class="right"> 90</td><td class="right"> 40</td></tr>
+<tr><th class="right"> 64</th><td class="right"> 180</td><td class="right"> 150</td><td class="right"> 70</td></tr>
+<tr><th class="right"> 512</th><td class="right"> 1200</td><td class="right"> 230</td><td class="right"> 100</td></tr>
+<tr><th class="right"> 4096</th><td class="right"> 17000</td><td class="right"> 320</td><td class="right"> 160</td></tr>
 <tr><td></td><th>linear</th><th>binary</th><th>vEB</th></tr>
 </table>
 
@@ -74,11 +74,9 @@
 </li>
 <li> van Emde Boas wins hands down, thanks to its predictable access pattern. 
 </li></ul>
-<p><i>"You pays your money and you takes your choice." &mdash; <a href="http://www.nytimes.com/1988/02/28/magazine/on-language-you-pays-yer-money.html?pagewanted=all" class="external text" title="http://www.nytimes.com/1988/02/28/magazine/on-language-you-pays-yer-money.html?pagewanted=all" rel="nofollow">Punch</a></i>
+<blockquote><i>"You pays your money and you takes your choice." &mdash; <a href="http://www.nytimes.com/1988/02/28/magazine/on-language-you-pays-yer-money.html?pagewanted=all" class="external text" title="http://www.nytimes.com/1988/02/28/magazine/on-language-you-pays-yer-money.html?pagewanted=all" rel="nofollow">Punch</a></i>
+</blockquote>
 
-</p>
-<p><br/>
-</p>
 <footer>
 <p class="author">By Greg Colvin
 </p>
