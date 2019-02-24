@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Document Your Process, Then Make Sure It Is Followed - Project Manager 97Things</title>
+<meta property="og:title" content="Document Your Process, Then Make Sure It Is Followed">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/mngr97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/mngr_en/Document_Your_Process_Then_Make_Sure_It_Is_Followed.htm">
+<meta property="og:site_name" content="97 Things Every Project Manager Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Document Your Process, Then Make Sure It Is Followed</h1>
+
+<p><b>Monte Davis, MCSE</b>
+<i>Omaha, Nebraska, USA</i></p>
+</header>
+
+<p>During an e-mail migration from one platform to another, a woman got married and brought our e-mail system to its knees.
+</p><p>The e-mail flow works like this.
+</p><p>1.	New e-mails coming in are delivered through the new e-mail system.
+</p><p>2.	If the new e-mail system can, it delivers the message to the appropriate new system user. If not, the message is sent on to the old e-mail system for delivery.
+</p><p>3.	E-mails sent <i>from</i> someone still on the old system <i>to</i> someone still on the old system are delivered to the appropriate mailbox. However, if the recipient has already been migrated to the new system, the e-mail is automatically forwarded using a &#x201c;migration&#x201d; forwarding address created for each user.
+</p><p>Here's where the funny part comes in. Once Sally Single was migrated to the new e-mail system she had two email addresses, sally.single@mycompany.com, as well as a forwarding email address, sally.single@migrate.mycompany.com. All email sent to her from users on the old system would automatically be forwarded to the new mail system using her &#x201c;migration&#x201d; forwarding address.
+</p><p>When Sally got married and changed her name from &#x201c;Sally Single&#x201d;  to &#x201c;Sally Married&#x201d;, her e-mail address changed as well.  However, the person who renamed Sally's e-mail address in the new system forgot to change her e-mail &#x201c;migration&#x201d; forwarding address on the old system. So, Sally ended up with the following addresses.
+</p><p><b>New System</b>
+</p><p>1.	sally.married@mycompany.com
+</p><p>2.	sally.single@mycompany.com 
+</p><p>3.	sally.married@migrate.mycompany.com
+</p><p><b>Old System</b>
+</p><p>1.	sally.married@mycompany.com 
+</p><p>2.	sally.single@mycompany.com 
+</p><p>3.	<b>sally.single@migrate</b>.mycompany.com (<b>Original, unchanged migration entry that was overlooked after the wedding</b>.)
+</p><p>When e-mails were sent to Sally <i>from users still on the old messaging system</i>, they created a loop.
+</p><p>1.	Messages were created and sent on the old mail system to sally.single@mycompany.com, 2. Old mail system checks Sally's account and sees that forwarding is set to sally.single@migrate.mycompany.com and forwards the messages, 3. The new mail system looks for someone with an e-mail address equal to sally.single@migrate.mycompany.com. It doesn't find it, since that address was renamed when Sally got married.
+</p><p>4.	The new mail system forwards the messages for the unknown recipient back to the old mail system, 5. The old mail system knows to forward all messages with an @migrate.mycompany.com address, so it forwards them to the new mail server, 6.Lather, rinse, repeat.
+</p><p>Every time the messages loop, the corporate Legal Disclaimer is added to the end of the messages. The Legal Disclaimer is only about 100 words, but when each message is looping between systems several times a minute, this adds up quickly. Evidently, Sally was very popular. There were so many messages sent to Sally, that the size and volume of the messages brought the mail system to a grinding halt.
+</p><p>Moral of this story: Document your processes and make sure the process is followed. Although the name change process had been documented, it was not being followed. Otherwise, Sally's user account on the old mail server would have been updated with her new, married name migration e-mail address, and the issue would have been avoided.
+</p><p>[O'Reilly, if length is an issue, the two sections labeled New System and Old System can be put into a table with New System on the left and Old System on the right.  Or, they can be put side by side in two columns. BKD]
+</p>
+
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

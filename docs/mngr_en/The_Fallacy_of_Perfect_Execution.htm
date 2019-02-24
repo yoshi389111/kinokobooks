@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>The Fallacy of Perfect Execution - Project Manager 97Things</title>
+<meta property="og:title" content="The Fallacy of Perfect Execution">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/mngr97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/mngr_en/The_Fallacy_of_Perfect_Execution.htm">
+<meta property="og:site_name" content="97 Things Every Project Manager Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>The Fallacy of Perfect Execution</h1>
+
+<p><b>David Wood</b>
+<i>Fredericksburg, Virginia, USA</i></p>
+</header>
+
+<p>If you think you can create flawless code if you work hard enough, don't be embarrassed. Many others have thought so, too. Unfortunately, it is not possible. Even in theory.
+</p><p>Arbitrary logic is hard to verify in the general case and hard, or impossible, to fully test. Drawing an analogy to the bricks and beams used in other construction-related activities, three researchers in the U.K. recently suggested that software is hard to verify because &#x201c;there are no good, predictable building blocks. The elements out of which programs are constructed: statements, procedures, or objects, cannot be composed in a predictable fashion&#x201d;.
+</p><p>The building blocks of software don't snap together like Legos. They can be put together in so many ways that it is impossible to determine all of the combinations. That may be a decent working definition of Turing completeness*. Software is, in a word, complicated. 
+</p><p>Tracing and verifying arbitrary logic in code may sound esoteric. How about the simpler job of tracing programmer intent? Surely we can talk to programmers and ask them what they meant. Unfortunately again, programmer intent is generally lost within a few days of writing a code block, especially when requirements change or are inconsistently documented.
+</p><p>Programmers also change jobs, leaving undocumented or wrongly-documented code behind. Source code rapidly becomes the last and only forensic clue to programmer intent. Alas, intent can only be imperfectly ascertained from clues like variable names, logic flow, and the occasional comment. 
+</p><p>Bugs will remain part of every software product shipped. We put bugs into software for both bad reasons (like ignorance of language features or poor attention to detail) and good ones (such as conflicting or poorly communicated requirements). Further, bugs are a source of change in software because when they are recognized we refactor the code to fix them, meanwhile injecting new bugs in the process.
+</p><p>Meir (Manny) Lehman was the first to recognize that software evolves during its lifecycle, way back in 1969. He later figured out that multiple feedback loops exist within a software development effort, and that those feedback loops influence the process of evolution. Those feedback loops include the injection of multiple (possibly conflicting) requirements and design decisions.
+</p><p>Various degrees of programmer understanding of requirements, design decisions, and implementation details contribute to other feedback loops. In other words, the sources of bugs don't have to be logical programming errors. Bugs are also introduced by differences of opinion.
+</p><p>The Fallacy Of Perfect Execution is the delusion that it is possible to create flawless code with sufficient attention to detail. If that were so, we would all be strong advocates of structured programming techniques. We aren't, and for good reason. Software, at any stage of its evolution, is buggy, extremely likely to change, and inaccurately documented.
+</p><p>That insight, simple though it may be, encourages us to approach software differently. It encourages us to develop tools and techniques to incrementally refactor software implementations, requirements, and documentation. 
+</p>
+<ul>
+<li>Turing completeness - Named after Alan Turing, this is a concept that every design for a computing device could be emulated by a universal machine.  True Turing-complete machines are physically impossible, due the unlimited storage they would require.  However, Turning completeness may be attributed to machines that would be universal <i>if</i> they had unlimited storage.</li>
+</ul>
+
+
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+
