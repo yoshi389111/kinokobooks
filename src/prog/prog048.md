@@ -18,4 +18,4 @@
 
 > 語り得ぬものについては沈黙しなければならない
 >
-> <div class="cite_author">――ルートヴィヒ・ウィトゲンシュタイン</div>
+> <div class="cite_author">&mdash;&mdash;ルートヴィヒ・ウィトゲンシュタイン</div>
