@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 cd $(dirname $0)
 cd ../src/prog
