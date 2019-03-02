@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Welcome to the Real World - Software Architect 97Things</title>
+<meta property="og:title" content="Welcome to the Real World">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Welcome_to_the_Real_World.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Welcome to the Real World</h1>
+</header>
+
+<p>Engineers like precision, especially software engineers who live in the realm of ones and zeros. They are used to working with binary decisions, one or zero, true or false, yes or no. Everything is clear and consistent, guaranteed by foreign key constraints, atomic transactions, and check sums.
+</p><p>Unfortunately, the real world is not quite that binary. Customers place orders, just to cancel them a moment later. Checks bounce, letters are lost, payments delayed, and promises broken. Data entry errors are bound to happen every so often. Users prefer "shallow" user interfaces, which give them access to many functions at once without being boxed into a lengthy, one-dimensional "process", which is easier to program and seems more "logical" to many developers. Instead of the call stack controlling the program flow, the user is in charge.
+</p><p>Worse yet, widely distributed systems introduce a whole new set of inconsistencies into the game. Services may not be reachable, change without prior notice, or do not provide transactional guarantees. When you run applications on thousands of machine, failure is no longer a question of "if", but of "when". These systems are loosely coupled, asynchronous, concurrent, and do not adhere to traditional transaction semantics. You should have taken the blue pill!
+</p><p>As computer scientists' brave new world is crumbling, what are we to do? As so often, awareness is a first important step towards a solution. Say good bye to the good old predictive call-stack architecture, where you get to define what happens when and in what order. Instead, be ready to respond to events at any time in any order, regaining your context as needed. Make asynchronous requests concurrently instead of calling methods one by one. Avoid complete chaos by modeling your application using event-driven process chains or state models. Reconcile errors through compensation, retry, or tentative operations.
+</p><p>Sounds scary and more than you bargained for? Luckily, the real world had to deal with the same issues for a long time: delayed letters, broken promises, messages crossing in transit, payments posted to the wrong account -- the examples are countless. Accordingly, people had to resend letters, write off bad orders, or tell you to ignore the payment reminder in case you already sent a payment. So don't just blame the real world for your headaches, but also use it as a place to look for solutions. After all, Starbucks does not two-phase commit either [1]. Welcome to the real world.
+</p><p>[1] 
+</p>
+
+<footer>
+<p class="author">by Gregor Hohpe</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

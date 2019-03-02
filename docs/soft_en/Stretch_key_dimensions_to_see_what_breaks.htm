@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Stretch key dimensions to see what breaks - Software Architect 97Things</title>
+<meta property="og:title" content="Stretch key dimensions to see what breaks">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Stretch_key_dimensions_to_see_what_breaks.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Stretch key dimensions to see what breaks</h1>
+</header>
+
+<p>An application's design is outlined initially based on the specified business requirements, selected or existing technologies, performance envelope, expected data volumes and the financial resources available to build, deploy and operate it. The solution, whatever it is, will meet or exceed what is asked of it in the contemporary environment and is expected to run successfully (or it is not yet a solution).
+</p><p>Now take this solution and stretch the key dimensions to see what breaks. 
+</p><p>This examination looks for limits in the design that will occur when, for example, the system becomes wildly popular and more customers use it, the products being processed increase their transaction counts per day, or six months of data must now be retained rather than the initially specified week. Dimensions are stretched individually and then in combination to tease out the unseen limits that might lie hidden in the initial design.
+</p><p>Stretching key dimensions allows an architect to validate a solution by:
+</p>
+<ul><li> Understanding whether the planned infrastructure accommodates these increases, and where the limits are. If the infrastructure will break it identifies where it will break which can be highlighted to the application's owner, or the planned infrastructure can be purchased with specific upgrade paths in mind.
+</li><li> Confirming there are sufficient hours in the day to perform the processing at the expected throughput, with head room to accommodate 'busy days' or 'catch up' after an outage. A solution that cannot process a day's processing in a day and relies on the weekend when things are quieter has no long-term future.
+</li><li> Validating the data access choices that were made are still valid as the system scales. What might work for when a week's data is held, may be unusable with six month's data loaded.
+</li><li> Confirming how the application's increased workload will be scaled across additional hardware (if required), and the transition path as the load increases. Working through the transition before the application is deployed can influence the data stored and its structure.
+</li><li> Confirming the application can still be recovered if the data volumes are increased and/or the data is now split amongst an increased infrastructure.
+</li></ul>
+<p>Based on this examination, elements of the design may be recognised as problems requiring redesign. The redesign will be cheaper whilst the design is still virtual, technical choices are not locked-in and the business data has yet to be stored in the repositories.
+</p>
+
+<footer>
+<p class="author">by Stephen Jones</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

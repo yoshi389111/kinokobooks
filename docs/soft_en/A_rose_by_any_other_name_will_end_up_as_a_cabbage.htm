@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>A rose by any other name will end up as a cabbage - Software Architect 97Things</title>
+<meta property="og:title" content="A rose by any other name will end up as a cabbage">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/A_rose_by_any_other_name_will_end_up_as_a_cabbage.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>A rose by any other name will end up as a cabbage</h1>
+</header>
+
+<p>I overheard some people deciding that they need more layers in their architecture. They were right, as it happens; but going about it a little backwards. They were attempting to create a framework that would contain the business logic. Rather than solving some specific problems they started with the idea that they want a framework that wraps the database up and produces objects. And it should use object-relational mapping. And messages. And web services. And it should do all sorts of cool stuff.
+</p><p>Unfortunately, since they didn't exactly know what cool stuff it would do, they didn't know what to call it. So they held a little competition to suggest a name. And that is the point at which you must recognise that you have a problem: <i>if you don't know what a thing should be called, you cannot know what it is. If you don't know what it is, you cannot sit down and write the code.</i>
+</p><p>In this particular case, a quick browse throught the source control history revealed the depth of the problem. Of course, there were lots of empty interface "implementations"! And the really funny thing is that they had already changed the names three times with no actual code. When they started they called it ClientAPI -- the &#x201c;client&#x201d; refers to the customers of the business, not client as in &#x201c;client-server&#x201d;-- and the final version was called ClientBusinessObjects. Great name: vague, broad and misleading. 
+</p><p>Of course, in the end, a name is just a pointer. Once everyone involved knows that the name is just a name and not a design metaphor then you can all move on. However, if you can't agree on a name that is specific enough for you to know when it is wrong, then you might have some difficulty even getting started. Design is all about trying to fulfil intentions -- e.g., fast, cheap, flexible -- and <i>names convey intentions</i>.
+</p><p>If you can't name it, you can't write it. If you change the name 3 times, then you should stop until you know what you are trying to build.
+
+<footer>
+<p class="author">By Sam Gardiner</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

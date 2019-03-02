@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Stable problems get high quality solutions - Software Architect 97Things</title>
+<meta property="og:title" content="Stable problems get high quality solutions">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Stable_problems_get_high_quality_solutions.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Stable problems get high quality solutions</h1>
+</header>
+
+<p>Real-world programming is not about
+solving the problem that someone gives to you. In the computer science
+classroom you must solve the binary-sort problem it's given to you. In
+the real world, the best architects don't solve hard problems they work
+around them. The skill is in drawing boundaries around diffuse and
+diverse software problems so that they are stable and self-contained.
+</p><p>An
+architect should be able to look at a whole mess of concepts and data
+and process and separate them into smaller pieces or &#x201c;chunks&#x201d;. The
+important thing about those problem chunks is that they are stable
+allowing them to be solved by a system chunk that is finite and stable
+in scope. The problem chunks should be:
+</p>
+<ul>
+<li>Internally cohesive: the chunk is conceptually unified, so all of the tasks, data, and features are related</li>
+<li>Well separated from other chunks: the chunks are conceptually normalized; there is little or no overlap between them</li>
+</ul>
+<p>
+The
+person who is excessively good at doing this may not even know that
+they are doing it, just as a person with a good sense of direction
+knows where they are. It just seems to make sense to them to break up
+the tasks, data, and features in a way that provides a nice edge or
+interface to the system. I'm not talking about the actual interfaces of
+an object-oriented language, but system boundaries.
+</p><p>For
+instance, a relational database management system has a very nice
+system boundary. It manages literally any type of data that can be
+serialized into a stream of bytes and it can organize, search and
+retrieve that data. Simple.
+</p>
+<p>What is interesting is that if the problem is stable then when it is solved, it
+is solved permanently. In five/fifty years time you might want to slap a
+web/telepathic interface over it, but your core system won't need to
+change. <i>The system is durable because the problem is durable.</i> 
+</p><p>Of course, the code needs to be pretty neat, but if
+the problem is neat the code can be neat as there are no special cases.
+And neat code is good because it is easy to test and easy to review,
+and that means that the implementation quality can be very high. As you
+don't have messy code you can concentrate on things that are outside
+the domain of user-visible features like using reliable messaging,
+distributed transactions, or driving up performance by using
+multithreading or even low level languages like assembly code; because
+the problem isn't changing you can concentrate on driving up the
+quality to the point where quality is a feature.
+</p><p>A stable
+problem allows you to create a system with a stable design; stable
+design allows you to concentrate on making an application that has very
+high quality. 
+</p>
+
+<footer>
+<p class="author">By Sam Gardiner</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>It's never too early to think about performance - Software Architect 97Things</title>
+<meta property="og:title" content="It's never too early to think about performance">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Its_never_too_early_to_think_about_performance.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>It's never too early to think about performance</h1>
+</header>
+
+<p>
+Business users specify their needs primarily through functional requirements.  The non-functional aspects of the systems, like performance, resiliency, up-time, support needs, and the like, are the purview of the architect. However, often the preliminary testing of non-functional requirements is left until very late in the development cycle, and is sometimes delegated completely to the operations team. This is a mistake that is made far too often.
+</p><p>The reasons are varied.  There is presumably no sense in making something fast and resilient if it doesn't actually perform the required function. The environments and tests themselves are complex.  Perhaps the early versions of the production system will not be as heavily utilized.  
+</p><p>However, if you aren't looking at performance until late in the project cycle, you have lost an incredible amount of information as to when performance changed. If performance is going to be an important architectural and design criterion, then performance testing should begin as soon as possible. If you are using an Agile methodology based on two week iterations, I'd say performance testing should be included in the process no later than the third iteration.
+</p><p>Why is this so important? The biggest reason is that at the very least you know the kinds of changes that made performance fall off a cliff. Instead of having to think about the entire architecture when you encounter performance problems, you can focus on the most recent changes. Doing performance testing early and often provides you with a narrow range of changes on which to focus. In early testing, you may not even try to diagnose performance, but you do have a baseline of performance figures to work from.  This trend data provides vital information in diagnosing the source of performance issues and resolving them. 
+</p><p>This approach also allows for the architectural and design choices to be validated against the actual performance requirements.  Particularly for systems with stringent requirements, early validation is crucial to delivering the system in a timely fashion.
+</p><p>Technical testing is also notoriously difficult to get going. Setting up appropriate environments, generating the proper data sets, and defining the necessary test cases all take a lot of time. By addressing performance testing early you can establish your test environment incrementally avoiding much more expensive efforts once after you discover performance issues.
+</p>
+
+<footer>
+<p class="author">By Rebecca Parsons</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

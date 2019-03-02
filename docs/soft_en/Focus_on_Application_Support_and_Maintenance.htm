@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Focus on Application Support and Maintenance - Software Architect 97Things</title>
+<meta property="og:title" content="Focus on Application Support and Maintenance">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Focus_on_Application_Support_and_Maintenance.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Focus on Application Support and Maintenance</h1>
+</header>
+
+<p>
+The support and maintenance of an application should never ever be an
+after-thought. Since over 80% of an application's life-cycle is spent in
+maintenance, you should pay a lot of attention to the problems of support and maintenance when you're designing. Fail to heed
+this and you'll watch with horror as your application stops being
+the architect's dream and becomes a vile beast that dies a horrible
+death and is forever remembered as a failure.
+</p><p>When most
+architects design applications they think mainly of developers, who have IDEs
+and debuggers in place.  If something goes wrong, highly skilled software engineers debug away and the bug is discovered. It's easy to think this way because most architects have spent most of their lives as
+developers rather than administrators.  Unfortunately, the developer
+and the support guy have different skill sets, just as the
+development/testing environment and the production environment has
+different purposes.
+</p><p>Here are a few of the disadvantages that an administrator faces:
+</p><p> * An administrator can't resubmit a request message to reproduce the problem.  When you're in production, you can't re-issue a financial transaction against the "live" database to see what when wrong
+ * Once the application is in production, the pressure to fix bugs comes from customers and executives, not from the project manager and the testing team.   And an angry CEO can be a lot more threatening. 
+ * Once you're in production, there is no debugger.  
+ * Once you're in production, deployment needs to be scheduled and co-ordinated.  You can't take a production application down for a few minutes to test a bug fix.
+ * The logging level is much higher in the development environment than in production
+</p><p>A few symptoms of this failure to plan for support are:
+ * most problems require a developer's involvement
+ *
+the relationship between the development team and the support team is
+sour; the developers think the support team is a bunch of idiots
+ * the support team hates the new application
+ * the architect and development teams are spending a lot of time in production
+ * the application is restarted often as a way to resolve problems
+ * the administrators never have time to tune the system properly because they're always fighting fires
+</p><p>To ensure that your application succeeds once it's out of the developers' hands, you should:
+ * understand that development and support require a different skill set
+ * get a support lead as early in on the project as possible
+ * make the support lead a core part of the team
+ * get a support lead to be involved with the planning for the application support
+</p><p>Design
+such that the learning curve for the support personnel is minimal.  Traceability, auditing and logging are crucial. When the
+administrators are happy, everybody is happy ( espescially your boss )
+</p>
+
+<footer>
+<p class="author">by Mncedisi Mawabo Kasper</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

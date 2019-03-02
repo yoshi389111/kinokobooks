@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Understand the impact of change - Software Architect 97Things</title>
+<meta property="og:title" content="Understand the impact of change">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Understand_the_impact_of_change.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Understand the impact of change</h1>
+</header>
+
+<p>A good architect reduces complexity to a minimum and can design a solution whose abstractions provide solid foundations to build upon, but are pragmatic enough to weather change. 
+The great architect understands the impact of change - not just in isolated software modules, but also between people and between systems. 
+</p><p>
+Change can manifest in a variety of forms: 
+</p>
+<ul><li> Functional requirements change 
+</li><li> Scalability needs evolve 
+</li><li> System interfaces are modified 
+</li><li> People in the team come and go 
+</li><li> and the list goes on... 
+</li></ul>
+<p>The breadth and complexity of change in a software project is impossible to fathom up-front, and it's a fruitless task trying to accommodate every potential bump before it happens.  But the architect can play a crucial role in determining whether the bumps in the road make or break a project. 
+</p><p>
+The architect's role is not necessarily to manage change, but rather to ensure change is manageable. 
+</p><p>
+Take, for example, a highly distributed solution that spans many applications and relies on a variety of middleware to glue the pieces together.  A change in a business process can cause havoc if the set of dependencies are not correctly tracked or accurately represented in some visual model.  The impact downstream is particularly significant if the change affects the data model, breaks existing interfaces, and the existing long-running, stateful transactions must successfully complete under the old version of the process. 
+This example may appear extreme, but highly integrated solutions are now mainstream.  This is evident in the choice of integration standards, frameworks and patterns available.  Understanding the implications of change in these outlying systems is critical in ensuring a sustainable level of support to your customers.
+</p><p>
+Fortunately, there are many tools and techniques to mitigate the impact of change: 
+</p>
+<ul><li> Make small, incremental changes
+</li><li> Build repeatable test cases - run them often
+</li><li> Make building test cases easier
+</li><li> Track dependencies
+</li><li> Act and react systematically
+</li><li> Automate repetitive tasks
+</li></ul>
+<p>
+The architect must estimate the risk of change on various aspects of the project's scope, time and budget, and be prepared to spend more time on those areas whose impact would be the greatest as the result of "a bump in the road".  Measuring risk is a useful tool for knowing where your valuable time should be spent.
+Reducing complexity is important, but reduced complexity it does not equate to simplicity.  The pay-off for understanding the type and impact of change on your solutions is immeasurable in the medium- to long-term.
+</p>
+
+<footer>
+<p class="author">by Doug Crawford</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

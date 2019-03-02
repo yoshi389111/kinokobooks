@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Prepare to pick two - Software Architect 97Things</title>
+<meta property="og:title" content="Prepare to pick two">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Prepare_to_pick_two.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Prepare to pick two</h1>
+</header>
+
+<p>Sometimes
+accepting a constraint or giving up on a property can lead to a better
+architecture, one that is easier and less expensive to build and run.
+Like buses, desirable properties tend to come in threes and trying to
+define and build a system that supports all three can result in system
+that does nothing especially well.
+</p><p>A famous example is Brewer's conjecture, also know as  Consistency, Availability, and Partitioning (<i>CAP</i>),
+which states that  there are three properties that are commonly desired
+in a distributed system - consistency, availability, and partition
+tolerance, and that it is impossible to achieve all three. Trying to
+have all three is going drastically increase the engineering costs and
+typically increase complexity without actually achieving the desired
+effect or business goal. If you data must be available and distributed,
+achieving consistency becomes increasingly expensive and eventually
+impossible  Likewise if the system must be distributed and consistent,
+ensuring consistency will lead at first to latency and performance
+problems and eventually to unavailability as the system cannot be
+exposed as it tries to reaches agreement.
+</p><p>It's often the case
+that one or more properties are considered inviolate - data cannot be
+duplicated, all writes must be transactional, the system must be 100%
+available, calls must be asynchronous, there must be no single point of failure,
+everything must be extensible, and so on. Apart from being naive,
+treating properties as religious artifacts will stop you thinking about
+the problem at hand. We start to talk about architectural deviation
+instead of principled design and we confuse dogmatism with good
+governance. Instead we should ask, <i>why</i> must these properties hold? <i>What</i> benefit is to had by doing so? <i>When</i> are these properties desirable? <i>How</i>
+can we break the sustem up to achieve a better result? Be ever the
+skeptic, because architectural dogma typically tends to undermine
+delivery. The inevitability of such tradeoffs is one of the most
+difficult things to accept in software development, not just as
+architect, but also as developers and stakeholders. But we should
+cherish them as it's far better than having limitless choice and
+accepting tradeoffs often induces a creative and inventive result.
+</p>
+
+<footer>
+<p class="author">Bill de h&#xd3;ra</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

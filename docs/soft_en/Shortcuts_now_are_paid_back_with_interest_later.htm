@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Shortcuts now are paid back with interest later - Software Architect 97Things</title>
+<meta property="og:title" content="Shortcuts now are paid back with interest later">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Shortcuts_now_are_paid_back_with_interest_later.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Shortcuts now are paid back with interest later</h1>
+</header>
+
+<p>It's important to remember when architecting a system that maintenance
+will, in the long run, consume more resources than initial development
+of the project.  Short cuts taken during the initial development phase
+of a project can result in significant maintenance costs later.
+</p><p>
+For example, you may have been informed that unit tests don't deliver
+direct value and so you tell your developers to skip the rigorous
+application of them. This makes the delivered system much more
+difficult to change in the future, and decreases confidence when making
+those changes. The system will require far more manual testing for a
+smaller set of changes, leading to brittleness and increased
+maintenance expenses as well as a design that's not as appropriate as a
+fully-tested design (let alone a test-first design).
+</p><p>
+A serious architectural mistake that is sometimes made is to adapt an
+existing system for a purpose that it is not fit for, on the basis that
+using an existing system somehow reduces costs. For example, you might
+find yourself utilizing BPEL architectural components coupled with
+database triggers to deliver an asynchronous messaging system. This
+might be done or insisted upon for reasons of convenience or because
+that is the architecture is known to you or the client.  But a
+messaging architecture should have been selected in the first instance
+after requirements made it clear it was a necessary component. Poor
+decisions made at the inception of a project make it much more
+expensive to re-architect the system to meet new requirements. 
+</p><p>
+In addition to avoiding short cuts during the initial development
+phase, it's also important to correct poor design decisions as quickly
+as they are discovered. Poorly designed features can become the
+foundation for future features making corrective action later even more
+costly.
+</p><p>
+For example, if you discover that inappropriate libraries were selected
+for some underlying functionality they should be replaced as soon as
+possible. Otherwise the effort to make them fit evolving requirements
+will result in additional layers of abstractions, each designed to
+hide the poor fit of the previous layer. You are building yourself a ball
+of tangled twine, tack, and sticky tape and with every layer you add,
+it is harder to unravel. This easily results in a system that is
+resistant to change.
+</p><p>
+As an architect, when you encounter an architectural problem or design
+flaw insist that it be rectified now, when it cheapest to fix it. The
+longer you leave it to drag out, the higher the interest payment is. 
+</p>
+
+<footer>
+<p class="author">by Scot Mcphee</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Skyscrapers aren't scalable - Software Architect 97Things</title>
+<meta property="og:title" content="Skyscrapers aren't scalable">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Skyscrapers_arent_scalable.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Skyscrapers aren't scalable</h1>
+</header>
+<p>We often hear software engineering compared to building skyscrapers, dams, or roads. It's true in some important aspects.
+</p><p>The hardest part of civil engineering isn't designing a building that will stand up once it is finished, but figuring out the construction process. The construction process has to go from a bare site to a finished building. In the interim, every worker must be able to apply his trade, and the unfinished structure has to stand up the whole time. We can take a lesson from that when it comes to deploying large integrated systems. ("Integrated" includes virtually every enterprise and web application!) Traditional "big bang" deployments are like stacking up a pile of beams and girders, throwing them into the air, and expecting them to stick together in the shape of a building. 
+Instead, we should plan to deploy one component at a time. Whether this is a replacement or a greenfield project, this has two large benefits.
+First, when we deploy software, we are exposing ourselves to the accumulated
+technical risk embodied in the code. By deploying one component at a
+time, we spread technical risk out over a longer period of time. Every component has its own chance to fail in production, letting us harden each one independently. 
+The second large benefit is that it forces us to create well-defined interfaces between components. Deploying a single component of a new system often means reverse-integrating it with the old system. Therefore, by the time deployment is complete, each component has worked with two different systems: the original and the replacement. Nothing is reusable until it has been reused, so piecewise deployment automatically means greater reusability. In practice, it also leads to better coherence and looser coupling.
+</p><p>Conversely, there are some important ways that civil engineering analogies mislead us. In particular, the concreteness of the real world pushes us toward a waterfall process. After all, nobody starts building a skyscraper without knowing where it's going or how tall it should be. Adding additional floors to an existing building is costly, disruptive and risky, so we strive to avoid it. Once designed, the skyscraper isn't supposed to change its location or height. Skyscrapers aren't scalable.
+</p><p>We cannot easily add lanes to roads, but we've learned how to easily add features to software. This isn't a defect of our software processes, but a virtue of the medium in which we work. It's OK to release an application that only does a few things, as long as users value those things enough to pay for them. In fact, the earlier you release your application, the greater the net present value of the whole thing will be.
+</p><p>"Early release" may appear to compete with "incremental deployment", but they can actually work together quite well. Early release of individual components means that each one can iterate independently. In fact, it will force you to work out thorny issues like continuous availability during deployments and protocol versioning. 
+It's rare to find a technique that simultaneously provides higher commercial value and better architectural qualities, but early deployment of individual components offers both.
+</p>
+
+<footer>
+<p class="author">By Michael Nygard</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

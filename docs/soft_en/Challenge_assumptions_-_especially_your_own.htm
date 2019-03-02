@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Challenge assumptions - especially your own - Software Architect 97Things</title>
+<meta property="og:title" content="Challenge assumptions - especially your own">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Challenge_assumptions_-_especially_your_own.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Challenge assumptions - especially your own</h1>
+</header>
+
+<p>
+Wethern's Law of Suspended Judgement states (in a rather
+tongue-in-cheek fashion) that "Assumption is the mother of all
+screw-ups." A more popular take on this would be, "Don't assume - it
+makes an 'ass' of 'u' and 'me'." But when you are dealing with
+assumptions that could cost thousands, if not millions of dollars, it's
+not always a laughing matter.
+</p><p>
+Best practices in
+software architecture state that you should document the rationale
+behind each decision that is made, especially when that decision
+involves a trade-off (performance versus maintainability, cost versus
+time-to-market, and so on). In more formal approaches, it is common to
+record along with each decision the context of that decision, including
+the "factors" that contributed to the final judgement. Factors may be
+functional or non-functional requirements, but they also may just be
+"facts" (or factoids...) that the decision-makers found important
+(technology constraints, available skill sets, the political
+environment, etc.).
+</p><p>
+This practice is valuable because
+by way of listing these factors, it helps highlight assumptions that
+the architects may have that are affecting important decisions
+regarding the software that is being designed. Very often these
+assumptions are based on "historical reasons", opinion, developer lore,
+FUDs, or even "something I heard in the hallway":
+</p>
+<ul><li> "Open source is not reliable"
+</li><li> "Bitmap indexes are more trouble than they're worth"
+</li></ul>
+<ul><li> "The customer would NEVER accept a page that takes 5 seconds to load"
+</li><li> "The CIO would reject anything that isn't sold by a major vendor"
+</li></ul>
+<p>It
+is important to make these assumptions visible and explicit for the
+sake of posterity and for future re-evaluation. However, it is even
+more critical to make sure that any assumptions that aren't based on
+relevant empirical evidence (or a confirmation from the people
+involved, for political factors) be validated before a decision is
+finalized. What if customers can wait 5 seconds for critical reports if
+you provide a counter? In exactly what way is exactly which open source
+project unreliable? Have you tested the bitmap indexes on your data,
+using your application's transactions and queries?
+</p><p>And
+don't overlook the word "relevant." Something that was true in an older
+version of your software may not be true today. The performance of
+bitmap indexes in one version of Oracle may not be the same as in
+another. An older version of a library may have had security holes that
+have already been fixed. Your old reliable software vendor may be on
+their last legs financially. The technology landscape changes every
+day, and so do people. Who knows? Maybe your CIO has become a closet
+fan of Linux.
+</p><p>Facts and assumptions are the
+pillars on which your software will be built. Whatever they are, make
+sure the foundations are solid.
+</p>
+
+<footer>
+<p class="author">by Timothy High</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

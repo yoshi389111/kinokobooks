@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Simplicity before generality, use before reuse - Software Architect 97Things</title>
+<meta property="og:title" content="Simplicity before generality, use before reuse">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Simplicity_before_generality,_use_before_reuse.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Simplicity before generality, use before reuse</h1>
+</header>
+<p>A common problem in component frameworks, class libraries,
+foundation services, and other infrastructure code is that many are
+designed to be general purpose without reference to concrete
+applications. This leads to a dizzying array of options and
+possibilities that are often unused, misused, or just not useful. Most
+developers work on specific systems: the quest for unbounded generality
+rarely serves them well (if at all). The best route to generality is
+through understanding known, specific examples and focusing on their
+essence to find an essential common solution. Simplicity through
+experience rather than generality through guesswork.
+</p><p>Favoring simplicity before generality acts as a tiebreaker
+between otherwise equally viable design alternatives. When there are
+two possible solutions, favor the one that is simpler and based on
+concrete need rather than the more intricate one that boasts of
+generality. Of course, it is entirely possible (and more than a little
+likely) that the simpler solution will turn out to be the more general
+one in practice. And if that doesn't turn out to be the case, it will
+be easier to change the simpler solution to what you now know you need
+than to change the 'general' one that turns out not to be quite general
+enough in the right way.
+</p><p>Although well meant, many things that are designed just to be
+general purpose often end up satisfying no purpose. Software components
+should, first and foremost, be designed for use and to fulfill that use
+well. Effective generality comes from understanding, and understanding
+leads to simplification. Generalization can allow us to reduce a
+problem to something more essential, resulting in an approach that
+embodies regularity across known examples, a regularity that is crisp,
+concise, and well grounded. However, too often generalization becomes a
+work item in itself, pulling in the opposite direction, adding to the
+complexity rather than reducing it. The pursuit of speculative
+generality often leads to solutions that are not anchored in the
+reality of actual development. They are based on assumptions that later
+turn out to be wrong, offer choices that later turn out not to be
+useful, and accumulate baggage that becomes difficult or impossible to
+remove, thereby adding to the accidental complexity developers and
+future architects must face.
+</p><p>Although many architects value generality, it should not be
+unconditional. People do not on the whole pay for (or need) generality:
+They tend to have a specific situation, and it is a solution to that
+specific situation that has value. We can find generality and
+flexibility in trying to deliver specific solutions, but if we weigh
+anchor and forget the specifics too soon, we end up adrift in a sea of
+nebulous possibilities, a world of tricky configuration options,
+overburdened (not just overloaded) parameter lists, long-winded
+interfaces, and not-quite right abstractions. In pursuit of arbitrary
+flexibility you can often lose valuable properties, accidental or
+intended, of alternative, simpler designs.
+</p>
+
+<footer>
+<p class="author">By Kevlin Henney</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

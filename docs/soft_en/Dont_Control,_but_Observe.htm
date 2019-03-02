@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Don't Control, but Observe - Software Architect 97Things</title>
+<meta property="og:title" content="Don't Control, but Observe">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Dont_Control,_but_Observe.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Don't Control, but Observe</h1>
+</header>
+
+<p>Today's systems are distributed and loosely coupled. Building loosely coupled systems is a bit of a drag, so why do we bother? Because we want our systems to be flexible, so they do not break apart at the slightest change. This is a critical property in today's environments where we may only control a small portion of our application, the remainder living in distributed services or third party packages, controlled by other departments or external vendors.
+</p><p>So it looks like the effort to build a system that is flexible and can evolve over time is a good idea. But that also means our system will change over time. As in "today's system is not what it was yesterday." Unfortunately, this makes documenting the system challenging. It's commonly known that documentation is out of date the moment it is printed, but in a system that changes all the time, things can only be worse. Moreover, building a system that is flexible generally means the architecture is more complex and it's more difficult to get the proverbial "big picture." For example, if all system components communicate with each other over logical, configurable channels, one better have a look at the channel configuration to have any idea what is going on. Sending messages into the logical la-la-land is unlikely to trigger a compiler error, but it is sure to disappoint the user whose action was encapsulated in that message.
+</p><p>Being a control freak architect is so yesteryear, leading to tightly coupled and brittle solutions. But letting the software run wild is sure to spawn chaos. You have to supplement the lack of control with other mechanisms to avoid doing an instrument flight without the instruments. But what kind of instruments do we have? Plenty, actually. Today's programming languages support reflection, and almost all run-time platforms provide run-time metrics. As your system becomes more configurable, the current system configuration is another great source of information. Because so much raw data is difficult to understand, extract a model from it. For example, once you figure out which components send messages to which logical channels, and which components listen to these channels, you can create a graph model of the actual communication between components. You can do this every few minutes or hours, providing an accurate and up-to-date image of the system as it evolves. Think of it as "Reverse MDA[1]". Instead of a model driving the architecture, you build a flexible architecture, and extract the model from the actual system state.
+</p><p>In many cases, it's easy to visualize this model, creating the literal big picture. However, resist the temptation to plot the 3 by 5 meter billboard of boxes and lines, which contains every class in your system. That picture may pass as contemporary art, but it's not a useful software model. Instead, use a 1000 ft view as described by Erik Doernenburg, a level of abstraction that actually tells you something. On top of that, you can make sure your model passes basic validation rules, such as the absence of circular dependencies in a dependency graph, or no messages being sent to a logical channel no one listens to.
+</p><p>Letting go of control is a scary thing, even when it comes to system architecture. But supplemented by observation, model extraction, and validation, it is probably the way only to architect for the 21st century.
+</p><p>[1]  MDA = Model Driven Architecture
+</p>
+
+<footer>
+<p class="author">by Gregor Hohpe</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

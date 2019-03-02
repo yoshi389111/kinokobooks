@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Commit-and-run is a crime. - Software Architect 97Things</title>
+<meta property="og:title" content="Commit-and-run is a crime.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Commit-and-run_is_a_crime..htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Commit-and-run is a crime.</h1>
+</header>
+
+<p>It's late in the afternoon. The team is churning out the last pieces
+of the new feature set for the iteration, and you can almost feel the
+rhythm in the room. John is in a bit of a hurry though. He's late for a
+date, but he manages to finish up his code, compile, check-in and off
+he goes. A few minutes later, the red light turns on. The build is
+broken. John didn't have time to run the automated tests, so he made a
+commit-and-run and thereby left everybody else hanging. The situation
+is now changed and the rhythm is lost. Everybody now knows that if they
+do an update against the version control system, they will get the
+broken code onto their local machine as well, and since the team has a
+lot to integrate this afternoon to prepare for the upcoming demo, this
+is quite a disruption. John effectively put the team flow to a halt
+because now no integration can be done before someone takes the time to
+revert his changes.
+</p><p>This scenario is way too common. Commit-and-run is a crime
+because it kills flow. It's one of the most common ways for a developer
+to try to save time for himself, that ends up wasting other peoples
+time and it is downright disrespectful. Still, it happens everywhere.
+Why? Usually because it takes too long time to build the system
+properly or to run the tests. 
+This is where you, the architect, come into play. If you've
+put a lot of effort into creating a flexible architecture where people
+can perform, taught the developers agile practices like test-driven
+development and set up a continuous integration server, then you also
+want to nurture a culture where it's not alright to waste anybody
+else's time and flow in any way. To be able to get that, you need to
+make sure the system among other things has a sound architecture for
+automated testing, since it will change the behavior of the developers.
+If tests run fast, they will run them more often, which itself is a
+good thing, but it also means that they won't leave their colleagues
+with broken code. If the tests are dependent on external systems or if
+they need to hit the database, reengineer them so they can be run
+locally with mocks or stubs, or at the very least with an in-memory
+database, and let the build server run them in the slow way. People
+should not have to wait for computers, because if they have to, they
+will take shortcuts which often causes problems for others instead.
+</p><p>Invest time in making the system fast to work with. It
+increases flow, lessens the reasons for working in silos and in the end
+makes it possible to develop faster. Mock things, create simulators,
+lessen dependencies, divide the system in smaller modules or do
+whatever you have to. Just make sure there's no reason to even think
+about doing a commit-and-run.
+</p>
+
+<footer>
+<p class="author">By Niclas Nilsson</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Use uncertainty as a driver - Software Architect 97Things</title>
+<meta property="og:title" content="Use uncertainty as a driver">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Use_uncertainty_as_a_driver.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Use uncertainty as a driver</h1>
+</header>
+
+<p>Confronted with two options, most people think that the most
+important thing to do is to make a choice between them. In design
+(software or otherwise), it is not. The presence of two options is an
+indicator that you need to consider uncertainty in the design. Use the
+uncertainty as a driver to determine where you can defer commitment to
+details and where you can partition and abstract to reduce the
+significance of design decisions. If you hardwire the first thing that
+comes to mind you're more likely to be stuck with it, so that
+incidental decisions become significant and the softness of the
+software is reduced.
+</p><p>One of the simplest and most constructive definitions of architecture comes from Grady Booch:
+"All architecture is design but not all design is architecture.
+Architecture represents the significant design decisions that shape a
+system, where significant is measured by cost of change." What follows
+from this is that an effective architecture is one that generally
+reduces the significance of design decisions. An ineffective
+architecture will amplify significance.
+</p><p>When a design decision can reasonably go one of two ways, an
+architect needs to take a step back. Instead of trying to decide
+between options A and B, the question becomes "How do I design so that
+the choice between A and B is less significant?" The most interesting
+thing is not actually the choice between A and B, but the fact that
+there is a choice between A and B (and that the appropriate choice is
+not necessarily obvious or stable).
+</p><p>An architect may need to go in circles before becoming dizzy
+and recognizing the dichotomy. Standing at whiteboard (energetically)
+debating options with a colleague? Umming and ahhing in front of some
+code, deadlocked over whether to try one implementation or another?
+When a new requirement or a clarification of a requirement has cast
+doubt on the wisdom of a current implementation, that's uncertainty.
+Respond by figuring out what separation or encapsulation would isolate
+that decision from the code that ultimately depends on it. Without this
+sensibility the alternative response is often rambling code that, like
+a nervous interviewee, babbles away trying to compensate for
+uncertainty with a multitude of speculative and general options. Or,
+where a response is made with arbitrary but unjustified confidence, a
+wrong turn is taken at speed and without looking back.
+</p><p>There is often pressure to make a decision for decision's sake.
+This is where options thinking can help. Where there is uncertainty
+over different paths a system's development might take, make the
+decision not to make a decision. Defer the actual decision until a
+decision can be made more responsibly, based on actual knowledge, but
+not so late that it is not possible to take advantage of the knowledge.
+</p><p>Architecture and process are interwoven, which is a key reason
+that architects should favor development lifecycles and architectural
+approaches that are empirical and elicit feedback, using uncertainty
+constructively to divide up both the system and the schedule.
+</p>
+
+<footer>
+<p class="author">By Kevlin Henney</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Architects focus is on the boundaries and interfaces - Software Architect 97Things</title>
+<meta property="og:title" content="Architects focus is on the boundaries and interfaces">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Architects_focus_is_on_the_boundaries_and_interfaces.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Architects focus is on the boundaries and interfaces</h1>
+</header>
+
+<p>Since Lord Nelson destroyed the French and Spanish fleet at
+Trafalgar in 1805, "divide an conquer" has been the mantra for dealing
+with complex and difficult problems. A more familiar term with the same intent is <i>separation of concern</i>.  From separation of concern we get <i>encapsulation</i>, and from encapsulation we get <i>boundaries</i> and <i>interfaces</i>. 
+</p><p>From an architect's point of view, the hard part is to find the natural places to locate boundaries and define the appropriate interfaces needed to build a working system. This is especially difficult in large enterprise systems, often characterized by few natural boundaries and inter-tangled domains. In this situation old wisdom such as: <i>Minimize coupling, maximize cohesion</i>, and <i>Do not slice through regions where high rates of information exchange are required </i>provide some guidance, but they say nothing about how to communicate the problems and potential solutions to stakeholders in a easy way. 
+Here the concept of <i>bounded-contexts</i> and <i>context mapping</i>, as described by Eric Evans in his book <i>Domain-Driven Design</i>,comes to the rescue. A <i>bounded context</i> is an area where a model or concept is uniquely defined, and we represent it as a cloud or bubble with a descriptive name that define its role and responsibility in the domain at hand. As an example, a shipping system might include contexts such as: Cargo Operation, Cargo Scheduling and Harbor Movement. In other domains other names will be appropriate. 
+</p><p>With the <i>bounded contexts</i> identified and drawn up on the white-board, it's time to start to draw the relationships between the contexts. These relationships might address organizational, functional or technical dependencies. The result from this exercise is a context map, a collection of bounded-contexts and the interfaces between them. 
+</p><p>Such a <i>context map</i> provides architects with a powerful tool that allows them to focus on what belongs together and what should be kept apart, enabling them to divide and conquer wisely in a communicative way. The technique can easily be used to document and analyze the as-is situation, and from there guide re-design toward a better system characterized by low coupling, high cohesion and well defined interfaces.
+</p>
+
+<footer>
+<p class="author">By Einar Landre</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

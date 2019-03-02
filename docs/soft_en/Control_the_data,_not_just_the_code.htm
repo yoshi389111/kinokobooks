@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Control the data, not just the code - Software Architect 97Things</title>
+<meta property="og:title" content="Control the data, not just the code">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Control_the_data,_not_just_the_code.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Control the data, not just the code</h1>
+</header>
+
+<p>Source code control and continuous integration are excellent tools for managing the application build and deployment process.  Along with source code, schema and data changes are often a significant part of this process and thus warrant similar controls.  If your build and deployment process includes a list of elaborate steps required for data updates, beware.  These are the lists that always have you crossing your fingers.  They look something like this:
+</p><p>1) Create a list of scripts that need to be run, in order
+</p><p>2) E-mail scripts to special database person
+</p><p>3) Database person copies the scripts to a location where they're executed by a cron job
+</p><p>4) Check script execution log and pray that all scripts ran successfully since you're not exactly sure what will happen if you re-run them
+</p><p>6) Run validation scripts and spot-check the data
+</p><p>7) Regression test the application and see what blows up
+</p><p>8) Write scripts to insert missing data and fix blow-ups
+</p><p>9) Repeat
+</p><p>Ok, so that might be a slight exaggeration but it's not that far off.  Many a project requires this type of acrobatic workflow for successful database migration.  For some reason the data portion of the migration plan seems to be easily overlooked during architecture planning.  As a result it can become a brittle, manual process that gets bolted on as an afterthought. 
+</p><p>This complex web-work creates many opportunities for process breakdown.  To make matters worse, bugs caused by schema and data changes don't always get caught by unit tests as part of the nightly build report.  They like to rear their ugly head in a loud, boisterous manner immediately after a build has been migrated. Database problems are usually tedious to reverse by hand and their solutions tend to be more difficult to validate.  The value of a completely automated build process that is capable of restoring the database to a known state will never be more evident than when you're using it to fix an extremely visible issue.  If you don't have the ability to drop the database and restore it to a state that is compatible with a specific build of the application you are susceptible to the same type of problems you'd have if you couldn't back out a code change quickly.
+</p><p>Database changes shouldn't create a ripple in your build's time-space continuum.  You need to be able to build the entire application, including the database, as one unit.  Make data and schema management a seamless part of your automated build and testing process early on and include an undo button; it will pay large dividends.  At best it will save hours of painful, high-stress problem solving after a late night blunder. At worst it will give your team the ability to confidently charge forward with refactoring of the data access layer.
+</p>
+
+<footer>
+<p class="author">by Chad LaVigne</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

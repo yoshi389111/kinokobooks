@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Application architecture determines application performance - Software Architect 97Things</title>
+<meta property="og:title" content="Application architecture determines application performance">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Application_architecture_determines_application_performance.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Application architecture determines application performance</h1>
+</header>
+
+<p>Application architecture determines application performance. That might seem rather obvious, but real-word experience shows that its not. For example, software architects frequently believe that simply switching from one brand of software infrastructure to another will be sufficient to solve an application's performance challenges. Such beliefs may be based on a vendor's benchmark trumpeting, say, 25% better performance than the closest competition's. But, taken in context, if the vendor's product performs an operation in three milliseconds while the competition's product takes four milliseconds, the 25% or one-millisecond advantage matters little in the midst of a highly inefficient architecture at the root of an application's performance characteristics.
+</p><p>
+In addition to IT managers and vendor benchmarking teams, other groups of people &ndash; vendor support departments, and authors of application performance management literature &ndash; recommend simply &#x201c;tuning&#x201d; the software infrastructure, by fiddling with memory allocations, connection pool sizes, thread pool sizes, and the like.  But if the deployment of an application is insufficiently architected for the expected load, or if the application's functional architecture is too inefficient in its utilization of computing resources, then no amount of &#x201c;tuning&#x201d; will bring about the desired performance and scalability characteristics. Instead a re-architecting of internal logic, or deployment strategy, or both, will be required.
+</p><p>
+In the end, all vendor products and application architectures are constrained by the same fundamental principles of distributed computing and underlying physics: applications, and the products they use, run as processes on computers of limited capacity, communicating with each other via protocol stacks and links of non-zero latency. Therefore people need to appreciate that application architecture is the primary determinant of application performance and scalability. Those quality attributes cannot be miraculously improved with some silver-bullet switch of software brands, or infrastructure &#x201c;tuning&#x201d;. Instead, improvements in those areas require the hard work of carefully-considered (re-) architecting.
+</p>
+
+<footer>
+<p class="author">By Randy Stafford</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Choose Frameworks that play well with others - Software Architect 97Things</title>
+<meta property="og:title" content="Choose Frameworks that play well with others">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Choose_Frameworks_that_play_well_with_others.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Choose Frameworks that play well with others</h1>
+</header>
+
+<p>
+When choosing software frameworks as a basis of your system,
+you must consider not only the individual quality and features of each framework,
+but also how well the set of frameworks that make up your system will
+work together, and how easy it will be to adapt them to new software you may
+need to add as your system evolves. This means you must choose frameworks that do not overlap and that are humble and simple and specialized.
+</p><p>It will be best if each framework or 3rd party library addresses 
+a separate logical domain or concern, and does not tread into
+the domain or concern of another framework you need to use.
+</p><p>Make sure you understand how the logical
+domains and concerns addressed by your candidate frameworks overlap. Draw a Venn diagram if you need to. Two data models that overlap substantially in domain, or two 
+implementations that address very similar concerns but in slightly 
+different ways, will cause unnecessary complexity: the slight differences
+in conceptualization or representation must be mapped or patched with kludgy glue code. 
+Chances are you'll end up not only with complex glue, but also with the 
+lowest-common-denominator of the functionality or representative power of 
+the two frameworks.
+</p><p>To minimize the chance that any given framework
+will overlap with another framework, choose frameworks that have a
+high utility to baggage ratio, in the context of your system requirements. 
+Utility is the functionality or data representation that your project needs 
+from the framework. Baggage is the framework's sweeping, all-encompassing, 
+I'm-in-charge view of the world. Does it insist on mixing data representation and
+control? Does its data model or set of packages and classes extend well beyond
+what your system needs? Do you have to become a fundamentalist in the framework's 
+religion, and limit your choices of other frameworks to those of the correct
+denomination? Does its excess complexity limit the kinds of things you can mix
+with it? If a framework comes with lots of baggage, then that it had also 
+better be providing 75% of the functionality value in your project.
+</p><p>Your system should be comprised of mutually exclusive frameworks, each
+of which may be a master of its domain, but which is also simple, humble, 
+and flexible.
+</p>
+
+<footer>
+<p class="author">by Eric Hawthorne</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

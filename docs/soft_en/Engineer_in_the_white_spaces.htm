@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Engineer in the white spaces - Software Architect 97Things</title>
+<meta property="og:title" content="Engineer in the white spaces">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Engineer_in_the_white_spaces.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Engineer in the white spaces</h1>
+</header>
+
+<p>A system consists of interdependent programs. We call the
+arrangement of these programs and their relationships "architecture".
+When we diagram these systems, we often represent individual programs
+or servers as simplistic little rectangles, connected by arrows.
+</p><p>One little arrow might mean, "Synchronous request/reply using
+SOAP-XML over HTTP." That's quite a lot of information for one glyph to
+carry. There's not usually enough room to write all that, so we label
+the arrow with either "XML over HTTP"---from an internal
+perspective---or "SKU Lookup"---for the external perspective.
+</p><p>That arrow bridging programs looks like a direct contact, but
+it isn't. The white space between the boxes is filled with hardware and
+software components. This substrate may contain:
+</p>
+<ul>
+<li>Network interface cards</li>
+<li>Network switches</li>
+<li>Firewalls</li>
+<li>IDS and IPS</li>
+<li>Message queues or brokers</li>
+<li>XML transformation engines</li>
+<li>FTP servers</li>
+<li>"Landing zone" tables</li>
+<li>Metro-area SoNET rings</li>
+<li>MPLS gateways</li>
+<li>Trunk lines</li>
+<li>Oceans</li>
+<li>Cable-finding fishing trawlers</li>
+</ul>
+<p>There will always be four or five computers between program A and B,
+running their software for packet switching, traffic analysis, routing,
+threat analysis, and so on. As the architect bridging between those
+programs, you must consider this substrate.
+</p><p>I saw one arrow labeled "Fulfillment". One server was inside my
+client's company, the other server was in a different one. That arrow,
+critical to customer satisfaction, unpacked to a chain of events that
+resembled a game of "Mousetrap" more than a single interface. Messages
+went to message brokers that dumped to files, which were picked up by a
+periodic FTP job, and so on. That one "interface" had more than twenty
+steps.
+</p><p>It's essential to understand that static and dynamic loads that
+arrow must carry. Instead of just "SOAP-XML over HTTP", that one little
+arrow should also say, "Expect one query per HTTP request and send back
+one response per HTTP reply. Expect up to 100 requests per second, and
+deliver responses in less than 250 milliseconds 99.999% of the time."
+</p><p>There's more we need to know about that arrow.
+</p>
+<ul>
+<li>What if the caller hits it too often? Should the receiver drop requests on the floor, refuse politely, or make the best effort possible?</li>
+<li>What should the caller do when replies take more than 250 milliseconds? Should it retry the call? Should it wait until later, or assume the receiver has failed and move on without that function?</li>
+<li>What happens when the caller sends a request with version 1.0 of the protocol and gets back a reply in version 1.1? What if it gets back some HTML instead of XML?  Or an MP3 file instead of XML?</li>
+<li>What happens when one end of the interface disappears for a while?</li>
+</ul>
+<p>Answering these questions is the essence of engineering the white spaces.
+</p>
+
+<footer>
+<p class="author">By Michael Nygard</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

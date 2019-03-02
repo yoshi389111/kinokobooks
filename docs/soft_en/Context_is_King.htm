@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Context is King - Software Architect 97Things</title>
+<meta property="og:title" content="Context is King">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Context_is_King.htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Context is King</h1>
+</header>
+
+<p>I feel there is a certain irony in trying to impart something about
+architectural ideals, when the very premise I wish to begin with is
+that effectively <i>there are no ideals</i>. If this is indeed the
+case, then surely there is nothing to write, I am a contradiction and
+by doing this I run the risk of the universe imploding or something
+like that.
+</p><p>But alas, <i>ceci n'est pas une pipe.</i>
+One of the most valuable lessons that I have learned as a
+software architect is that context is king, and simplicity its humble
+servant. What this means in practical terms is that context is the only
+force that trumps simplicity when making architectural decisions. 
+When I say context, I refer not only to high-level, immediate
+forces such as key business drivers, but also to elements in the
+periphery, such as emerging technologies and thought leadership on
+diverse topics. Indeed, good architects keep track of several
+fast-moving targets. 
+What constitutes good architecture? It is the product of
+decisions made within a context usually tainted with multiple competing
+priorities. Those competing priorities mean that sometimes the most
+important decisions are not about what you put in, but rather what you
+omit. The currency of good architecture is simply astute
+decision-making (while the products are all only about communicating
+your intent).
+</p><p>Historically, there have been some fascinating examples of the
+influence that context can have on architecture. A favorite example
+involves the database selected to support an ambitious new software
+system for a modern battlefield tank [1]. (Deciding what database to
+use is not usually architecturally significant; this example merely
+serves to illustrate a point).
+</p><p>When it came time to choose the database, the team assessed
+many. They found that while the tank was moving quickly over undulating
+terrain while tracking a target, the majority of the databases were
+capable of supporting this maximal throughput required of the
+navigation and targeting systems. But they were taken by surprise when
+they discovered that firing the main gun on the tank caused such a
+strong electromagnetic pulse that it totally crashed the on-board
+systems and of course the database along with it! On a modern
+battlefield, a tank without its software running is quite literally in
+the dark. In this context, <i>recovery time</i> was the overwhelming
+factor in the choice of database, and no database did that better at
+the time than InterBase [2], and that is why it was chosen for the M1
+Abrams tank.
+</p><p>So, while newsgroups rage with the flames of technology debates
+of X vs Y, it is idle amusement. The reason these debates rage is often
+not because of huge disparities in their technical merits, but rather
+because there are more subtle differences between them, and what
+features individuals value more than others when there is no guiding <i>context</i> to act as a trump card. 
+</p><p>Your team should be free of ideals, reflect on context in the first instance, and reach for the simplest solutions from there.
+</p>
+
+<footer>
+<p class="author">By Edward Garson</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+

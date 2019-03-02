@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style_en.css"/>
+<title>Your system is legacy, design for it. - Software Architect 97Things</title>
+<meta property="og:title" content="Your system is legacy, design for it.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_en.png">
+<meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_en/Your_system_is_legacy,_design_for_it..htm">
+<meta property="og:site_name" content="97 Things Every Software Architect Should Know.">
+<meta property="og:locale" content="en_US">
+
+</head>
+<body>
+<article>
+<header>
+<h1>Your system is legacy, design for it.</h1>
+</header>
+
+<p>Even if your system is bleeding edge and developed in the latest technology, it will be legacy to the next guy. Deal with it! The nature of software today means things go out of date fast. If you expect your system to go into production and survive, even for a few months, then you need to accept that maintenance developers will need to fix things up. This means several things:
+</p><p>Clarity - it should be obvious what role components and classes perform.
+</p><p>Testability - is your system easy to verify?
+</p><p>Correctness - do things work as designed or as they should? Eliminate quick and nasty fixes.
+</p><p>Traceability - can Ernie the Emergency bug fixer who has never seen the code before jump into production, diagnose a fault and put in a fix? Or does he need an 8 week handover?
+</p><p>Try to think of a different team opening up the codebase and working out what's happening. This is fundamental for great architecture. It doesn't have to be over-simplified or documented to the hilt, a good design will document itself in many ways. Also the way a system behaves in production can also expose the design. For example, a sprawling architecture with ugly dependencies will often behave like a caged animal in production. Spare a thought for (usually more junior) developers who may have to debug defects.
+</p><p>Legacy tends to be a bad word in software circles, but in reality, all software systems should endure the tag. It is not a bad thing as it may indicate that your system is durable, meets expectations and has business value. Any software system that has never been called legacy has probably been canned before launch - which is not the sign of a successful architecture.
+</p>
+
+<footer>
+<p class="author">by Dave Anderson</p>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+
+</footer>
+</article>
+</body>
+</html>
+
