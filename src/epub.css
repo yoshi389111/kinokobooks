@@ -38,8 +38,6 @@ h6 {
     text-align: left;
 }
 h1.title { }
-h2.author { }
-h3.date { }
 ol.toc { padding: 0; margin-left: 1em; }
 ol.toc li { list-style-type: none; margin: 0; padding: 0; }
 p{
@@ -73,9 +71,27 @@ dd { font-family: serif; }
 div.author {
     font-family: sans-serif;
 }
+span.author_title {
+    font-size: 80%;
+}
+div.author_address {
+    font-family: sans-serif;
+    font-size: 80%;
+}
 div.cite_author {
     text-align: right;
     font-family: serif;
 }
 figure { width: 90% }
 img { width: 100% }
+ul.label_9_7 {
+    list-style-type: none;
+    padding-left: 0;
+}
+ul.label_9_7 li {
+    text-indent: -2em;
+    padding-left: 2em;
+}
+ul.label_9_7 li:before {
+    content: "9.7";
+}
