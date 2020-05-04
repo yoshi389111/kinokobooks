@@ -1,14 +1,15 @@
 #!/bin/bash
 
 cd $(dirname $0)
-cd ../src/prog
+cd ../src/game2
 
 export LANG="ja_JP.UTF-8"
 
 pandoc -f markdown -t epub3-auto_identifiers \
  --toc-depth=1 \
- --epub-cover-image=./prog.png \
  --css=../epub.css \
- -o ../../epub/prog97.epub \
- prog000.txt prog*.md
+ -o ../../epub/game297.epub \
+ game200.txt game2*.md
+
+# --epub-cover-image=./game2.png \
 
