@@ -2,7 +2,19 @@
 
 いわゆる「きのこ本」、例えば「プログラマが知るべき97のこと」などの電子書籍化を勝手にやっています。
 
-## プログラマが知るべき97のこと
+## 非公式電子書籍
+
+* [プログラマが知るべき97のこと](https://github.com/yoshi389111/kinokobooks/blob/master/epub/prog97.epub?raw=true) epub 版
+* [ソフトウェアアーキテクトが知るべき97のこと](https://github.com/yoshi389111/kinokobooks/blob/master/epub/soft97.epub?raw=true) epub 版
+* [プロジェクト・マネジャーが知るべき97のこと](https://github.com/yoshi389111/kinokobooks/blob/master/epub/mngr97.epub?raw=true) epub 版
+* [ゲームクリエイターが知るべき97のこと](https://github.com/yoshi389111/kinokobooks/blob/master/epub/game197.epub?raw=true) epub 版
+  * まだ表紙がありません
+* [ゲームクリエイターが知るべき97のこと 2](https://github.com/yoshi389111/kinokobooks/blob/master/epub/game297.epub?raw=true) epub 版
+  * まだ表紙がありません
+
+## 参考情報
+
+### プログラマが知るべき97のこと
 
 * 書籍情報 [プログラマが知るべき97のこと](https://www.oreilly.co.jp/books/9784873114798/) 日本語版
 * 書籍情報 [97 Things Every Programmer Should Know](http://oreilly.com/catalog/9780596809492/) 英語版
@@ -12,7 +24,7 @@
 
 * 英語版のコピー [97 Things Every Programmer Should Know](https://yoshi389111.github.io/kinokobooks/prog_en/)
 
-## ソフトウェアアーキテクトが知るべき97のこと
+### ソフトウェアアーキテクトが知るべき97のこと
 
 * 書籍情報 [ソフトウェアアーキテクトが知るべき97のこと](https://www.oreilly.co.jp/books/9784873114293/) 日本語版
 * 書籍情報 [97 Things Every Software Architect Should Know](http://oreilly.com/catalog/9780596522704/) 英語版
@@ -21,7 +33,7 @@
 
 * 英語版のコピー [97 Things Every Software Architect Should Know](https://yoshi389111.github.io/kinokobooks/soft_en/)
 
-## プロジェクト・マネジャーが知るべき97のこと
+### プロジェクト・マネジャーが知るべき97のこと
 
 * 書籍情報 [プロジェクトマネジャーが知るべき97のこと](https://www.oreilly.co.jp/books/9784873115108/) 日本語版
 * 書籍情報 [97 Things Every Project Manager Should Know](http://oreilly.com/catalog/9780596804152/) 英語版
@@ -29,10 +41,10 @@
 
 * 英語版のコピー [97 Things Every Project Manager Should Know](https://yoshi389111.github.io/kinokobooks/mngr_en/)
 
-## ゲームクリエイターが知るべき97のこと
+### ゲームクリエイターが知るべき97のこと
 
 * 書籍情報 [ゲームクリエイターが知るべき97のこと](https://www.oreilly.co.jp/books/9784873115702/)
 
-## ゲームクリエイターが知るべき97のこと 2
+### ゲームクリエイターが知るべき97のこと 2
 
 * 書籍情報 [ゲームクリエイターが知るべき97のこと 2](https://www.oreilly.co.jp/books/9784873116228/)
