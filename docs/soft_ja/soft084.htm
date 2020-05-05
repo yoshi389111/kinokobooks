@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【84】フレームワークは相性で選べ - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【84】フレームワークは相性で選べ">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_ja/soft084.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e84">【84】フレームワークは相性で選べ</h1>
+<div class="author">
+エリック・ホーソーン
+</div>
+<p>　システムの基礎としてソフトウェア・フレームワークを選ぶときには、フレームワーク単独の品質や機能だけではなく、システムを構成するフレームワークセットがどの程度うまく連携するか、システムの発展にともなって新しいソフトウェアを追加しなければならなくなったときに、それをどの程度うまく吸収できるかを考えなければなりません。つまり、互いに重複がなく、それぞれが控えめで、単純で、何かに特化したフレームワークを選ぶということです。</p>
+<p>　個々のフレームワークやサードパーティー・ライブラリは、別個の論理ドメインや問題を扱い、あなたが使いたいと思っている他のフレームワークのドメインや問題を荒らさないことが大切なのです。</p>
+<p>　採用しようとしているフレームワークの論理ドメインや問題がどのくらい重なり合っているかをきちんと把握しなければなりません。必要ならベン図を描いてみることです。ドメインが大きく重なる 2 つのデータモデルや、非常に近い問題を別々の方法で解決する 2 つの実装は、不必要にシステムを複雑にします。概念化や表現のわずかな違いを、その場しのぎのグルーコードでマッピングしたりパッチしたりしなければならなくなります。こうなるとグルーコードが複雑になるだけでなく、2 つのフレームワークの最大公約数的な機能しか使えなくなる可能性が高くなります。</p>
+<p>　フレームワークの重なり合う部分を小さくするには、システムの要件という制約のもとで有用性‐傲慢率が低いフレームワークを選ぶことです。「有用性」とは、あなたのプロジェクトが必要とするフレームワーク内の機能やデータ表現のことで、これが分子になります。「傲慢度」とは、フレームワークが世界に対してどのくらい「オレだけ」的「何でもコイ」的「それはオレの役目だ」的考え方をしているかで、これが分母になります。そのフレームワークは、データの表現と制御の併用を要求していますか？　データモデルやパッケージ / クラスセットは、システムが必要とする以上のものになっていますか？　フレームワークの原理主義者にならなければならず、他のフレームワークは同じ教派に属するものだけに限られてしまいますか？</p>
+<p>　フレームワークが思い切り傲慢なら、プロジェクトの機能価値の 75% くらいは提供してもらいたいところです。</p>
+<p>　システムは、それぞれのドメインを定全に支配しつつ、単純で、従えめで、柔軟性の高い相互に排他的なフレームワークを使って構成すべきです。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

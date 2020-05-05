@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【50】アーキテクトは境界とインターフェイスに注意を注げ - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【50】アーキテクトは境界とインターフェイスに注意を注げ">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_ja/soft050.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e50">【50】アーキテクトは境界とインターフェイスに注意を注げ</h1>
+<div class="author">
+アイナー・ランドル
+</div>
+<p>　1805 年にネルソン提督がフランス、スペイン連合艦隊を打ち破って以来、「分割統治」は複雑で困難な問題に取り組むための合い言葉になっています。同じことをもっとわかりやすく言うと、問題の分割ということです。問題の分割はカプセル化を実現し、カプセル化は境界とインターフェイスを生み出します。</p>
+<p>　アーキテクトの立場から見て難しいのは、適切なインターフェイスを定義し、自然に境界線を引ける場所を探すことですが、これらは稼働するシステムを構築するためには是非とも必要なことです。「結合度を下げ、凝集度を上げよ」とか「密接な情報交換が必要とされる領域をスライスするな」といった古くからの知恵は、確かにある程度のヒントを与えてくれますが、利害関係者に問題と解決案をわかりやすく説明するためには何の役にも立ちません。</p>
+<p>　ここで役に立つのは、エリック・エバンスが『ドメイン駆動設計』で述べているコンテキスト境界、コンテキストマップの概念です。コンテキスト境界は、モデルやコンセプトを一意に定義できる領域で、雲または風船で表現し、ドメインの中での役割や任務をわかりやすく示す名前を与えます。たとえば、出荷システムには、荷役作業、輸送日程策定、港内輸送などのコンテキストがあります。他のドメインでは、別の名前を使うことになるでしょう。</p>
+<p>　コンテキスト境界がはっきりしてホワイトボードに描けたら、今度はそれらのコンテキストの間の関係を描いていきます。組織的、機能的、技術的な依存関係を表現するのです。この関係が明確になると、境界のはっきりしたコンテキストとそれらの間のインターフェイスのコレクションであるコンテキストマップが完成します。</p>
+<p>　このようなコンテキストマップは、アーキテクトにとって強力なツールになります。アーキテクトは、何をいっしょに扱い、何を離しておかなければならないかをはっきりさせ、説明しやすい形でうまく分割統治を進められるようになります。このテクニックは、現状をドキュメント、分析するために簡単に利用でき、さらに疎結合、高凝集、明確なインターフェイスという特徴を持つよりよいシステムに向かって設計を改良するためにも役に立ちます。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

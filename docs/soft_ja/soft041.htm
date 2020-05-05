@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【41】ダイアグラムの空白に注意せよ - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【41】ダイアグラムの空白に注意せよ">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_ja/soft041.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e41">【41】ダイアグラムの空白に注意せよ</h1>
+<div class="author">
+マイケル・ナイガード
+</div>
+<p>　システムは、相互依存するプログラムから構成されています。プログラムの関係と配置をアーキテクチャーと呼びます。システムのダイアグラムを描くときには、個々のプログラムやサーバーを小さなボックスで表し、矢印で結びます。</p>
+<p>　1 つの小さな矢印が、たとえば「HTTP 上の SOAP-XML を使った同期的な要求 / 応答」を意味します。1 つの記号が表す情報としてはかなり多いと言えるでしょう。普通は全部を書くことはとてもできないので、開発部内向けに「HTTP 上の XML」と書いたり、外部向けに「SKU 照合」と書いたりします。</p>
+<p>　矢印が結ぶプログラムは直接つながっているかのように見えますが、実際はそうではありません。ボックスの間の空白は、実際にはプリント基板と同じで、さまざまなハードウェア / ソフトウェア・コンポーネントによって埋められています。この「基板」には、次のようなものが含まれています。</p>
+<ul>
+<li>ネットワークインターフェイスカード</li>
+<li>ネットワークスイッチ</li>
+<li>ファイアウォール</li>
+<li>IDS と IPS</li>
+<li>メッセージキュー / ブローカー</li>
+<li>XML 変換エンジン</li>
+<li>FTP サーバー</li>
+<li>ランディングゾーンのテーブル</li>
+<li>MAN の SONET リング</li>
+<li>MPLS ルーター</li>
+<li>幹線ネットワーク</li>
+<li>太平洋、大西洋</li>
+<li>ケーブル探索用トロール船</li>
+</ul>
+<p>　プログラム A と B の間には、いつも 4、5 台のコンピューターが介在しており、それぞれがパケット交換、トラフィック分析、ルーティング、脅成分析などのソフトウェアを実行しています。プログラムに橋を架けていくアーキテクトとして、あなたはこれらの「基板」に注意する必要があります。</p>
+<p>　たとえば、私が見た矢印の中に、「履行」というラベルのついたものがありました。矢印が結ぶ片方のサーバーは私の顧客企業の中にあり、もう片方のサーバーは別の企業の中にありました。この矢印は顧客企業にとっては決定的に重要な意味を持っていましたが、単一のインターフェイスというよりも、ピタゴラスイッチのような連続的な操作でした。メッセージはメッセージブローカーに送られ、そこでファイルにダンプ出力されます。ファイルは、定期的にピックアップされて FTP で送られます。この単一の「インターフェイス」には、20 以上のステップが含まれていたのです。</p>
+<p>　矢印が表す静的 / 動的負荷を理解することはとても大切です。矢印には「HTTP 上の SOAP-XML」と素っ気なく書かれていても、「1 個の HTTP リクエストで 1 つの問い合わせを送ると、1 個の HTTP レスポンスで 1 つの応答が返される。1 秒に送れる要求は 100 個までで、99.999% までは 250m 秒以内に応答が返される」というところまで読み込まなければなりません。</p>
+<p>　矢印については、他にも知っておかなければならないことがあります。</p>
+<ul>
+<li>呼び出し元が、頻繁すぎるくらいに要求を送ってきたときにどうするか。レシーバーは、リクエストを床に落として捨てるか、礼儀正しく処理を拒否するか、がんばってできる限り処理するか。</li>
+<li>250m 秒たっても応答が返ってこないときに、呼び出し元はどうすべきか。再試行すべきか、待ち続けるか、レシーバーがエラーを起こしたと考えてその部分を省略して先に進むか。</li>
+<li>呼び出し元がプロトコルのバージョン 1.0 で要求を送り、レシーバーがバージョン 1.1 で応答を返してくるときにはどうするか。応答が XML ではなく HTML だったらどうするか。XML ではなく MP3 ファイルだったらどうするか。</li>
+<li>インターフェイスの片方がしばらく姿を消してしまったときにはどうするか。</li>
+</ul>
+<p>　これらの問いに答えることこそが、「基板」を意識した設計のエッセンスです。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

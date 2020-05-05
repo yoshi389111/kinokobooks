@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【76】他の名前でバラを呼べば、キャベツにしかならない - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【76】他の名前でバラを呼べば、キャベツにしかならない">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_ja/soft076.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e76">【76】他の名前でバラを呼べば、キャベツにしかならない</h1>
+<div class="author">
+サム・ガーディナー
+</div>
+<p>　以前聞いた話です。何人かの人たちが話をして、アーキテクチャーにレイヤーを追加することにしたそうです。彼らはたまたま正しかったのですが、話が逆方向を向いていました。彼らは、ビジネスロジックを含むフレームワークを作ろうとしていました。ところが彼らは、具体的な問題を解決しようとはせず、データベースをラップしてオブジェクトを作ってくれるフレームワークが必要だという考え方からスタートしたのです。OR マッピング、メッセージ処理、ウェブサービス、その他ありとあらゆるすばらしい処理をするフレームワークが必要だと考えたのです。</p>
+<p>　残念ながら、彼らは、フレームワークがしてくれるすばらしいことが何かがわからなかったので、何と呼んだらよいのかわかりませんでした。結局、彼らは名前を募集したのです。本当なら、この時点で問題があるということに気付かなければなりません。あるものを何と呼んだらよいのかがわからなければ、それが何になるのかはわかりません。それが何なのかがわからなければ、落ち着いてコードを書くことはできないのです。</p>
+<p>　この例では、ソースコードのヒストリ情報全体をさっと見たときに問題の深さがわかりました。もちろん、「実装せよ」と書かれた空っぽのインターフェイスがたくさんありました。しかし本当におかしなことは、実際にコードがないのに 3 度も名前が変わっていたことです。最初の名前は、ClientAPI でした。この Client は、「クライアント‐サーバー」のクライアントではなく、ビジネスのお客さんのことです。そして最終バージョンの名前は、ClientBusinessObjects でした。すばらしい名前です。曖昧で、意味が広くて、誤解を招きやすい。</p>
+<p>　もちろん、名前は単なるポインタにすぎません。全員が名前はただ名前にすぎず、設計のメタファーではないことがわかれば、先に進めます。しかし、名前は十分に具体的なもので、間違っていたら間違っていることがわかるはずのものです。そのようなものについて意見が一致しないようでは、スタートを切ることさえ難しいでしょう。設計とは、システムの目標（速さ、安さ、柔軟性など）を満たすための試みであり、名前はその目標を表しているのです。</p>
+<p>　名前を付けられないようなものを書くことはできません。名前を 3 回変えたところで立ち止まり、何を作ろうとしているのかをはっきりさせるべきです。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

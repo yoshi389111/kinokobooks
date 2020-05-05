@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【15】犯罪的なコミットエンドランを防ぐには - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【15】犯罪的なコミットエンドランを防ぐには">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_ja/soft015.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e15">【15】犯罪的なコミットエンドランを防ぐには</h1>
+<div class="author">
+ニクラス・ニルソン
+</div>
+<p>　それは、暗くなってからのことです。チームはこのイテレーションで作る新しい機能セットの最後の部分を完成させようとしており、あなたは室内にリズムのようなものを感じていました。しかし、ジョンは少し急いでいました。彼はデートの時間に遅れていたので、がんばって自分のコードを完成させ、コンパイルし、チェックインして出て行きました。数分後、赤ランプが点灯しました。ビルドできなくなったのです。</p>
+<p>　ジョンは自動テストを実行する時間がなかったので、コミットエンドランを決めていきました。結果、チームメンバー全員を立ち往生させたのです。状況は暗転し、リズムは失われました。バージョン管理システムに更新をかけると、ローカルマシンにも動かないコードが送られてくることを誰もが知っていました。この日は、間近に迫ったデモのために、実行すべきインテグレーションが大量にありましたが、これによって、大幅な中断が入りました。誰かが時間を割いてジョンがかけた更新を元に戻さなければ、インテグレーションを実行することはできません。ジョンは、チームの流れを止めたのです。</p>
+<p>　これは残念ながらよくある話です。流れを止めるコミットエンドランはまさに犯罪です。デベロッパーが自分の作業時間を切り詰めようとして、同僚の時間を無駄にさせるなど、まったく無礼なことです。しかし、どこの職場でも、このようなことが起きています。なぜでしょうか。それは、システムをビルドしたり、テストを実行したりするのに時間がかかりすぎるからです。</p>
+<p>　ここは、システム・アーキテクトであるあなたの出番です。あなたは、デベロッパーたちの力を引き出せるような柔軟性の高いアーキテクチャーを作るために力を注ぎ、彼らにテスト駆動開発などのアジャイルの手法を教え、継続的インテグレーション用のサーバーをセットアップしたはずです。そこまでしたのなら、どんな形であれ、同僚の時間を潰し、流れを止めるようなことは絶対に認められないという文化を育てるべきです。</p>
+<p>　そのためには何よりもまず、自動テストができるよう健全なアーキテクチャーを作らなければなりません。これでデベロッパーたちの態度が変わるのです。テストが素早く実行できるなら、デベロッパーたちはもっと頻繁にテストを実行するようになるでしょう。これ自体もよいことですが、ビルドを止めるようなコードを放置して同僚に迷惑をかけることもなくなります。</p>
+<p>　テストが外部システムに依存していたり、データベースアクセスを必要とする場合には、ローカルマシンではモックやスタブ、最悪でもインメモリーデータベースを使うようにリエンジニアリングしましょう。そして、ビルドサーバーにはテストをゆっくり実行させるのです。コンピューターを待たなくて済むようにしなければ、デベロッパーたちは近道を狙って、結局別の問題を起こすようになってしまいます。</p>
+<p>　時間を割いて、仕事が早くできるようにシステムを作りましょう。そうすれば、流れが良くなり、独りよがりな仕事をする理由がなくなるので、最終的には開発のペースを上げることができます。モックを使い、シミュレーターを作り、依存関係を減らし、システムを小さなモジュールに分割し、その他何でもできることをしましょう。コミットエンドランを決めてやろうなどと思う理由さえなくしてしまうのです。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【61】データがすべて - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【61】データがすべて">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_ja/soft061.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e61">【61】データがすべて</h1>
+<div class="author">
+ポール・W・ホーマー
+</div>
+<p>　私たちソフトウェア・デベロッパーは、キャリアの最初の段階で、ソフトウェアとはコマンド、関数、アルゴリズムのシステムだと学んでいます。このような命令指向の見方は、ソフトウェアの作り方を学ぶ上では役に立ちますが、より大規模なシステムを作ろうとすると、途端に私たちの行く手を遮ります。</p>
+<p>　1 歩下がって考えてみると、コンピューターとは、データの塊にアクセスし、それを操作するためのしゃれた道具にすぎません。大規模システムで複雑さを管理するためのポイントは、データが持つ構造にあるのです。数百万個の命令はいかにも複雑ですが、その下にあるのは、ごく少数の基本データ構造であり、それなら私たちの頭も簡単についていけます。</p>
+<p>　たとえば、Unix オペレーティングシステムを理解したいのなら、ソースコードを 1 行 1 行見ていっても役に立たないでしょう。それよりも、プロセスやファイルシステムといった部分で使われている主要な内部データ構造の概要を説明してくれる本を読んだ方が、Unix の仕組みはわかりやすいはずです。データはコードよりも概念として小さく、複雑度もかなり低いのです。</p>
+<p>　コンピューターでコードが実行されている間、データの状態はその下で絶えず変化しています。抽象的に見ると、すべてのアルゴリズムは、データのあるバージョンを別のバージョンに変換する作業です。プログラム全体は、データをさまざまなリビジョンに変化させていく変換処理を集めたものにすぎません。</p>
+<p>　このように、システムを土台となる情報の構造から見るデータ指向の見方を取れば、複雑なシステムでも、相手にできる程度の細部をまとめたものに圧縮できます。複雑なシステムをどのようにして構築、実行すればよいかを理解するためには、複雑さを軽減することが必要です。</p>
+<p>　データは、多くの問題の核となります。ビジネスドメインの問題は、データを介してコードに潜り込みます。たとえば、主要なアルゴリズムは、データの構造や関係の変化から見ればたいてい理解できます。アップグレードなどの運用上の問題も、データに影響がある場合にはかなり難しくなります。コードやふるまいの変更は新しいバージョンをリリースすれば済む程度の問題ですが、データ構造を変える場合には、古いバージョンを新しいバージョンに変換する大仕事が必要になるのです。</p>
+<p>　ご存じのように、アーキテクチャーの基本的な問題の多くはデータに関連したものです。システムが正しいときに正しいデータを集めているか、誰がデータを読んだり書き換えたりしてよいのか。データが存在するなら、その品質はどの程度で、どれくらいのペースで成長していくのか。まだ存在しないなら、どこから送られてきて、どのような構造になっているのか。このような観点に立つと、システムにデータさえあれば、後は、特定のデータを表示、編集する方法がすでにあるか、追加する必要があるかということだけを考えるだけですみます。</p>
+<p>　設計という観点から見ると、特に重要なのは、正しいタイミングで正しいデータをシステムに送り込むことです。それさえしっかりしていれば、データの調理は、コードを実行して結果を保存するだけのことです。ほとんどのシステムは、データ構造を複雑にしなくても動きます。ただ、どんどんデータ量が大きくなっていくだけです。最初に目に付くのはコードかもしれませんが、システムのもっともコアな部分はデータなのです。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

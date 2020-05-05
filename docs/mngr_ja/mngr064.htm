@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【64】インテグレーションポイントを知る - プロジェクト・マネジャーが知るべき 97 のこと</title>
+  <meta property="og:title" content="【64】インテグレーションポイントを知る">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/mngr97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/mngr_ja/mngr064.htm">
+  <meta property="og:site_name" content="プロジェクト・マネジャーが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e64">【64】インテグレーションポイントを知る</h1>
+<div class="author">
+モンデ・デイビス（Monte Davis）<span class="author_title">MCSE</span>
+</div>
+<div class="author_address">
+アメリカ、ネブラスカ州オマハ
+</div>
+<p>　システム管理者や開発エンジニア、プロジェクト・マネジャーはシステムインテグレーションに苦しんでいます。新規開発したアプリケーションや新規購入したソフトウェアパッケージ、待望の新機能を搭載したアップグレードなど、それらがどんなに有望なものであっても、そのビジネス価値は既存の社内システムと組み合わせて円滑に動かせるか否かにかかっているのです。</p>
+<p>　あなたが経験豊富なプロジェクト・マネジャーだとしても、IT 業界に不慣れであれば、インテグレーションという言葉に惑わされてはいけません。インテグレーションとは、さまざまなソフトウェアプログラムを組み合わせることで、すべてのサブシステムが連携して単独のアプリケーションから得られる以上の機能を提供することを意味しています。例えば、あなたは一度データを入力するだけで、その情報がスムーズに営業担当に伝わり、買掛金と売掛金にも反映され、さらにほかのシステムにも伝わり、利用するインターフェイスが何であっても、従業員がほしい情報を引き出せるようになるのです。</p>
+<p>　残念ながら、たいていの場合、ソフトウェアのアップグレードが要求されるとプロジェクト・マネジャーは緊張します。これまでスムーズに動いていた処理に問題が生じるおそれがあるためです。最近、私たちはシステムのひとつをアップグレードすることになっていました。ところがアップグレードの最中、ベンダーは予期せぬエラーに遭遇してしまいました。</p>
+<p>　アップグレードは複数のビュー（データベース情報の特定の一部を示すよう事前にプログラムされた画面）で失敗していました。アップグレードを実施した外部ベンダーには、そのビューが何のために使われているかわからなかったので、そのビューを消去してしまいました。その結果、アップグレードはうまく完了したように見えました。</p>
+<p>　数日後、このシステムとはまったく別のシステムに、問題が登録されました。ユーザーが先週末アップグレードしたシステムから新しい顧客データが到着するのを確認できなかったためです。あとでわかったことですが、削除したビューは失われた顧客データのソースだったのです。</p>
+<p>　アップグレードを完了させるためにソースビューを削除した結果、システム間の同期処理がおかしくなりました。ソースビューが失われているという結論に至るまで、トラブルシューティングに何時間もかかりました。原因が判明してからも 2 つのシステムが再びやりとりできるようにするため、削除したビューを手作業で再生成しなくてはなりませんでした。</p>
+<p>　たいていの IT 部門では、各種ハードウェアシステムにおける各種コンポーネントがどうつながっているかを示した図を用意しています。これと同じように、組織にデータがどう流れているかを視覚的に表現すると役に立ちます。アプリケーションのデータが別のプログラムに流れる重要な連結点（インテグレーションポイント）を明記しておきましょう。</p>
+<p>　このような場合には、システムがお互いに依存していることを説明したドキュメントがあると役に立ちます。もしそれがあれば、アップグレードを実施するベンダーと最初に会ったときに、彼らとビジネスフロー図を共有できたかもしれません。</p>
+<p>　また、ほかのシステムに提供する重要なビューを削除しなくても、最初のアップグレード問題を別の方法で解決できたかもしれません。システムダウンの時間と管理者のストレスを軽減できたかもれません。信念をもって、アップグレードを乗り越えましょう。隠れた問題がシステムに取り込まれることを恐れて暮らす必要はありません。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

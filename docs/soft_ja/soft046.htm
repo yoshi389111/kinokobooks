@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【46】繰り返しと戦え - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【46】繰り返しと戦え">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_ja/soft046.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e46">【46】繰り返しと戦え</h1>
+<div class="author">
+ニクラス・ニルソン
+</div>
+<p>　あなたのチームのデベロッパーは、考えることをほとんど必要としない反復作業をしていますか。コードに同じパターンが繰り返し現れていますか。コピー - ペースト - 変更スタイルで書かれたコードが見つかりますか。もしそうなら、あなたのチームは、本来の実力よりも作業速度が遅くなっています。そして、その原因は、困ったことにあなたかもしれません。理由を説明する前に、ソフトウェア開発の正しい命題を 2 つ確認しておきましょう。</p>
+<ul>
+<li>重複は悪である。</li>
+<li>反復的な作業は開発を遅らせる。</li>
+</ul>
+<p>　異論はありませんね。では、続けます。</p>
+<p>　あなたは、アーキテクトとして全体の基調を設定します。あなたはシステム全体を把握したはずですし、それに基づいてシステムを端から端まで縦にスライスしたような形で、チームが参考にすべきサンプルを書いているはずです。今まで何度もコピーされているサンプルのことです。数行のコードであれ、XML ファイルであれ、クラスであれ、デベロッパーが何かをコピーするたびに、それはもっと単純化できるか抽象化できる何かが残っているということを示しています。多くの場合、コピーされているのは、ドメインロジックではありません。システムを動かすためにそこになくてはならないインフラコードです。</p>
+<p>　このような理由から、あなたが自分のサンプルの効果を頭に思い描けているかどうかがとても重要な意味を持ちます。あなたのサンプルに含まれているコードやコンフィギュレーションは、その 10 倍、100 倍、1000 倍のスライスの基礎となりますから、あなたのコードはクリーンで、意図がはっきりとわかって、抽象化できないもの以外含まれていないようなものでなければなりません。つまり、ドメインの問題に対応するコードだけということです。あなたがアーキテクトとして書くコードは、（皮肉にも）繰り返し使われますので、反復的なパターンには特に注意しなければならないのです。</p>
+<p>　しかし、あなたのシステムでは反復的なパターンが現れているのではないでしょうか。コンフィギュレーションファイルを見てみましょう。システムの他の部分に適用したときに異なっていなければならないところはどこで、同じままになるのはどこでしょうか。典型的なビジネスレイヤーメソッドを見てみましょう。他のメソッドにも出てきそうなパターン、つまり、トランザクション処理やログ、認証、監査のためのコードが含まれていませんか。データアクセスレイヤーはどうでしょうか。エンティティやフィールドの名前以外同じになるようなコードはありませんか。</p>
+<p>　もっと広い視野から見てみましょう。よくいっしょに固まっている 2、3 行のコードがあって、他のオブジェクトを操作しているのに、同じことをしているような感じがすることはありませんか。それはすべて反復の例です。コードの重複とは、デベロッパーたちが違いのある大切な部分を見分ける方法を覚えたら、頭の中でフィルタリングして無視できるようになる部分ですが、デベロッパーたちがそれに慣れたとしても、作業を遅らせることに変わりはありません。そのようなコードは、コンピューターが実行しやすいように書かれているのであって、デベロッパーにとって読みやすいようには書かれていません。</p>
+<p>　そのような部分を取り除くのは、あなたの仕事です。そのためには、フレームワークを活用したり、より良い抽象を作ったり、ツール担当に頼んでアスペクト・フレームワークをセットアップしたり、小さなコードジェネレーターを書いたりしなければならなくなるかもしれません。しかし誰かが何かをしなければ、重複は消えません。</p>
+<p>　その誰かとはあなたなのです。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

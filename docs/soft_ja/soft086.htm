@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【86】コードだけではなくデータをコントロールせよ - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【86】コードだけではなくデータをコントロールせよ">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_ja/soft086.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e86">【86】コードだけではなくデータをコントロールせよ</h1>
+<div class="author">
+チャド・ラヴィーニュ
+</div>
+<p>　バージョン管理システムと継続的インテグレーションは、アプリケーションのビルド、デプロイプロセスを管理するためのツールとして非常に優れています。しかし、ビルド、デプロイでは、ソースコードとともに、スキーマやデータ変更も大きな位置を占めているので、これらにも同じような管理システムが欲しいところです。ビルド、デプロイプロセスにデータ更新のために手順を細々と指定するリストが含まれているようなら、注意が必要です。このリストは成功するかどうかひやひやしながら実行するもので、次のような内容になっています。</p>
+<ol type="1">
+<li>実行しなければならないスクリプトを順に並べたリストを作成する。</li>
+<li>データベース担当にスクリプトをメールする。</li>
+<li>データベース担当がスクリプトをクローンジョブが実行する位置にコピーする。</li>
+<li>すべてのスクリプトの実行が成功していることを祈りながら、スクリプトの実行ログをチェックする。再実行したら何が起きるかわからないので祈るのです。</li>
+<li>整合性確認スクリプトを実行し、データのスポットチェックを行う。</li>
+<li>アプリケーションのリグレッションテストを行い、エラーを起こすところをチェックする。</li>
+<li>失われているデータを挿入し、エラーを訂正するスクリプトを書く。</li>
+<li>繰り返し。</li>
+</ol>
+<p>　少し大げさなところが含まれているかもしれませんが、それほどかけ離れたものにはなっていないはずです。多くのプロジェクトは、データベースのマイグレーションを成功させるために、こんな感じの曲芸的な作業フローを必要とするのです。どういうわけか、マイグレーション計画のデータに関する部分は、アーキテクチャー設計の段階では見落とされてしまいます。そのため、あと知恵としてこの部分のために危なっかしい手作業がバタバタと組みたてられるのです。</p>
+<p>　この複雑に織り合わさった作業には、ほころびが生じそうな場所がいくつも含まれています。さらに悪いことに、スキーマやデータ変更が原因となっているバグは、ナイトリービルドレポートに含まれる単体テストではキャッチできない場合があります。マイグレーションが済んだ直後あたりに醜い頭をがばっと持ち上げることが多いのです。データベース関連で障害が起きたとき、手作業で復旧するのは非常に大変ですし、修復結果の整合性確認は厳しくなりがちです。これだけ問題がはっきりしている作業をすると、データベースを把握できている以前の状態に復元できる、完全に自動化されたビルドプロセスが是非必要だと思うようになるでしょう。データベースをドロップして、アプリケーションの特定のビルドと完全に互換性のある状態に復元できなければ、コード変更を素早く取り消せない時におきるのと同じような問題にさらされることになります。</p>
+<p>　ビルドの時間的空間的一体性がデータベースの変更によって揺らぐことがあってはなりません。アプリケーションは、データベースともども、1 つの単位、ユニットとしてビルドできるものでなければならないのです。早い段階で自動ビルド、テストプロセスのシームレスな一部として、データ・スキーマ管理を組み込み、アンドゥ機能を用意しましょう。この作業には大きな見返りがあります。うまくすれば、深夜の大トラブルの後の苦しくてストレスのたまる何時間もの障害復旧作業を省略できます。そうでなくても、データアクセスレイヤーのリファクタリングに自信をもって臨めるようになります。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

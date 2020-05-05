@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【17】要求と仕様 - プロジェクト・マネジャーが知るべき 97 のこと</title>
+  <meta property="og:title" content="【17】要求と仕様">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/mngr97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/mngr_ja/mngr017.htm">
+  <meta property="og:site_name" content="プロジェクト・マネジャーが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e17">【17】要求と仕様</h1>
+<div class="author">
+アラン・グリーンブラット（Alan Greenblatt）
+</div>
+<div class="author_address">
+アメリカ、マサチューセッツ州サドベリー
+</div>
+<p>　すぐれた<strong>要求</strong>とは、製品のフィーチャーがある既存の問題あるいは潜在的な問題をどのように解決するかを記述したものです。すぐれた<strong>フィーチャー</strong>（機能と呼ばれることもある）とは、そうした重要な問題を解決するために製品に追加されるものです。要求はセールスによって獲得されたり、ソフトウェアプロジェクト・マネジャーによって作り出されます。</p>
+<ul>
+<li>米国外でその製品を売ることはできない（要求）。私たちは国際化と地域サポートを提供する必要がある（フィーチャー）。</li>
+<li>ユーザーはごく単純なタスクを完了するのに 5 つのボタンをクリックする必要がある。これだとユーザーはイライラしてタスクを完了できない。私たちはユーザーインターフェイスを単純化して（要求）、同じタスクを完了するのにボタンのクリック数を 2 回以下に減らす必要がある（フィーチャー）。</li>
+</ul>
+<p>　これに対して<strong>仕様</strong>とは、問題がどのように解決されるか、要求がどのように満たされるかを正確に記述したものです。先ほどの例を使うと、次のような仕様がシステムアーキテクトによって書かれることになります。</p>
+<ul>
+<li>ポップアップメッセージを含むすべてのテキスト文字列を抽出して、外部リソースバンドルに置く（仕様）</li>
+<li>アプリケーションを改良して、画面上に表示されるテキストをすべて、外部リソースバンドルから取得する（仕様）</li>
+<li>必要とされるロケール用のリソースバンドルを作ることによって、ローカライゼーションを実現する（仕様）</li>
+<li>ボタン 1、2、3 をクリックすることで実現していた機能は、ボタン A の 1 回クリックにまとめる（仕様）</li>
+<li>既存のボタン 4、5 の機能は、ボタン B にまとめる（仕様）</li>
+</ul>
+<p>　要求と仕様の区別をあいまいにすると、間違った人に判断させることになります。どの機能がユーザーにとって重要なのか、ユーザーに代わってソフトウェア開発者が「判断」してしまったり、コードをどう組み立てるかをプロジェクト・マネジャーが「開発者に教える」ことになります。いずれにせよ、最終的に作られるソフトウェア製品はひどいものになるでしょう。</p>
+<p>　開発者は通常、顧客、ユーザー、マーケティング、セールス、パートナーになる可能性のある人たちと会話をしません。彼らはどの新規フィーチャーが一番重要なのか理解しようとしていないのです。それに対して、プロジェクト・マネジャーは通常、熟練した開発者ではありません。彼らはフィーチャーをどう実装するのが一番よいか理解していませんし、未熟な仕様提案がその製品の別のところにどんな影響を及ぼすのかも理解していません。開発者とプロジェクト・マネジャーには、それぞれ特有のスキルセットがあるのです。</p>
+<p>　すぐれた要求は、解決しようとしている問題について、また、その問題を解くことが重要である理由について記述したものです。開発プロセスにおいて、プログラマにはもっと柔軟に、もっと効率よく、もっとモチベーションを高くもってもらいましょう。プログラマが問題に集中して徹底的に理解すると、独立した設計判断が下せるようになります。プログラマは自分たちが選び抜いてきた技術によってのみ縛られるべきです。プログラマでない人によって作られた、厳格だけれども脆弱な仕様によって縛られるべきではありません。</p>
+<p>　とはいえ、仕様は文書化しておく必要があります。ところが、仕様は変化するものです。あなたは製品開発ライフサイクルの最後になってようやく、この製品がそもそもどう作られるべきだったか理解できるようになったという経験はありませんか？</p>
+<p>　あなたが作ろうとしているもの（what）とその作り方（how）を分けておきましょう。そして、それぞれの役割に基づき、きちんとトレーニングを受けたチームメンバーに判断させましょう。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

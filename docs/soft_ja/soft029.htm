@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【29】選ぶ前に試せ - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【29】選ぶ前に試せ">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_ja/soft029.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e29">【29】選ぶ前に試せ</h1>
+<div class="author">
+エリック・ドーネンバーグ
+</div>
+<p>　アプリケーションの開発には、多くの判断、決定が必要です。フレームワークやライブラリの選択もありますし、特定のデザインパターンを使うかどうかという判断もあります。いずれにしても、決定の責任を負うのは、一般にチームのアーキテクトです。平凡なアーキテクトは、集められる情報をすべて集め、象牙の塔でしばらく考え、デベロッパーたちにこのソリューションを実装せよと命令を下します。当然ですが、もっとよいやり方はあります。</p>
+<p>　メアリーおよびトム・ポッベンディークは、リーン開発についての著書の中で、意思決定のためのテクニックを説明しています。彼らが奨めているのは、責任を果たしうる最後の瞬間まで決定を先延ばしにせよということです。つまり、チームが決定を下さなければ外から決定が下されてしまうとき、あるいは何もしないでいると簡単には取り返しの付かない結果を招くときということです。決定が遅ければ遅いほど、決定の判断材料が増えるわけですから、これは用心深い考え方だと言えるでしょう。しかし、多くの場合、多すぎる情報は十分な情報ではありませんし、私たちは後知恵以上に優れた判断はないことをよく知っています。では、このような前提のもとで、優れたアーキテクトはどのように行動すればよいのでしょうか。</p>
+<p>　アーキテクトは、すぐにしなければならない判断がないかどうか、警戒を怠らないようにしなければなりません。チームが数人のデベロッパーから構成されていて、コードの共同所有を実践しているものとした場合、判断の時期が迫ったことに気付いたアーキテクトは、数人のデベロッパーに問題のソリューションをそれぞれ考えさせ、しばらくそれぞれその方向で作業をするように頼みます。そして、最後の瞬間が近づいたときにミーティングを実施し、それらのソリューションの長所と短所を評価します。</p>
+<p>　通常は、後知恵がもうできているので、最良のソリューションがどれかは誰の目からも明らかです。アーキテクトは意思決定する必要さえありません。ただ、意思決定プロセスをリードすればよいのです。</p>
+<p>　このアプローチは、大きな決定でも小さな決定でも同じように使えます。Spring フレームワークが提供する Hibernate テンプレートを使うべきかどうかだけでなく、どちらの JavaScript フレームワークを使うべきかも判断できるのです。異なるアプローチを試す期間は、当然ながら判断すべき問題の複雑さによって決まります。</p>
+<p>　同じ問題に対する複数のソリューションを試すためには、あらかじめソリューションを 1 つに決めてそれを実装するのと比べて多くの作業量が必要になります。しかし、最初に決めたソリューションは、後で最適ではなかったことがわかることがよくあります。このような場合、アーキテクトは、難しい二者択一に迫られます。現在の実装を諦めるか、結果を受け入れるかですが、いずれにしてもそれまでかけてきた労力が無駄になります。しかも、他の選択肢を試していないので、それが最良の選択ではなかったことがチームの誰一人としてわからないという場合さえあります。この場合、労力はただ無駄になり、回復のチャンスすらありません。結局、もっとも安くて済むのは、複数のソリューションを試してみる方法なのです。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

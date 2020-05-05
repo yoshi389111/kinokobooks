@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【70】「完璧」は、「十分よい」の敵 - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【70】「完璧」は、「十分よい」の敵">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_ja/soft070.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e70">【70】「完璧」は、「十分よい」の敵</h1>
+<div class="author">
+グレッグ・ナイバーグ
+</div>
+<p>　ソフトウェア・デザイナーやアーキテクトは、与えられた問題に対してどれだけエレガントでどれだけ最適な解決策になっているかという基準でソリューションを評価しがちです。まるでミスコンの審査員のように設計や実装を見てしまい、変更、リファクタリングのためのイテレーションを数回追加すれば取り除けるような小さな欠点がすぐに気になります。ドメインモデルをあと 1 回点検すれば、基底クラスに移せる共通の属性や関数があるかどうかはわかるでしょう。複数の実装で重複しているサービスはウェブサービスにすべきでしょうし、クエリーが「バッファ読み出し」と一意でないインデックスについて警告を返してくるなら注意が必要でしょう。</p>
+<p>　しかし、ちょっと待ってください。設計や実装を完璧なものにしたいという誘惑に負けてはなりません。「十分よい」レベルを狙い、そこまで達したら立ち止まるのです。</p>
+<p>　「十分よい」というのはどこのことなのでしょうか？　それは、不備が残っていても、システムの機能、メンテナンス性、パフォーマンスにこれといった影響を与えないことです。アーキテクチャーと設計にずれがなく、実装は正しく動作してパフォーマンス要件を満たし、コードが簡潔明快でドキュメント化されていれば十分よいと言えます。もっとよくすることはできないのかと言われれば、もちろんできるのですが、十分よい状態なので、そこで止めるのです。勝利を宣言し、次の仕事に移りましょう。</p>
+<p>　私の見るところでは、設計や実装で完璧を求めると、つい設計しすぎたりソリューションが混乱したりして、かえってメンテナンスが難しくなります。</p>
+<p>　この本の他の項でも、さまざまなデザイナーたちが不要な抽象化、複雑さを避けよと言っています。なぜ、単純な状態を保てないのでしょうか。それは、完璧なソリューションを求めるからです。なぜ、きちんと動作するソリューションに余分な複雑さを持ち込む必要があるのでしょうか。単純な設計に残された不備を正したいという以外に理由はありません。</p>
+<p>　アプリケーション開発はミスコンではありません。欠点を正して完墜にしようなどと考えて時間を浪費するのは止めることです。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

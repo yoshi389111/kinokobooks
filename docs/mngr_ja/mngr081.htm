@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【81】ステータスという間違った考え - プロジェクト・マネジャーが知るべき 97 のこと</title>
+  <meta property="og:title" content="【81】ステータスという間違った考え">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/mngr97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/mngr_ja/mngr081.htm">
+  <meta property="og:site_name" content="プロジェクト・マネジャーが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e81">【81】ステータスという間違った考え</h1>
+<div class="author">
+ウディ・ダーハン（Udi Dahan）
+</div>
+<div class="author_address">
+イスラエル、ハイファ
+</div>
+<p>　私は最初のプロジェクトに成功したあと、自信満々で 2 番目のプロジェクトに取りかかりました。これは大きなプロジェクトでした。私の雇用主にとって、はるかに戦略的なプロジェクトで、私はさまざまな専門分野にわたる人たちで構成されるチームを管理することになりました。そこで初めて、私は自分のスキルが役に立たないことを実感しました。非常に興味深いことに、最終的にプロジェクトが失敗した原因は、私がチームのステータスレポートを信頼していたことでした。</p>
+<p>　プロジェクトが始まってから 2 か月ほどたったころ、インフラストラクチャチームのリーダーが「私たちが下したアーキテクチャ上の想定のいくつかに根拠がないことがわかりました」と私に打ち明けました。彼は「でも月末までには軌道に戻せます」と私に保証しました。彼の保証と私が用意した予備バッファがあるにもかかわらず、私は何かがおかしいという予感を振り払うことができませんでした。</p>
+<p>　月末になって、そのチームリーダーのフォローアップをしました。彼はいかにしてリファクタリングが予定通り完了したか、いかにして開発者が来月の目標を達成することになっているかを私に説明しました。インテグレーションチームのリーダーと話し合ったときに確認すると、彼女の目からもすべてうまくいっているように見えると教えてくれました。モジュールは仕様にしたがっており、それぞれ十分にテストされ、アーキテクチャの各層は最初のインテグレーションに向けて十分に安定していました。</p>
+<p>　かなりでこぼこした最初のインテグレーション（たいていの場合がそうですが）とお決まりの QA サイクルの結果、ほとんどすべてのユースケースに重大なバグがあることがわかり、私はかなり驚きました。15 か月のスケジュールのうち 5 か月ほどのところにいましたが、プロジェクト作業の 3 分の 1 が完了するには遠く及びませんでした。</p>
+<p>　それでも私は、チームメンバー全員が協力して予定通りに終えてくれるものと信じていました。システム稼動日の 1 か月前には、自分の仕事の少なくとも 95% が完了していると全員が報告しました。しかし、システムを実際に試しているユーザーのひとりを呼んだところ、彼女ははっきりとこう言いました。「いろいろなところに問題があります。これで仕事をするのは耐えられません」　どう考えても、私にはプロジェクトの 95% が完了しているようには聞こえませんでした。</p>
+<p>　経験豊富なプロジェクト・マネジャーであるパトリックが、「この窮地からプロジェクトを救う」ために呼ばれました。プロジェクトの救世主（そして今は私のメンターです）であるパトリックは、事態を軌道に戻しながら、ステータスという間違った考えについて私に説明してくれました。「完了」を定義するのは顧客なのです。ステータスレポートではないのです。</p>
+<p>　データベースチームは 95% が完了していると報告しましたが、開発したものが実際にユーザーにとって使いものになるかには、何ら関係がありませんでした。たとえステータスレポート上は完璧であるように見えても、私たちは間違ったプロジェクト進捗を見ていたのです。結局のところ、プロジェクトは最初から失敗する運命にあったのです。なぜなら私がプロジェクトの目標をきちんと描けていなかったためです。</p>
+<p>　私はようやく、なぜフィーチャーを開発したら、それが顧客視点で価値を高めているかをユーザーに評価してもらう必要があるのか理解しました。そうすることで、プロジェクトのステータスレポートはアーンドバリューレポートに変わり、どれだけ仕事が残っているかを示すだけでなく、生み出されたアーンドバリューの真の割合を示すようになります。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

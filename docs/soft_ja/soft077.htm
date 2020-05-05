@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【77】しっかりとした問題には高品質のソリューションが与えられる - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【77】しっかりとした問題には高品質のソリューションが与えられる">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_ja/soft077.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e77">【77】しっかりとした問題には高品質のソリューションが与えられる</h1>
+<div class="author">
+サム・ガーディナー
+</div>
+<p>　実社会でのプログラミングは、誰かがあなたに与えた問題を解くことではありません。コンピューター科学の教室では、あなたは与えられたバイナリソートの問題を解かなければなりませんが、実社会では、最良のアーキテクトは難しい問題を解かず、回避します。アーキテクトの腕を示すのは、拡散したさまざまなソフトウェア上の問題の間に境界線を引いて、かちっとした自己完結的な問題にすることができるかどうかです。</p>
+<p>　アーキテクトは、コンセプト、データ、プロセスが入り乱れて混ざっている全体を見て、それらを小さな部品、すなわち「チャンク」に分割できなければなりません。これらの問題チャンクで大切なことは、はっきりとしたスコープ（範囲、境界）を持つシステムによって解決できるしっかりとした内容を持ったものだということです。問題チャンクは、次のような性質を持たなければなりません。</p>
+<ul>
+<li>求心力があること。塊の中では概念が統ーされており、タスク、データ、機能がすべて関連し合っていることです。</li>
+<li>他のチャンクからの分離。チャンクは、概念的に正規化されたものでなければなりません。そのようなチャンクの間では、重なり合いはまずないはずですし、あったとしてもごくわずかに抑えられているはずです。</li>
+</ul>
+<p>　このような線引きがとりわけうまい人は、方向感覚の優れた人が自分の居場所を把握しているのと同じように、自分が線引きをしていることを意識さえしないかもしれません。そのような人にとっては、システムに対してちょうどよい縁、すなわちインターフェイスが露出するように、タスク、データ、機能を分割することが、当然のことと感じられるようなのです。なお、私がここで言っているインターフェイスは、オブジェクト指向言語のインターフェイスではなく、システムの境界という意味です。</p>
+<p>　たとえば、RDBMS は、非常に明確なシステム境界を持っています。バイトストリームにシリアライズできるほぼすべてのタイプのデータを管理でき、そのデータを整理、検索、読み出しできます。実に単純です。</p>
+<p>　面白いのは、問題がかちっとしていると、解決されたときにはほとんど永遠に解決されることです。たとえば、5 年後、50 年後にウェブ / テレパシーインターフェイスを付けたくなったとしても、コアシステムに変更を加える必要はありません。問題に耐久性があるので、システムも長生きするのです。</p>
+<p>　もちろん、コードはきちんとしていなければなりませんが、問題がきちんとしていればコードをきちんと書くことはできますし、特殊条件は出てきません。きちんとしたコードはテストしやすく、レビューもしやすいという点で優れています。実装の品質が非常に高いということです。コードがごちゃごちゃしていないので、あなたはユーザーから見えるドメインとは無関係な信頼性の高いメッセージング、分散トランザクションなどの機能に集中することができます。マルチスレッドやアセンブリコードのような低水準言語を使ってパフォーマンスを引き上げることを考えることもできます。問題に変化がないので、そのシステムの特徴と言えるくらいにコードの品質を高めていくことに集中できるのです。</p>
+<p>　問題がしっかりとしていれば、設計が安定しているシステムを作ることができます。設計が安定していれば、アプリケーションの品質を非常に高くすることに集中できるのです。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

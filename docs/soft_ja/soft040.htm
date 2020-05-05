@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【40】パフォーマンスがまず大事 - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【40】パフォーマンスがまず大事">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/soft97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/soft_ja/soft040.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e40">【40】パフォーマンスがまず大事</h1>
+<div class="author">
+クレイグ・ラッセル
+</div>
+<p>　広々として居心地がよく、製造コストが安くて 98% リサイクル可能で、燃費もいい車があったとします。欲しいですか？　そりゃあ、誰でも欲しいでしょう。しかし、1 つだけ問題があります。トップスピードが時速 1Okm なのです。それでもこの車を買う気になりますか？　この例からも、パフォーマンスが他の基準と同じくらい重要なことがわかるだろうと思います。</p>
+<p>　しかし、多くのデザイナーは、パフォーマンスの優先順位をきわめて後ろの方に置きます。たぶん、コンピューターは人間と比べれば非常に速く計算できるので、システムのスピードが許容範囲以下になることなどないだろうと思うのでしょう。仮に今のシステムがそれほど速くなくても、ムーアの法則によって問題は解消するというのでしょうか。しかし、ハードウェアのスピードは、システムのすべてではありません。</p>
+<p>　パフォーマンスは、システムがユーザーの入力に応答するためにかかる時間だと単純に考えられていることがあります。しかし、システム設計者は、アナリストや設計を実装するプログラマーのパフォーマンス、ユーザーとのインタラクションのパフォーマンス、インタラクションとは関係のないコンポーネントのパフォーマンスを含め、パフォーマンスのさまざまな側面を考えなければなりません。</p>
+<p>　システムを構築する人々のパフォーマンスは、生産性と呼ばれます。これは、プロジェクトのコストと日程に直接影響を与えるので、非常に重要な要素です。プロジェクトの日程を遅らせ、予算を超過させるチームには、問題がたくさんあります。ツールやビルド済みのコンポーネントを使えば、システムのビルドの速度を大幅に上げ、すぐに効果をあげることができます。</p>
+<p>　ユーザーとのインタラクションのパフォーマンスは、ユーザーにとってシステムが許せるものになるかどうかを決める鍵です。システム設計のさまざまな要素がこのパフォーマンスに影響を与えます。その中でももっともわかりやすいのは応答時間ですが、それだけではありません。インターフェイスのわかりやすさ、目的を達するために必要な操作の回数などの要素も、このパフォーマンスに直接影響を与えます。</p>
+<p>　優れたシステム仕様は、応答時間そのものだけでなく、作業時間も規定します。作業時間とは、特定の仕事を終わらせるまでに必要な時間のことで、人がシステムの操作のために使っている時間を含みます。詳しく言うと、システムの応答時間に加えて、オペレーターが考える時間、オペレーターがデータを入力するためにかかる時間といったシステムの管理下にない時間が含まれます。しかし、これらの時間を含めて考えれば、マン・マシン・インターフェイスをきちんとデザインしようという発想が生まれます。情報がどのように表現されるか、処理を終わらせるために何回の操作が必要かといったことに注意を払えば、オペレーターの操作に関わるパフォーマンスを上げられます。</p>
+<p>　インタラクションとは関係のないコンポーネントのパフォーマンスも、システムの成功のためには同じように重要です。たとえば、「夜間」に実行されるバッチ処理が終了までに 24 時間以上かかるようなら、そのシステムは使い物になりません。障害修復用コンポーネントのパフォーマンスも、非常に重要です。システムの一部が完全に破壊されたときに、稼働できる状態を回復して通常業務を再開するためにかかる時間をどれだけ短くできるかが、これによって決まるのです。</p>
+<p>　システムを成功させるために実装、運用について考えるときには、かならずパフォーマンスに十分な注意を払わなければなりません。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>
