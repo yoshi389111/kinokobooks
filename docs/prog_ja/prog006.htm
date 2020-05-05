@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【06】リファクタリングの際に注意すべきこと - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【06】リファクタリングの際に注意すべきこと">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_ja/prog006.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e06">【06】リファクタリングの際に注意すべきこと</h1>
+<div class="author">
+ラジット・アタパトゥー（Rajith Attapattu）
+</div>
+<p>　私たちプログラマには必ず、既存のコードの「リファクタリング」が必要になるときがやってきます。ただ、リファクタリングをする前にいくつか考えてほしいことがあります。次に書くようなことに注意すれば、自分を含め、開発に関わるすべての人の時間と労力を大幅に節約できるでしょう。</p>
+<ul>
+<li><strong>リファクタリングするにあたって始めにすべきことは、既存のコードベースと、そのコードに対して書かれたテストコードの洗い直しです。</strong> 具体的に、現状での良い点、悪い点、強み、弱みを一つずつ確認していきます。これは、良い点、強みを残しながら、悪い点、弱みを克服することにつながります。既存のシステムに手を加えれば、必ず元より良いものになるはずと考えがちですが、実は何も良くならないこともあるし、元より悪くなることもあり得るのです。既存のコード、テストを十分に検証しなければ、過去の失敗に学ぶことができません。</li>
+<li><strong>すべてをゼロから書き直したい衝動にかられることもありますが、その誘惑に打ち克たなければなりません。</strong> 既存のコードをできる限り活かすべきです。いかに醜悪なコードであっても、そのコードはテストやレビューを通っているものなのです。既存のコード——特に、既にリリースされたシステムのコード——をすべて破棄するというのは、それまでの何ヶ月（何年）という時間を捨ててしまうということを意味します。大変な作業を経て、曲がりなりにも形にしてきたコードです。その過程では無数に発生した問題の回避策を講じ、数えきれないほどのバグ修正もしてきたでしょう。仮にコードを新たにゼロから書き直したとすると、同じようなことをまた繰り返すことになりますし、既存のコードでは発見 / 修正できたバグを、今度は見逃してしまうかもしれません。これでは時間と労力の無駄だし、過去の作業で得た知識も無駄になってしまいます。</li>
+<li><strong>一度に大幅な変更を加えるよりも、少しずつの変更（インクリメンタルな変更）を数多くするべきです。</strong> インクリメンタルな変更ならば、テストからのフィードバックを得ることで、変更がシステムへ及ぼす影響を容易に知ることができます。変更を加えたらテストが百個以上も失敗する、というのは非常に辛いものです。いらだちと焦りから、誤った意思決定をしてしまう恐れもあります。失敗するテストが 2 つや 3 つならば、冷静に確実な対処ができるでしょう。</li>
+<li><strong>各イテレーションの最後には、既存のテストが通るか必ず確認します。</strong> 既存のテストだけでは、変更を加えた部分をカバーするのに十分でない場合は、新たにテストを追加します。十分な検討もせずに、古いコードに対応するテストを破棄してはいけません。古いテストの中には、一見すると、変更後のコードには合わないのでは、と思えるものも確かにあります。しかし破棄する前に、そもそもなぜそのテストが存在したのかを深く掘り下げて検討する必要があります。</li>
+<li><strong>個人の好みやエゴを入れてはいけません。</strong> 壊れてもいないものを直すのは無意味です。コードの書き方の流儀や構造が自分の好みに合わない、というのは、修正の十分な理由にはなりません。自分の方が前任者よりも能力があるのだから良いコードが書けるはず、というのも十分な理由にはなりません。</li>
+<li><strong>新技術を使いたい、というのもそれだけではリファクタリングの十分な理由にはなりません。</strong> 最悪なのは「今流行の新技術が取り入れられていない」「時代遅れである」というだけの理由でリファクタリングをする、ということです。新しい言語やフレームワークを使えば、今と同じことがもっとうまくやれるだろう、というような単純な考えでリファクタリングをすべきではありません。コストの分析を行い、新しい言語やフレームワークの導入により、機能、保守性、生産性が著しく向上するという結論が得られた場合を除き、現状の技術のままにしておくのが得策です。</li>
+<li><strong>人間は必ずミスをする、ということを常に忘れないようにしましょう。</strong> コードを書き換えてもコードが元より良くなるとは限りません——何かミスをして、かえって質が下がることもあり得ます。実際、私は何度かコードの書き換えに失敗しています。情けないことではありますが、それが人間というものです。</li>
+</ul>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【09】No といえることの大事さ - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【09】No といえることの大事さ">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_ja/prog109.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="j09">【09】No といえることの大事さ</h1>
+<div class="author">
+宮川 達彦
+</div>
+<p>　自分でつくったソフトウェアを公開し、利用してもらうことはとてもうれしいものです。利用しているユーザからのフィードバックに耳を傾けることはソフトウェアをよりよいものにしていくためにもとても重要なことです。</p>
+<p>　一方、ソフトウェアのデザインにおける究極の美しさはシンプルさにあると言われます。有名な UNIX 哲学では“Write program that do one thing and do it well”（1 つのことをうまくやるプログラムを書け）といわれるように、複数の機能をつめ込まず、単一の機能をもったプログラムを組み合わせて使うことが美とされます。</p>
+<p>　ここにギャップが生じます。ソフトウェアが人気になり、ユーザが増えるにつれ、「あの機能を追加してくれ」「ここの動作をオプションで On/Off できるようにしてくれ」という要望が出てきます。実際にそうした機能やオプションが欲しいとおもっているのは、ごく一部であるにもかかわらず、声の大きいユーザからの要望を無視することができず、忠実に応えようとするあまり、あなたはそれをすべて実装してしまいます。ユーザからのフィードバックはうれしいものですからね。はじめて公開したソフトウェアで特におこりがちなことです。</p>
+<p>　こうしてあなたのソフトウェアは、ほとんどのユーザが使わないようなニッチな機能と、それを有効にするための複雑怪奇な設定画面または設定ファイルが必要になり、またそれによってメンテナンスがしづらく、バグのでやすいソフトウェアになってしまいました。こうしたソフトウェアは Feature Creep（creep：いつの間にか忍び寄る、からみつく）とよばれ、ソフトウェアが破滅に向かう第一歩（あるいはもう手遅れ）の状態になっているといえます。</p>
+<p>　こうした悲劇を避けるポイントはただひとつ、そうした要望に「No」といえる勇気です。ソフトウェアのコアではないもの、他のソフトウェアと組み合わせて実装できるものに関しては、明確に No といえることが、結果としてよいデザインやシンプルさを達成する原動力になります。</p>
+<p>　とはいえ、顧客からの要望で、No ということはできない、というケースも多々あるでしょう。そうした場合にも、ソフトウェア本体で実装するのではなく、本体をラップする形の拡張で実装したり、プラグインのようにコアのコードを変更することなく動作を変更できるようなデザインにする、というやり方も考えられます。</p>
+<p>　ビジネス上の理由で、そうしたこともできない、というのであれば、そこはそれとあきらめて、業務外でオープンソースのソフトウェアプロジェクトに参加するモチベーションにする、というのもありかもしれません :-)</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

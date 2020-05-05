@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【05】美はシンプルさに宿る - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【05】美はシンプルさに宿る">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_ja/prog005.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e05">【05】美はシンプルさに宿る</h1>
+<div class="author">
+ヨルン・オルムハイム（Jørn Ølmheim）
+</div>
+<p>　ひとつプラトンの言葉を引用します。ソフトウェア開発に携わる人ならば是非知っておくべき言葉、常に心に留めておくべき言葉だと思います。</p>
+<blockquote>
+<p>「文章にしろ、和音にしろ、リズムにしろ、美しく、優雅なもの優れたものはすべて、シンプルである。」</p>
+</blockquote>
+<p>　この言葉には、ソフトウェア開発において大事にすべきことが見事に要約されていると思います。</p>
+<p>　プログラマがコードを書くときに留意すべきことはいくつかありますが、まとめればだいたい次のようになるでしょう。</p>
+<ul>
+<li>可読性</li>
+<li>保守性</li>
+<li>開発効率</li>
+<li>（言葉で表現するのが難しい）美しさ</li>
+</ul>
+<p>　プラトンの言葉が教えてくれるのは、シンプルであることを心がければ、上のすべてが達成されるということです。</p>
+<p>　4 つ目の「美しさ」とは何でしょうか。コードが美しいとはどういう意味なのかは、曖昧で、なかなか明確にはわかりません。美しいかどうかは、どうしても主観的な判断になります。何を美しいと感じるかは、その人の経験や嗜好に大きく影響されるでしょう。美しさに限らず、感じ方というのは、どうしても一人一人違ってしまいます。たとえば、いわゆる「芸術家」の美的感覚（少なくとも「美しさ」に対する考え方）は、きっと科学者とは違っているでしょう。芸術を学んだ人が「ソフトウェアの美しさ」という言葉を聞けば、それは芸術作品のような美しさのことだと思うでしょう。一方、科学を学んだ人は「ソフトウェアの美しさ」と聞くと、対称性や黄金比の話をしていると思うかもしれません。あるいは、できるだけコードの書き方を定型化すること、と解釈するかもしれません。私の経験から言うと、両者の間で最も違っているのが、「シンプルさ」というものに対する考え方のようです。</p>
+<p>　これまでに見たことがあるソースコードをどれでもいいので、頭に思い浮かべてみてください。他人の書いたコードをあまりみたことがないという人は、本をいったん閉じ、オープンソースソフトウェアのソースコードを今すぐどこかから入手して、内容をよく見てください。冗談抜きで、今すぐです。検索すればすぐに見つかります。言語は問いません。できれば著名なプログラマの書いたソースコードが良いでしょう。</p>
+<p>　私はこれまでに、優れている、美しい、と思えるコードを多数見てきました。そこには、必ずいくつか共通の特徴があると気づきました。その中でも特に重要なのが「シンプルである」ということです。アプリケーションやシステムが全体としてどれほど複雑であっても、個々の部分を取り出してみると、すべてシンプルになっています。単一の責務を持ったオブジェクトは、メソッドもすべて機能が絞り込まれており、名前を見ればすぐに、持っている機能がわかるようになっています。「メソッドのコードはどれも 5 行から 10 行くらいの長さにすべき」と言うと、あまりに極端な意見だと思う人もいるでしょう。言語によっては、その長さにすることが非常に難しいものもあります。しかし、それでも、それぐらいの短さを目指すべきだと私は思うのです。</p>
+<p>　美しいコードとは、突き詰めれば、シンプルなコードのことです。システムを構成する各部分がすべてシンプルで、個々の部分が担う責務も最小限に抑えられていて、部分どうしの関連もシンプル、そんなコードです。シンプルできれいなコードになっていればテストもしやすく、開発速度を落とさずに長期間にわたる保守が可能になります。</p>
+<p>　美は、シンプルなものから生じ、シンプルなものに宿るのです。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

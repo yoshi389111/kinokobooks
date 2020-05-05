@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【25】見られて恥ずかしいデータは使わないこと - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【25】見られて恥ずかしいデータは使わないこと">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_ja/prog025.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e25">【25】見られて恥ずかしいデータは使わないこと</h1>
+<div class="author">
+ロッド・ベグビー（Rod Begbie）
+</div>
+<blockquote>
+<p>夜遅くのことでした。私はページレイアウトのテストのため、サンプルデータを入力していました。</p>
+<p>ユーザ名には、英国のパンクロックバンド、ザ・クラッシュのメンバーの名前を使いました。会社名には、同じく英国のパンクロックバンド、セックス・ピストルズの曲名を使いました。あとはティッカーシンボルを入れるだけです。そこで私は、卑猥な 4 文字の言葉を大文字で入れることにしたのです。</p>
+<p>そう、皆さんご存知の、“F”で始まる言葉なんかを使ったわけです。</p>
+<p>特に問題はないだろうと思っていました。自分や他のプログラマが面白がって見るだけのものだし、どうせ翌日には「本物」のデータソースに入れ替えることになっていたからです。ところが翌朝、プロジェクトマネージャが件の 4 文字言葉の表示されている画面のスクリーンショットをとり、あるプレゼンに使ってしまったのです。</p>
+</blockquote>
+<p>　プログラミング中の、この種の「いたずら」や「武勇伝」はよくある話です。「まあ誰も見ないのだから」と油断していると、思いがけず多くの人の目に触れてしまうことがあるのです。</p>
+<p>　露呈の仕方は様々ですが、いずれにしろ珍しいことではありません。しかし、関わったプログラマ個人や、開発チーム、あるいは会社全体にとっては命取りになりかねません。どんなパターンがあり得るか、例をいくつかあげておきましょう。</p>
+<ul>
+<li>進捗会議中、まだ機能が実装されていないボタンを顧客がクリックしてしまう。すると「二度とクリックすんじゃねーぞ、バーカ！」というメッセージが表示される。</li>
+<li>レガシーシステムの保守を担当するプログラマが、エラーダイアログの追加を指示される。そこで彼は、既存のログ機能の出力を利用しようと考える。しかし、元々は裏で動いていて出力がユーザの目に触れることはなかったログ機能だったために、保守作業によって「おい、バットマン、データベースのクソ野郎がヘマをしやがったぜ！」といったメッセージが画面に表示され、ユーザから見えるようになってしまう。</li>
+<li>誰かが、テスト用の管理インタフェースと、製品版の管理インタフェースを混同してしまい、ふざけたデータを入力してしまう。その結果、オンラインストアの顧客が、「等身大ビル・ゲイツ型マッサージロボット、価格 100 万ドル」といった商品が売られているのを目にすることになる。</li>
+</ul>
+<p>　「好事門を出でず、悪事千里を走る」というのは古くから言われることです。今の時代なら、なおさらそうでしょう。誰かの「あら」が見つかれば、その噂は、Digg、Twitter、Flib-flarb などにより、あっという間に世界中に広まってしまいます。担当者が寝ている間に、タイムゾーンの違う国に広まってしまえば、何も手を打つことはできないでしょう。</p>
+<p>　ソースコードの中でさえ、まったく安心とは言えません。2004 年には Windows 2000 のソースコードの TAR アーカイブがファイル共有ネットワークに流出しています。その時は、ソースコードに卑猥な言葉、ふざけた言葉が使われていないか、grep で嬉々として調べている人間が大勢いました（実を言えば、その時に発見された <code>// TERRIBLE HORRIBLE NO GOOD VERY BAD HACK</code>「実に実にひどい、まったく良いところのない、最悪のハッキングだ」というコメントを私は気に入ってしまい、以来、何度か使ってしまっています……）。</p>
+<p>　要するに、コードに何かテキストを入力する時は——コメントであれ、あるいはログ、ダイアログ、テストデータであれ——常に「これがもし公になったとして問題にならないか」と自問せよ、ということです。そうすれば、突然、卑猥な言葉が大写しになり、その場にいる全員が赤面するというような事態は防げます。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

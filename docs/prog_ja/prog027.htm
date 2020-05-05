@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【27】死ぬはずのプログラムを無理に生かしておいてはいけない - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【27】死ぬはずのプログラムを無理に生かしておいてはいけない">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_ja/prog027.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e27">【27】死ぬはずのプログラムを無理に生かしておいてはいけない</h1>
+<div class="author">
+ヴェリティ・ストブ（Verity Stob）
+</div>
+<p>　私は以前、C++ の例外処理に関し、こんな文章を書いたことがあります。</p>
+<blockquote>
+<p><code>try-catch</code> ブロックをコードベースに大量に入れれば、「例外が発生しても絶対に止まらない」というアプリケーションを作ることが可能なはずです。ただ、これは、もう死んでいる人の体を釘か何かで固定し、無理矢理立った状態にしているようなものですが……。</p>
+</blockquote>
+<p>　不謹慎と思われるかもしれませんが、これは一種の風刺であり、また自分自身の苦い経験から得た教訓の要約でもあります。</p>
+<p>　苦い経験とは、自社で作成した C++ ライブラリのアプリケーション基底クラスのことです。そのクラスは、何年にもわたり大勢のプログラマが手を加えてきたクラスだったのですが、問題はプログラマ全員の手が「汚れていた」ことです。そのクラスには、発生後どこでも処理されない例外を一手に引き受けるコードが含まれていました。私たちは、小説「キャッチ=22」の主人公ヨッサリアンのように、「このクラスのインスタンスは、いったん生まれたら、自らの意志で死なない限り、永遠に生き続けるようにすべきだろう」と判断しました。正確には「判断した」というより、「そう感じた」と言った方がいいかもしれません（判断したというと、この化け物のようなクラスの構造について、私たちが深く考え、あれこれ検討したように聞こえますが、実際はそうではないのです）。</p>
+<p>　インスタンスを決して死なせないため、私たちは、複数の例外ハンドラを絡み合わせるという方法を採りました。Windows の SEH（Structured Exception Handling：構造化例外処理）と、C++ のネイティブの例外処理メカニズムを組み合わせたのです（ネイティブのC++ に <code>__try … __except</code> という構文はないので、Windows でこんなものが使えるなんて知りませんでした）。何か予期せぬ事態が起きた時は、何度でも同様のパラメータが渡され、例外処理のコードが繰り返し呼び出されるようにしました。今考えると、<code>try-catch</code> ブロックを別の <code>try-catch</code> ブロックの <code>catch</code> 節の中に書いた時に、何となく嫌な感じがした、という気もします。何となく「正しい道からは外れてしまったな」という感じ、そして「魅力的だけれども、不健康で狂気をはらんだ道に入ってしまったな」そんな感じがしたような気もします。でも、それはきっと後知恵にすぎないでしょう。</p>
+<p>　この基底クラスを継承したアプリケーションで何か問題が起きても、その問題は、まるで波止場でマフィアに殺された人間のように、跡形もなく姿を消してしまいます。どんなことが起きたのか、それを知るほんのわずかな手がかりさえも残らないのです。普通ならばダンプが吐かれて状況が記録されるような場合でも、何も残らないのです。後になって——本当に随分と後になってからですが——私たちは自らのしたことの意味を悟り、恥ずかしい思いをしました。そしてその異常なメカニズムを破棄し、代わりに最小限の例外処理と通知をするだけの堅牢なメカニズムを組み込みました。ただ、そうすると今度は、クラッシュが頻繁に起きるようになってその対策が必要になりました。</p>
+<p>　こんな話をしても、「それがどうした」と思う読者が多いかもしれません——確かにこんなバカなことをする人はめったにいないでしょう——しかし、私は最近、インターネット上でこんな人物に遭遇しました。肩書きからして、もう少し物が分かってもよさそうに思える人です。私はその人とリモートトランザクションのための Java コードについて議論を交わしたのですが、「コードに何か問題が起きたら、例外はその場で捕まえ、握りつぶせばいい」と彼は主張したのです（私はそれに対し「で、その後どうするんですか？　夕食のおかずにでもするんですか？」と問い返しました）。</p>
+<p>　彼は「例外に関する情報をユーザの目に触れさせてはならない（NEVER LET THE USER SEE AN EXCEPTION REPORT）」それが UI デザイナーの掟だ、と言ってきました。すべてを大文字で打ったところから見て、これさえ言えば話は終わるだろうと思ったようでした。銀行の ATM などで突然ブルースクリーンが出ることがまれに起きますが、そういう ATM のコードを書いているのは彼のような人間なんじゃないか、と思ってしまいました。ATM でブルースクリーンが出たりすれば、ブログなどに書かれてその噂はすぐに広まります。開発元の信用は失われ、簡単には戻らないでしょう。</p>
+<p>　いずれにしても、もし彼に会うようなことがあれば、会釈だけして、即座にその場を立ち去った方が賢明でしょうね。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

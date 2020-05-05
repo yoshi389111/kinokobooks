@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【19】誰にとっての「利便性」か - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【19】誰にとっての「利便性」か">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_ja/prog019.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e19">【19】誰にとっての「利便性」か</h1>
+<div class="author">
+グレゴー・ホーペ（Gregor Hohpe）
+</div>
+<p>　優れた API の設計の重要性、そして難しさについては、これまで多くのことが語られてきました。最初から適切な API を作ることは難しく、しかし後から API に変更を加えることはもっと難しい。まるで子育てのような難しさ、と言っていいでしょう。経験を積んだプログラマならほぼ皆知っていることでしょうが、優れた API とは、まず抽象度がどこをとっても一様であり、その上で整合性、対称性を備えているものです。優れた API はプログラミング言語のボキャブラリーを充実させ、言語に豊かな表現力を与えるものでもあります。しかし、そうした原則を十分に意識していたとしても、適切な API ができるとは限りません。甘い物は身体に必要だが食べ過ぎると健康によくない、というのと同様に、原則にとらわれすぎるとかえって悪い結果を招くことがあるのです。</p>
+<p>　こう書いただけだと暖昧でよくわからないと思いますので、具体例をあげることにしましょう。以下の 3 つは、どれも API を設計する人が実際の作業時に言いそうなことです。そして、どの意見も「その方が利便性が高い」という理由で正当化されやすいのです。</p>
+<ul>
+<li>ほとんど同じ目的の呼び出しコードがクラス A にすでに存在するのに、クラス B に新たに呼び出しコードを持たせる必要はないのではないか。</li>
+<li>目的がほぼ同じメソッドがすでに存在するのであれば、わざわざ新たなメソッドを作る必要はないのではないか。switch 文を追加するくらいでいいのではないか。</li>
+<li>2 番目の文字列パラメータが“.txt”となっていれば、自動的に、第 1 パラメータはファイル名であるとみなして構わない。したがって、メソッドを 2 つ作る必要はない。簡単な話だ。</li>
+</ul>
+<p>　どれも善意から出た意見なのは確かです。しかし、こういう意見に従って API を作ると困ったことが起こります。それは、「API を使用したコードが非常に読みにくくなってしまう」ということです。たとえば、メソッド呼び出しのコードがこんなふうになります。</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1">parser.<span class="fu">processNodes</span>(text, <span class="kw">false</span>);</a></code></pre></div>
+<p>　このコードが何を意味するのか、API の内部の実装を知らない人にはおそらくわからないはずです。ドキュメントを調べて何とかわかればまだ良い方でしょう。このメソッドは、たしかに利便性を考えて設計されているのですが、それはメソッドを「実装する側にとっての利便性」であり、決して「呼び出す側にとっての利便性」ではないのです。「することはほとんど同じなのに、2 種類の呼び出しを使うのは不便ではないか」というのは、要するに呼び出す側にとって不便というのではなく、コードを書く自分が、内容のほとんど同じメソッドを 2 つ書くのが「面倒」という意味なのです。冗長で、不整合で、美しくないものを作りたくない、という意図は、基本的に間違っていません。しかし落ち着いてより深く考えるならば、それらの対偶にあるのは効率的、整合性、美しさです。必ずしも「利便性」ではありません。API を作るというのは、複雑な処理を隠蔽するということです。これは正確には、API を作る側が、複雑な処理を隠すために面倒な作業を引き受けなくてはならないということです。そうしなくては優れた API などできません。作る側にとってみれば、考え抜かれたメソッドをいくつも書くよりも、大きなメソッドを 1 つ書く方が「便利」です。しかしそれは使う側にとって「便利」でしょうか？</p>
+<p>　より良い API を作るには、API を 1 つの言語だと考えるといいと思います。API を表現力豊かな言語にするにはどうすればいいかを考えるのです。基本的な言語なら「意味のある問いを立て、それに答える」ということができれば十分ですが、API はさらに上のレイヤーの言語にするのです。つまり API では、1 つの問いに対応する動詞、つまりメソッドが必ず 1 つとは限らない、ということです。ボキャブラリーに多様性を持たせれば、微妙な意味の違いが容易に表現できます。たとえば、<code>walk(true)</code> というようなコードを書されるよりは、単に <code>run</code> と書ける方が間違いなく使いやすいでしょう。walk（歩く）とrun（走る）は本質的には同じ動作で、ただスピードが違うだけとみなすこともできるのですが、言葉が 2 つある方が使う側にとっては便利なのです。このように、一つ一つ考え抜かれ、整合性と豊富なボキャブラリーを兼ね備えた API を上のレイヤーとして追加すれば、言語の表現力が高まり、コードも読みやすく、理解しやすくなります。API を利用して、プログラマが自ら新たなボキャブラリーを作れるようになっているとさらにいいでしょう。API を作った人間がまったく予期していなかったような使い方を、プロクラマが自由に考えられるということです。それができれば API を使う側にとっては非常に便利です。API の開発をしていて、複数の要素を 1 つのメソッドに詰め込みたい衝動にかられたら、是非思い出しください。英語には、たとえば「部屋を片づけて、静かに宿題をやりなさい（Make up your room, be quiet and do your homework）」ということを一語で伝えるような単語はないのです。たとえ同じことを何度も繰り返し言っていて、一語にまとめられれば便利だと思っても、それはしないほうが賢明なのです。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

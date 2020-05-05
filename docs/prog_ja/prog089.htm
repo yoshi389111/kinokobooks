@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【89】関数の「サイズ」を小さくする - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【89】関数の「サイズ」を小さくする">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_ja/prog089.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e89">【89】関数の「サイズ」を小さくする</h1>
+<div class="author">
+ケース・ブレイスウェイト（Keith Braithwaite）
+</div>
+<p>　正しいコードを書きたいというのは誰もが思うことです。そして自分の書いたコードが間違いなく正しいという証拠も欲しいでしょう。そういう意味で役立つのは、関数の「サイズ」という指標です。この「サイズ」は、関数を実装しているコードの量という意味ではありません（もちろん、それも重要なのですが）。そのコードが表現している数学関数のサイズという意味です。</p>
+<p>　たとえば、囲碁のプログラムを書くとします。囲碁には「アタリ」と呼ばれる用語があります。これは、「相手に石を囲まれ、取られる一歩手前の状態」のことです。石の周りにまだ 2 箇所以上の隙間が空いている場合には「アタリ」とは言いません。あくまで、あと 1 個だけ石を置けば完全に囲まれてしまう状態をアタリと言うのです。あといくつ隙間が残っているかを数えるのは、ルールを覚える必要があるので少し難しいですが、それさえ数えられれば、アタリかどうかの判定は簡単です。アタリかどうかの判定のために次のような関数を書いたとしましょう。</p>
+<pre><code>boolean atari(int libertyCount)
+    libertyCount &lt; 2</code></pre>
+<p>　これは見た目よりも「サイズの大きい」関数です。数学関数は、引数（ここでは <code>int</code>）と返り値（ここでは <code>boolean</code>）がとりうる値の組み合わせの部分集合と捉えることができます。この値の集合のサイズは、たとえば Java で表すと、<code>2L*(Integer.MAX_VALUE+(-1L*Integer.MIN_VALUE)+1L)</code> となり、つまり、この <code>int × boolean</code> の集合には、8,589,934,592 個の要素があるということになります。この要素のうちの半分は、上の関数に対応する部分集合の要素なので、関数が完全に正しいという証拠を得るには、4.3×10<sup>9</sup> もの例を調べる必要がある、ということになります。</p>
+<p>　こういう場合は、いくらテストをしたとしても、確かにバグがないという証明はできません。テストは、持つべき機能を持っていることを確かめるのに役立つだけです。サイズが大きいことは、そういう点で問題だと言えます。</p>
+<p>　助けになるのは、問題領域についての知識です。実は、囲碁の場合、石の周りの隙間の数は無限に増えるわけではありません。実際には {1,2,3,4} のいずれかです。つまり、上の関数は次のように書き直せます。</p>
+<pre><code>LibertyCount = {1,2,3,4}
+boolean atari(LibertyCount libertyCount)
+    libertyCount == 1</code></pre>
+<p>　これだとはるかに扱いやすくなります。数学関数は、最大で 8 つの要素を持つだけの集合になりました。4 つの例について調べるだけで、関数が完全に正しいという証拠が得られます。組み込み型の代わりに、問題領域固有の型を使うのは、こういう意味でも良いことだと言えるでしょう。問題領域固有の型を使うと、関数のサイズを大幅に小さくすることができます。どういう型を使うのがいいかは、関数を書く前に、問題領域についての知識を基に考えるべきでしょう。確認すべき例の数をどこまで減らせるかを考えるのです。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【42】コマンドラインツールを使う - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【42】コマンドラインツールを使う">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_ja/prog042.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e42">【42】コマンドラインツールを使う</h1>
+<div class="author">
+キャロル・ロビンソン（Carroll Robinson）
+</div>
+<p>　現在ソフトウェア開発ツールは、IDE（Integrated Development Environment：統合開発環境）という形でパッケージングされて提供されることが多くなっています。Microsoft の Visual Studio やオープンソースの Eclipse がその代表例ですが、その他にも様々な IDE があります。IDE はすでに多数の人の支持を得ています。使いやすいだけでなく、ビルドプロセスに関わる細々した作業から解放されるからです。</p>
+<p>　使いやすい反面、IDE にはデメリットもあります。IDE が使いやすいのは、元々人間がしていた判断、作業の多くを裏で自動的にやってくれているからです。つまり、IDE 以外のプログラミング環境を使ったことがないプログラマは、ツールが裏で何をしているのかをずっと知らないまま、という可能性もあります。ボタンをクリックしてから、実行ファイルがプロジェクトフォルダに現れるまでの間に行われることは、彼らにとっては一種の「魔法」かもしれません。</p>
+<p>　一方、コマンドラインのビルドツールで仕事をすれば、ビルド時に具体的にどういうことが行われるのかを詳しく知ることができます。make ファイルを自分で書こうとすれば、実行ファイルができあがるまでの間にどのようなステップ（コンパイル、アセンブル、リンクなど）を踏むのかを嫌でも知る必要があります。ツールのオプションを一つ一つ使って機能を確かめることも、知識を深めるのに大いに役立つはずです。コマンドラインのビルドツールをはじめて使う人は、GCC などのオープンソースのツールを使うとよいでしょう。または、プロプライエタリな IDE とともに提供されているコマンドラインツールを使うという方法もあります。どれほど巧みに設計された IDE であっても、結局は、コマンドラインツールにグラフィカルなフロントエンドをかぶせたものです。実際にコマンドラインツールを使えばそのことがよく理解できるでしょう。</p>
+<p>　コマンドラインツールを使う利点は、ビルドプロセスについての理解が深まるということだけではありません。作業によっては、コマンドラインツールの方が IDE より簡単に効率よくできるものもあるのです。たとえば、検索や置換などの作業には、IDE に用意されているユーティリティよりも、grep や sed などの方がはるかに便利です。スクリプトを書けるのもコマンドラインツールの強みです。スクリプト化することでツールによる作業を簡単に自動化できます。たとえば、1 日 1 回決まった時間にビルドを実行する、1 つのプロジェクトのバージョンを複数作る、テストスイートを実行する、といった作業を簡単に自動化できるのです。IDE で同じことが絶対にできないわけではないでしょうが、コマンドラインツールほど容易ではないのは確かです。IDE の場合は、ビルドオプションの指定に GUI のダイアログボックスが必要になり、ビルドプロセスの開始にもマウスのクリックが必要になるということが多いためです。開発作業に IDE しか使ったことのない人は、こういう自動化が可能であることすら知らないかもしれません。</p>
+<p>　ただここで忘れてほしくないのは、IDE は開発作業を簡単にし、プログラマの生産性を向上させるために存在するということです。私は何も「IDE を使うな」、と言っているわけではありません。私が言いたいのは、「IDE が裏でしていることをよく見て理解しよう」ということです。そのためには、コマンドラインツールを使ってみるのが最善の方法であるというわけです。コマンドラインツールを使うことで、IDE が裏で何をしているかを知り、ビルドプロセスを円滑に進めるのにどのような作業が必要かを知れば、IDE をより有効に使えるようになるでしょう。もちろん、コマンドラインツールの使い方を習得し、その素晴らしい能力と柔軟性を知ったために、その後は IDE を使わなくなることもあるかもしれませんね。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

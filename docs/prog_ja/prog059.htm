@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【59】バイナリは常に1つ - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【59】バイナリは常に1つ">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_ja/prog059.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e59">【59】バイナリは常に1つ</h1>
+<div class="author">
+スティーブ・フリーマン（Steve Freeman）
+</div>
+<p>　私の見てきた限り、ビルド中にコードの一部分を書き換え、ターゲット環境ごとに違うカスタムバイナリを生成する、ということはよく行われているようです。ただ問題なのは、そういうことをすれば、必要以上に事態が複雑になってしまうということです。インストールする度に新しいバージョンが生まれるということになりかねないからです。同じソフトウェアの、ほとんど同じだけれどわずかに違っているというバージョンがいくつも生まれることは確かです。しかもそれぞれ違う場所にデプロイしなくてはなりません。これは不確定要素を必要以上に増やし、ミスをする可能性をわざわざ高めてしまっているといえます。</p>
+<p>　私が以前いた開発チームでは、プロパティに変更を加える度にチェックインし、フルビルドをやり直さなくてはならない、ということになっていました。テスト担当者は、ごくわずかな修正が行われるだけでも、その度に待たされることになります（ビルドには、もちろん大変な時間がかかります）。製品版は開発版とは別に、ゼロからビルドすることになっていた（使用するスクリプトは開発版と同じ）チームもありました。システム管理者がそうするよう強硬に主張したからです。こうなってしまうと、開発チームがテストに使用したバージョンと製品版が完全に同一であるという保証はまったく無いことになります。同じような話は他にもたくさんあります。</p>
+<p>　バイナリに関しては、1 つ簡単なルールを守るようにするだけで、問題の発生をかなり減らせるはずです。その簡単なルールとは「<strong>皆が常に同一のバイナリを使用するようにする</strong>」です。開発を通じたどのステージにおいても、バイナリは常に 1 つという状態を維持するのです。提供先の環境毎に違うバイナリを作るのではなく、<strong>どの環境でも</strong>同じバイナリを使い、細かい調整は環境の側で行います。調整のための情報はコンポーネントコンテナや、設定ファイル、ファイルパスなどに保持します。</p>
+<p>　ビルド中にコードを書き換えたり、ターゲットごとに違うコードを使うというのは、どう考えても賢明とは言えません。そういうことをするのは、開発チームの中に、設計について真剣に考える人間が誰もいない証拠です。深く考えていないので、アプリケーションのコアの部分と、各プラットフォームに固有の部分との切り分けをしていないのです。切り分けをした方がいいとわかっているのに、他のことで忙しいので後回しにしている場合もあるかもしれません。これはさらに良くないことです。</p>
+<p>　もちろん例外はあります。たとえば、ターゲットごとにリソースの制約が大きく違っている場合などです。しかしそういう例外は、大部分の人が開発している「データベースと画面の間のデータ入出力」アプリケーションには当てはまらないでしょう。ただ、開発チームでずっと昔からバイナリをいくつも作るやり方を続けているため、自分が変えたいと思っても急には変えられないということもあり得ます。その場合は、徐々に改善していくしかないでしょう。それでも、着手は早ければ早いほど良いというのは確かです。</p>
+<p>　もう一点重要なのは「<strong>環境に関する情報もバージョン管理の対象とする</strong>」ということです。環境設定の変更によって問題が発生したが、どこが変わったのかはわからなくなってしまった、というのは最悪です。環境に関する情報は、コードとは分けてバージョン管理するといいでしょう。環境とコードでは、変更される頻度もその理由も異なるためです。そのため、分散バージョン管理システム（bazaar、git など）を利用しているチームもあります。製品版の環境に変更を加えた場合（そういうことはどうしても発生します）、それを簡単にリポジトリに反映させることができるからです。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

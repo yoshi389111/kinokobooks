@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【26】言語だけでなく文化も学ぶ - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【26】言語だけでなく文化も学ぶ">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_ja/prog026.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e26">【26】言語だけでなく文化も学ぶ</h1>
+<div class="author">
+アンダース・ノラス（Anders Norås）
+</div>
+<p>　高校時代の外国語の授業、私はフランス語を選択していました。ただ当時「自分は将来も英語だけで何とかやっていく」と思っていたので、フランス語の授業では 3 年間ずっと寝続けてしまいました。その何年か後、私はチュニジアに旅行しました。チュニジアの公用語はアラビア語で、かつてフランスの植民地だったことから、フランス語も広く使われています。英語が通じるのは、観光地になっているところだけです。言葉が通じず、仕方ないので、私はずっとプールサイドにいて、ジェームズ・ジョイスの大作『フィネガンズ・ウェイク』を読んでいました。この小説は、文体という点でも言語という点でも、とてつもない作品です。40 ヶ国語を超える言語を駆使した言葉遊びの連続はまさに驚異であり、読んでいて消耗もします。そして、著者は、外国語の単語やフレーズを多数織り交ぜることにより、自分の表現の幅を大きく広げているとも感じます。また、それはどこか、プログラマである私がしてきたことにも通じます。</p>
+<p>　Andy Hunt と Dave Thomas は、多くの人に影響を与えた著書『達人プログラマー』の中で、「毎年、新たなプログラミング言語を 1 つは学ぶこと」と勧めています。私はそのアドバイスに従い、過去何年かの間に実際に数多くの言語を学んできました。そして、その中で「言語を学ぶというのは、ただ文法、構文を学ぶことではなく、その背景にある文化も学ぶこと」という重要な教訓を得ました。</p>
+<p>　どのような言語でも FORTRAN のように書くことはできます。しかし、言語にはその言語独自の文化というものがあり、真にその言語を知るには、その文化も正しく学ぶ必要があるのです。</p>
+<p>　C# を学び始めたばかりのときは、長い <code>Main</code> メソッドと静的なヘルパーメソッドばかりから成るコードを書いてしまうかもしれませんが、恥ずかしく思わなくていいのです。そのかわり「なぜクラスというものが存在するのか」を学び理解する姿勢が重要です。関数型言語で使われるラムダ式が最初なかなか理解できないとしても、怖じ気づくことはありません。ひたむきに、分かるまで使うように努めるのです。</p>
+<p>　新しい言語を学び、その勘所をつかんだら、前から知っていた言語の使い方がそれまでと変わっていることに気づき、自分で驚くことがよくあります。</p>
+<p>　私は、Ruby を学んだおかげで、C# の delegate をうまく利用できるようになりました。また、.NET の Generics の持つ潜在力を十分に知ったことで、Java の Generics の活かし方がわかるようになり、LINQ を学んだおかげで Scala を楽に理解できるようになりました。</p>
+<p>　複数の言語について学ぶと、デザインパターンについての理解も深まります。C のプログラマが C# と Java を学ぶと、そこでは Iterator パターンが一般化され普通に使われていることに気づくでしょう。Ruby などの動的言語を学べば、動的言語でもやはり Visitor パターンは使うけれど、その実装はいわゆる「GoF 本」に載せられた例とは違う見かけになることがわかるでしょう。</p>
+<p>　小説『フィネガンズ・ウェイク』に関しては、「これは読めない」と非難する人もいれば、その文体の美しさを絶賛する人もいます。この本の場合、翻訳版の方がかえって読みやすいかもしれません。原書にあった 40 ヶ国語以上の言語が 1 ヶ国語に整理されるのだとしたら、少しは読みやすいとも考えられます。しかし、私にとって皮肉なことに、最初に出た翻訳版はフランス語版でした。</p>
+<p>　コードにも同じようなことが言えます。『フィネガンズ・ウェイク』のようなコードを書くのだと言って、一部を Python で、一部を Java、さらに一部を Erlang で書いたとすれば、プロジェクトは大混乱に陥るでしょう。そうではなく、新しい言語から新たな発想を得て、同じ問題に対して違った解決策を見つけられるようになることが大事なのです。新たな言語を学べば、従来から使っていた言語でも、より美しいコードが書けるようになることが多いのです。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

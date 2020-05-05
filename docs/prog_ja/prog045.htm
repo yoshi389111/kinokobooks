@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【45】限界を知る - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【45】限界を知る">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_ja/prog045.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e45">【45】限界を知る</h1>
+<div class="author">
+グレッグ・コルヴィン（Greg Colvin）
+</div>
+<blockquote>
+<p>身の程を忘れないことだ</p>
+<div class="cite_author">
+——ダーティ・ハリー
+</div>
+</blockquote>
+<p>　人間の持つリソースは限られています。たとえば時間とお金です。まず、日々の業務には時間とお金が必要です。時代に遅れないよう知識や技術を磨き、ツールを常に最新に保つにも時間とお金は必要です。知性と能力を高めれば、また長時間、集中して働けば、それだけ大きな成果は得られるかもしれません。ツールの機能、マシンの性能が向上することによって得られる成果が大きくなるということもあるでしょう。それでもやはり、リソースに限界があるということを常に忘れず、その限界を尊重する必要があるのです。</p>
+<p>　「限界を尊重する」というのは具体的にどういうことでしょうか。それはまず、「限界が具体的にどのくらいかを知る」ということです。自分自身の限界、プロジェクトチームのメンバーたちの限界、予算の限界、自分の持つ時間、ハードウェア、ツールの限界などが具体的にどのくらいなのかをよく知らねばなりません。特にソフトウェア技術者の場合、自分の使うシステムの、データ構造、アルゴリズム、アーキテクチャ、性能等の特性の「空間と時間の複雑性（Time and Space Complexity）」を知ることが重要になります。ソフトウェアとハードウェアの最適な組み合わせを見つけて、両者の力を最大限に引き出すのです。</p>
+<p>　「空間と時間の複雑性」は、 O(f(n)) という関数で表せます。この場合、n が入力のサイズだとすると、この関数で求められるのは、n が無限大に向かって大きくなっていく時に必要な漸近空間、または漸近時間ということになります。f(n) の重要な複雑性クラスには、 ln(n)、n、n ln(n)、n<sup>e</sup>、e<sup>n</sup> があります。これらの関数をグラフにしてみると、n が大きくなるほど、O(ln(n)) は、O(n) や O(n ln(n)) に比べてはるかに小さくなっていくということがわかります。Sean Parent が指摘するとおり、達成可能な n に関して言えば、すべての複雑性クラスは、ほぼ一定、ほぼ線形、ほぼ無限ということになります。</p>
+<p><img src="./prog045.png" /></p>
+<p>　複雑性解析においては、抽象マシンによる評価が行われますが、ソフトウェアが動作するのは、現実の具体的なマシンです。近年のコンピュータシステムは、物理マシンと仮想マシンの階層構造になっており、そこには言語ランタイム、OS、CPU、キャッシュメモリ、RAM、ディスクドライブ、ネットワークなどが含まれます。次ページの表は、ネットワークに接続される一般的なサーバのランダムアクセス時間と容量についてまとめたものです。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">アクセス時間</th>
+<th style="text-align: right;">容量</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">レジスタ</td>
+<td style="text-align: right;">&lt;1 ns</td>
+<td style="text-align: right;">64 b</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">キャッシュライン</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">64 B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">    L1キャッシュ</td>
+<td style="text-align: right;">1ns</td>
+<td style="text-align: right;">64 KB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">    L2キャッシュ</td>
+<td style="text-align: right;">4ns</td>
+<td style="text-align: right;">8 MB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RAM</td>
+<td style="text-align: right;">20ns</td>
+<td style="text-align: right;">32 GB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ディスク</td>
+<td style="text-align: right;">10ms</td>
+<td style="text-align: right;">10 TB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LAN</td>
+<td style="text-align: right;">20ms</td>
+<td style="text-align: right;">&gt;1 PT</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">インターネット</td>
+<td style="text-align: right;">100ms</td>
+<td style="text-align: right;">&gt; 1 ZB</td>
+</tr>
+</tbody>
+</table>
+<p>　表を見てわかるのは、速度も容量も、項目によって桁がいくつも違っているということです。システムのあらゆるレベルで、キャッシュと先読みが頻繁に行われ、それによって、この違いはかなり隠蔽されてはいるのですが、キャッシュや先読みが有効なのは、アクセスが予測できる場合だけです。キャッシュしたデータが結局使われないような場面が多くなると、システムは急激に遅くなってしまいます。たとえば、ハードディスクのすべてのバイトをランダムに調べていく処理をしたとすると、完了までに 32 年くらいかかることになります。RAM のすべてのバイトをランダムに調べるという処理でも、11 分くらいはかかります。ランダムアクセスは予測ができないからです。では予測ができる処理とはどういうものでしょうか。システムによっても違いますが、アクセスしたばかりのデータへの再アクセスや、データへのシーケンシャルなアクセスなどは、通常、予測可能です。</p>
+<p>　キャッシュがどの程度有効に活かせるかは、アルゴリズムやデータ構造によっても違ってきます。例をいくつかあげておきます。</p>
+<ul>
+<li>線形探索では、先読みを有効に活かせるが、O(n) 比較が必要。</li>
+<li>ソートされた配列の二分探索には、O(log(n)) 比較のみ必要。</li>
+<li>van Emde Boas 木検索は O(log(n)) で、キャッシュが効きやすい。</li>
+</ul>
+<p>　ただ、結局どのアルゴリズムやデータ構造を選ぶかは、実際に試してみて処理時間を計測するという方法で決めるしかないことも多いでしょう。下の表は、上記 3 つのアルゴリズムで 64 ビット整数の配列を検索した場合の所要時間を示しています。ただし、これはあくまで私のコンピュータで得られた結果です。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;"></th>
+<th style="text-align: right;">線形</th>
+<th style="text-align: right;">二分</th>
+<th style="text-align: right;">vEB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">50ns</td>
+<td style="text-align: right;">90ns</td>
+<td style="text-align: right;">40ns</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">180ns</td>
+<td style="text-align: right;">150ns</td>
+<td style="text-align: right;">70ns</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">512</td>
+<td style="text-align: right;">1200ns</td>
+<td style="text-align: right;">230ns</td>
+<td style="text-align: right;">100ns</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4096</td>
+<td style="text-align: right;">17000ns</td>
+<td style="text-align: right;">320ns</td>
+<td style="text-align: right;">160ns</td>
+</tr>
+</tbody>
+</table>
+<p>この結果に関しては以下のことが言えます。</p>
+<ul>
+<li>線形探索は、配列が小さい場合には比較的優位だが、配列が大きくなると急速に不利になる。</li>
+<li>van Emde Boas 木検索は、配列が大きくなっても、さほど所要時間が増えない。アクセスパターンが予測可能なためと思われる。</li>
+</ul>
+<p>　「金を払う者が何でも好きに選べばよい」ということわざもあります。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

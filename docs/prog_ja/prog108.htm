@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【08】育ちのよいコード - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【08】育ちのよいコード">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_ja/prog108.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="j08">【08】育ちのよいコード</h1>
+<div class="author">
+森田 創
+</div>
+<p>　高凝集と疎結合が優れた設計の指標だと教わったとき、戸惑ったのを覚えています。あるコードがどのくらい指標を満たしているのか、私達は判断できるのでしょうか。</p>
+<p>　巨大な関数や相互依存など、凝集や結合のまずさを示す「匂い」があるのはたしかです。鼻をつまみたくなるソフトウェアは誰にも覚えがあるでしょう。けれど一見清潔なコードをみたときも、それが本当にうまい抽象なのか不安に思うことはありませんか。</p>
+<p>　そんな時は少し視点を変え、コードの生い立ちに目を向けましょう。コードのレポジトリをチェックアウトし、それまでにチェックインされた変更、パッチをよく調べるのです。そのパッチはひとかたまりの「+」行からできていましたか？　つまりパッチ単位の変更がファイルをまたがず、1 つのファイルの同じ場所にまとまっていましたか？</p>
+<p>　条件にあうパッチが多いなら、凝縮や結合の指標には期待が持てそうです。疎結合なコードは変更があちこちにまたがらないはずですし、高凝集なコードは変更が 1 箇所にまとまるはずです。そう考えると、このような「まとまりの良い」パッチで、育ったコードは冒頭の指標を満たすうまい設計だと考えて良いのではないでしょうか。</p>
+<p>　まとまりの良いパッチには、書き手にとっての利点もあります。レビューの負担が小さく、マージや取り消しも簡単なのです。変更のしやすさに多くを捧げてきたソフトウェア開発の歴史を振り返れば、優れた設計とまとまりの良いパッチの関係は自然なものに思えます。利便性のためだけでなく、設計の正しさを確かめる意味でも、私達はまとまりの良いパッチを書くよう心がけることができるでしょう。</p>
+<p>　さて。実際のコードがこう品行方正でないことを、私達は知っています。予期せぬ要望や小さな失敗を重ねるにつれて、健やかに育てたはずのコードにも「まとまりの悪い」パッチが顔を出しはじめます。野心あるコードが枠を破ろうとするのです。</p>
+<p>　先を急ぐ野心と慎重な設計を橋渡しするのがリファクタリングの役割です。リファクタリングを通じて設計を見直せば、先を急く野心が凝集や結合を損なうことはありません。ただし、リファクタリングはパッチにとって不都合なところがあります。名前の変更、クラスの引き上げといった構造上の変更は、一見「まとまりの悪い」パッチ、複数のファイルにまたがる小さな変更を生み出すからです。</p>
+<p>　リファクタリングを含むパッチはレビュアにとってのちょっとしたホラーですらあります。とはいえリファクタリングをしないコードに明るい未来はありません。まとまりの良いパッチとリファクタリング。2 つの間で折り合いをつけたいところです。</p>
+<p>　折り合いをつける方法のひとつは、リファクタリングとそれ以外の変更を別のパッチとしてチェックインすることです。振舞いを変更しないリファクタリングの原則は、まとまりの悪さを和らげてくれます。読み手が振舞い自体の正しさを気にしなくて済むからです。</p>
+<p>　リファクタリングを独立したパッチに追い出せば、優れた設計を示す「まとまりの良い」パッチが残ります。将来に向けて考えをあらため、新たな一歩を踏み出すコード。野心を手なずけて立派なコードに育ったと、思わず目頭が熱くなります。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

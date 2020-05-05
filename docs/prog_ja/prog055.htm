@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【55】並行処理に有効なメッセージパッシング - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【55】並行処理に有効なメッセージパッシング">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_ja/prog055.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e55">【55】並行処理に有効なメッセージパッシング</h1>
+<div class="author">
+ラッセル・ワインダー（Russel Winder）
+</div>
+<p>　並行処理（concurrency）、特にその一種である並列処理（parallelism）は「非常に難しいもの」と考えられています。並行処理が難しいことはプログラミングを学び始めたばかりの人でも知っていることでしょう。並行処理についてたとえ不正確にでも理解できるのは、経験を積んだ非常に優秀なプログラマだけと考える人が多いのです。しかし、スレッド、セマフォ、モニタといった概念への関心は常にとても高く、「変数へのスレッドセーフな並行アクセスは難しい」といったこともよく話題になります。</p>
+<p>　確かに並行処理に関しては、非常に解決の難しい問題が数多くあります。そして問題の根本は何かと探っていくと、それは結局「共有メモリ」であるという結論に達するのです。並行処理に関連する問題には、競合状態、デッドロック、ライブロックなどがありますが、そのほとんどが、可変メモリの共有に関係しています。だとすれば、どうするのがいいかは明白です。「並行処理、メモリ共有のどちらかをやめればいい」のです。</p>
+<p>　並行処理を一切やめる、という選択があり得ないのは明らかでしょう。プロセッサのコア数は、現在急速に増えています。四半期ごとに増えていると言ってもいいくらいです。つまり、並行処理、特に並列処理の重要度は高まる一方ということです。もはやプロセッサのクロック速度の向上だけでは、アプリケーションのパフォーマンスの向上はあまり期待できなくなっています。並列処理に頼ることではじめて、パフォーマンスが改善されると言ってもいいくらいです。これ以上パフォーマンスを向上させるつもりがないのならいいでしょうが、それがユーザに受け入れられるとは思えません。</p>
+<p>　ではメモリの共有をやめることは本当に可能なのでしょうか。実は可能なのです。</p>
+<p>　プログラミングモデルとして、スレッドや共有メモリの代わりにプロセスやメッセージパッシングを使うという方法があります。ここでの「プロセス」は、必ずしも OS のプロセスというわけでなく、単に「他から保護され、独立した状態の実行コード」という意味なので注意してください。Erlang（あるいはそれより前の Occam）などの言語を見ると、プロセスが並行 / 並列システムにとって非常に有効なメカニズムであるということがよくわかります。プロセスをプログラミングモデルとして使用したシステムでは、共有メモリ、マルチスレッドのシステムのような同期の問題が起きないのです。また、その種のシステムを構築する場合には、CSP（Communicating Sequential Processes）というフォーマルモデルを利用することができます。</p>
+<p>　さらに踏み込んで、データフローシステムを導入するという方法もあります。データフローシステムにおいては、プログラムに明確な制御フローというものは存在しません。代わりに、データパスで接続された、オペレータの有向グラフを構築するという方法を採ります。そうしてできたシステムにデータを流し込むのです。どのような処理が行われるかは、システムにどのようなデータが入力されるかによって変わります。当然、同期の問題は起きません。</p>
+<p>　とは言うものの、現在システム開発の主流となっている C、C++、Java、Python、Groovy といった言語はどれも、共有メモリ、マルチスレッドのシステムに対応した言語です。ではどうすればいいのでしょうか。方法はあります。プロセスモデル、メッセージパッシングに対応したライブラリやフレームワークを利用すること——無ければ作ることです。そうすることで、可変メモリの共有を一切せずに済むようにするのです。</p>
+<p>　まとめると、共有メモリを使わずメッセージパッシングを使ってプログラミングをすることが、現在のコンピュータハードウェアにはどうしても必要な並行 / 並列処理にとって最も有効な方法だと言えるでしょう。面白いのは、プロセス自体は、並行処理の単位としてはスレッドより古いということです。そして今後は、スレッドを使ってプロセスを実装するということが行われるようになるのではないかと考えています。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

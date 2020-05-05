@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【97】ステートに注目する - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【97】ステートに注目する">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_ja/prog097.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e97">【97】ステートに注目する</h1>
+<div class="author">
+ニクラス・ニルソン（Niclas Nilsson）
+</div>
+<p>　「ステート（状態）」というものについて、世間の人は面白い感覚を持っているようです。今朝、私はコーヒーを淹れるのに必要なものを買うために、近所の店に寄って買い物をしました。私はカフェインがないと一日たりとも仕事はできないのです。私が好きなのはカフェラテなので、牛乳を買おうと思ったのですが、牛乳がどこにも見当たりません。そこで店員に尋ねました。すると、</p>
+<p>　「すみません。牛乳は完全に売り切れてます」という答えが返ってきたのです。</p>
+<p>　プログラマから見れば、これは変な話です。売り切れは売り切れであり、それ以外ではあり得ません。「少し売り切れ」、「かなり売り切れ」などということはないのです。もしかすると店ではもう一週間も牛乳が品切れで、店員の言葉にはそれが込められていたのかもしれませんが、品切れが一週間だろうが 1 日だろうが、私にとって結果は同じです。カフェラテでなくエスプレッソで 1 日過ごすしかないということです。</p>
+<p>　もちろん、普段の生活では、ステートの扱いが厳密でなくて困ることはあまりありません。しかし問題なのは、プログラマの中にも、これと同じようにステートを厳密に扱わない人が意外にいるのです。</p>
+<p>　たとえば、クレジットカード決済のみを受けつけ、顧客に請求書は送らないという Web ショップがあったとします。そして、そのショップの <code>Order</code> クラスに次のようなメソッドがあったとします。</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">isComplete</span>() {</a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="kw">return</span> <span class="fu">isPaid</span>() &amp;&amp; <span class="fu">hasShipped</span>();</a>
+<a class="sourceLine" id="cb1-3" title="3">}</a></code></pre></div>
+<p>　これでいいじゃないか、と思う人は多いでしょう。しかし、本当にそうでしょうか。もし仮に、メソッドが呼び出された時に実行されるだけで、あちこちにコピー＆ペーストされるのでなかったとしても、こういうコードを書くべきではありません。このコードには問題があるからです。何が問題なのでしょうか。それは、決済処理が終わる前に、商品を発送することなどあり得ない、ということです。<code>isPaid</code> が <code>true</code> にならない限り、<code>hasShipped</code> は <code>true</code> にならないのです。要するに、このコードは冗長というわけです。コードを明解なものにするために、<code>isComplete</code> メソッドはやはり必要でしょうが、その内容は次のようなものにすべきです。</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">isComplete</span>() {</a>
+<a class="sourceLine" id="cb2-2" title="2">    <span class="kw">return</span> <span class="fu">hasShipped</span>();</a>
+<a class="sourceLine" id="cb2-3" title="3">}</a></code></pre></div>
+<p>　仕事をしていると、必要なチェックが抜けているコード、冗長なチェックをしているコードは頻繁に目にします。上の例は大したものではありませんが、キャンセルや払い戻しが絡んでくると、もっと複雑になるでしょう。ステートを適切に扱う必要性がさらに高まるからです。上の例の場合、注文のステートは次の 3 つに明確に分かれることになります。</p>
+<ul>
+<li><strong>進行中</strong>：注文の追加、削除はできない。商品の発送もできない。</li>
+<li><strong>決済済み</strong>：注文の追加、削除はできない。商品の発送は可能。</li>
+<li><strong>発送済み</strong>：注文処理がすべて完了。変更は一切受けつけない。</li>
+</ul>
+<p>　ステートは非常に重要です。何か操作をしようとすれば、まず現在どのステートにいるかを確認する必要があります。その時々のステートによってできる操作とできない操作があるからです。しようとした操作が、そのステートではできないものであれば、ステートが変わるのを待つ必要があります。そうして、常にステートに合った操作だけが行われるようにすることで、オブジェクトを保護するわけです。</p>
+<p>　ステートに関しては、具体的にどういうことを注意すべきでしょうか。必要な処理を一つ一つ別のメソッドに分け、どれも必要な時だけ呼び出す、というのは、出発点としてはとても良いですが、あくまで出発点であり十分とは言えません。基本は、「ステートマシン」という考え方を理解することでしょう。そういえば学校でそういうことを習った覚えがあるけれど、もう何だか忘れてしまった、という人もいるでしょうが、そういう人もこれを機会に改めて勉強し直してください。さほど難しいものではありません。図を描くなどすれば、理解しやすくなるはずです。また、図があれば、他の人とステートマシンについて話をするのも簡単です。コードを書くときには、テスト駆動開発で個々の操作に適合するステート、適合しないステート、ステート間の遷移の適切さを確かめながら開発し、実行時に常にステートが正しく保たれるようにしましょう。State パターンについても学び、それが十分に理解できたら、「契約による設計（Design by Contract）」などについても学ぶといいでしょう。そうした知識があれば、入力データをチェックし、ステートがそれに合ったものになっているかを確認するのに役立ちます。さらに、public メソッドの処理開始時と終了時のオブジェクトのステートが妥当なものになっているかの確認などにも役立つはずです。</p>
+<p>　ステートが不適切になる時があるようなら、それはバグです。処理を中断しなければ、データが破壊されてしまう危険があります。ステートチェックのコードが多くて煩わしく感じられるなら、ツールを利用するか、コード生成、ウィービング、アスペクト技術の使用等について検討するなどして、それが隠れるようにすればいいでしょう。どのようなアプローチをとるにしても、ステートに注目して考えれば、コードをよりシンプルに、そして堅牢にすることにつながります。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【34】API 設計の黄金律 - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【34】API 設計の黄金律">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_ja/prog034.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e34">【34】API 設計の黄金律</h1>
+<div class="author">
+マイケル・フェザーズ（Michael Feathers）
+</div>
+<p>　API の設計は簡単ではありません。特に規模が大きいと困難になります。何百、何千というユーザがいる場合には、将来 API に変更を加えた際の影響についても考慮する必要があります。変更を加えた時、その影響で API を利用するクライアントコードが動かなくなるようでは困るのです。逆に、API のユーザが開発側に与える影響についても考慮が必要です。たとえば API を構成するクラスの内部で、そのクラス自身のメソッドを呼び出したとします。その場合、ユーザがそのクラスを継承してサブクラスを作り、メソッドをオーバライドするという事態も考慮しなくてはなりませんし、その場合は実に面倒なことになります。API の開発側は、もはやそのメソッドに変更を加えることができません。ユーザが、そのメソッドに元とは違った意味を与えてしまっているからです。このように、ユーザの使い方によって、その後の開発側の内部実装に制約が加えられてしまうことがあり得るのです。</p>
+<p>　この種の問題が起きないようにする方法はいくつかあります。最も簡単なのは API を「ロックする」という方法です。Java の場合は、クラスやメソッドの大半を <code>final</code> 宣言してしまえばいいでしょう。C# の場合は、クラスやメソッドを <code>sealed</code> 宣言します。言語を問わず、ともかく API をシングルトン、あるいはスタティックファクトリメソッドばかりにして、ユーザがそのふるまいをオーバライドできないようにしてしまうことはできます。そうすれば、ユーザの使い方によって開発側の行動が制限されるという事態は防げます。これで一応問題は解決するように思えますが、しかし本当にそう言い切れるでしょうか。</p>
+<p>　開発作業におけるユニットテストの重要性は、過去 10 年の間に徐々に認識されるようになってきました。しかし、まだ認識が十分に広まったとはいえません。その証拠はいたるところに見つかります。試しに、どれでもいいので、サードパーティの API を利用している未テストのクラスを選び、そのクラスに対応するユニットテストを書いてみてください。ほぼ間違いなく問題が起きるはずです。問題が起きるのは、おそらく API を利用する部分でしょう。糊のついた紙が勝手なところに貼りつくような具合に、API を利用する部分がどうしても邪魔になるのです。API クラスに「なりすます」方法が無いので、自分のコードが API クラスとどういうやりとりをしているのかを検出することができず、かつテストに必要な API からの戻り値も作りだすことができないのです。</p>
+<p>　このような状況もいずれ改善されるかもしれません。しかしそのためには、皆が API の設計に際し、テストを本当のユースケースの 1 つとみなすことが必要です。それは残念ながら、単に自分が書いたコードをテストするより難しいことです。「<strong>API を提供するときは、API 自身のテストだけでなく、必ずその API を利用するコードのユニットテストも書く</strong>」API の設計者は、これを<strong>黄金律</strong>にして欲しいと思います。この黄金律を守れば、API の利用者がユニットテストに際してどのような問題に直面するかを事前に察知できます。</p>
+<p>　API 開発時にこうしておけば、API のユーザは必ず簡単にユニットテストができる、というような方法はありません。確かに <code>static</code> 宣言や <code>final</code> 宣言、<code>sealed</code> 宣言といった方法も場合によっては有効です。しかし、重要なのはまず API を開発する側が「API を利用するコードのユニットテストは難しい」と認識することです。それには、自らその難しさを体験するのが一番なのです。一度体験すれば、その後は「テストの難しさ」を設計上の課題の 1 つととらえ、他の課題と同様に考慮するようになるはずです。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>

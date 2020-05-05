@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【23】ドメイン特化言語 - プログラマが知るべき 97 のこと</title>
+  <meta property="og:title" content="【23】ドメイン特化言語">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://yoshi389111.github.io/kinokobooks/images/prog97_ja.png">
+  <meta property="og:url" content="https://yoshi389111.github.io/kinokobooks/prog_ja/prog023.htm">
+  <meta property="og:site_name" content="プログラマが知るべき 97 のこと">
+  <meta property="og:locale" content="ja_JP">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="e23">【23】ドメイン特化言語</h1>
+<div class="author">
+マイケル・フンガー（Michael Hunger）
+</div>
+<p>　チェスプレイヤー、幼稚園の先生、保険の外交員など、どの分野にも言えることですが、専門家というのは、日常生活で使われる言葉とは全く違った言葉を使うものです。いわゆる「ドメイン特化言語（DSL：Domain Specific Language）」が存在するのはそのためです。分野（ドメイン）には、それぞれ固有の事象があり、固有の事象を表す特殊な語彙があるので、DSL によってその語彙に対応するというわけです。</p>
+<p>　DSL は、ある分野に固有の語彙や語法を使用して事象を表現できるよう作られたプログラミング言語です。この言語を使えば、コードは当該分野の専門家にとって読みやすく理解しやすくなります。その言語を使うことで、専門家自身が自らコードを書くこともできれば理想でしょう。DSL の中でも特に古くから存在するのは、ソフトウェア開発者や科学者をターゲットとした DSL です。UNIX の環境設定ファイルなどで使われる「ミニ言語」や、LISP のマクロの力を利用して作成された言語などは、その中でも古い例と言えるでしょう。</p>
+<p>　DSL は、大きく <strong>内部 DSL</strong> と <strong>外部 DSL</strong> に分類することができます。</p>
+<dl>
+<dt>内部 DSL</dt>
+<dd><p>内部 DSL は、汎用のプログラミング言語の書き方を工夫して、見かけ上の構文を自然言語に近づけた言語です。内部 DSL の作成には、糖衣構文（syntactic sugar）を豊富に持ち、フォーマットの自由度の高い言語（Ruby、Scala など）の方が、そうでない言語（Java など）よりも向いていると言えます。内部 DSL では、ホスト言語（基になった言語）の API、ライブラリ、ビジネスコードなどはラッピングされるのが普通です。ラッパが提供され、技術的知識がなくてもその機能を容易に利用できるようにしてあるのです。また、コードをファイルに書けば、そのファイルを使って即、実行できるのが普通です。実装の仕方や分野によって言語の用途は様々に異なってきます。用途の例としては、データ構造の構築、依存関係の定義、プロセスやタスクの実行、他のシステムとの通信、ユーザ入力のバリデーションなどが挙げられます。内部 DSL の構文はホスト言語の構文の制約を受けます。ホスト言語での書き方を工夫して DSL を作るのに役立つパターンは多数存在します。例えばエクスプレッションビルダ、メソッドチェーン、アノテーションなどです。ホスト言語が再コンパイルを必要としない言語であれば、内部 DSL は非常に簡単に作成でき、対象ビジネス分野の専門家にとって使いやすいものになるでしょう。</p>
+</dd>
+<dt>外部 DSL</dt>
+<dd><p>外部 DSL は、汎用のプログラミング言語とはまったく別の構文を持った DSL です。グラフィカルな外部 DSL もありますが、テキストベースの外部 DSL の方が一般的です。テキストベースの外部 DSL のコードは、レキサー、パーサ、モデルトランスフォーマ、ジェネレータといったポストプロセッシングのためのツール群を組み合わせることによって処理されます。通常の場合外部 DSL は読み込み時に内部モデルに変換され、後続処理に使われます。EBNF などの文法（grammar）を定義するのが有効でしょう。文法は、エディタ、ビジュアライザ、パーサジェネレータ等のツール群が扱うパーツを生成するための起点となります。シンプルな DSL ならば、たとえば正規表現を利用した「手作りの」パーサなどでも十分に対応ができます。ただし、手作りのパーサは、あれこれ欲張ると非常にわかりにくく、使いにくくなってしまうので、openArchitectureWare、ANTLR、SableCC、AndroMDA など、元々文法定義または DSL のために作られた既存のツールを探す方が合理的でしょう。XML の「方言」を作り、それを外部 DSL とする方法もよく使われますが、特に技術知識のない人にとってコードが読みにくくなりやすいのが難点です。</p>
+</dd>
+</dl>
+<p>　DSL を作るときは、使う人が誰かということを常に考慮にいれておく必要があります。DSL の利用者は、開発者でしょうか、管理者でしょうか、どこかの企業の顧客でしょうか、それともエンドユーザでしょうか。言語の技術レベルや利用可能なツール、例えばシンタックスヘルプ（例：IntelliSense）、リアルタイムバリデーション、可視化ツールなどへの対応や、コード表現を利用者に応じて変えることになります。DSL が技術的な詳細を隠蔽すれば、技術者の助けを借りることなく、ユーザが自分の手でシステムを自らのニーズに合わせることができます。最初に DSL の枠組みさえ提供されれば、あとは各自が自力で作業を進められるため、それが開発作業のスピードアップにつながります。言語は使用されるうちに、徐々に進化することになるでしょう。既存の表現や文法からの移行のために使える手立ても増えます。</p>
+</article>
+<footer>
+<p class="license">This work is licensed under a <a href="https://creativecommons.org/licenses/by/3.0/us/" class="external text" title="https://creativecommons.org/licenses/by/3.0/us/" rel="nofollow">Creative Commons Attribution 3</a></p>
+</footer>
+</body>
+</html>
