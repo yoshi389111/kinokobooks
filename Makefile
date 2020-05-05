@@ -2,6 +2,11 @@ EPUBS=epub/prog97.epub epub/soft97.epub epub/mngr97.epub epub/game197.epub epub/
 
 all: $(EPUBS)
 
+web:
+	scripts/prog97_htm.sh
+	scripts/soft97_htm.sh
+	scripts/mngr97_htm.sh
+
 clean:
 	rm -f $(EPUBS)
 
