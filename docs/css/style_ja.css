@@ -331,4 +331,7 @@ footer {
 td.right, th.right { text-align: right; }
 td.left, th.left { text-align: left; }
 img.half { width: 50%; }
-p.author { color: #666; }
+div.author {
+  color: #666;
+  margin: 1em 0;
+}
