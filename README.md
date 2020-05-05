@@ -48,7 +48,7 @@
 
 ### プロジェクト・マネジャーが知るべき97のこと
 
-* 書籍情報 [プロジェクトマネジャーが知るべき97のこと](https://www.oreilly.co.jp/books/9784873115108/) 日本語版
+* 書籍情報 [プロジェクト・マネジャーが知るべき97のこと](https://www.oreilly.co.jp/books/9784873115108/) 日本語版
 * 書籍情報 [97 Things Every Project Manager Should Know](http://oreilly.com/catalog/9780596804152/) 英語版
 * 英語版 Wiki(リンク切れ) `http://pm.97things.oreilly.com/`
 
