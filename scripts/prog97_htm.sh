@@ -8,9 +8,9 @@ mkdir ../../docs/prog_ja
 
 export LANG="ja_JP.UTF-8"
 
-outindex="../../docs/prog_ja/index.htm"
+outindex="../../docs/prog_ja/index.html"
 
-sed -ne '1,/<!-- body -->/p' < index.htm > $outindex
+sed -ne '1,/<!-- body -->/p' < index.html > $outindex
 
 for NUM in $(seq 1 97) $(seq 101 110)
 do
@@ -40,7 +40,7 @@ do
 
 done
 
-sed -ne '/<!-- body -->/,$p' < index.htm >> $outindex
+sed -ne '/<!-- body -->/,$p' < index.html >> $outindex
 
 cp -p prog045.png ../../docs/prog_ja/
 
