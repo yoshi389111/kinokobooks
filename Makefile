@@ -6,6 +6,8 @@ web:
 	scripts/prog97_htm.sh
 	scripts/soft97_htm.sh
 	scripts/mngr97_htm.sh
+	scripts/game197_htm.sh
+	scripts/game297_htm.sh
 
 clean:
 	rm -f $(EPUBS)

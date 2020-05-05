@@ -1,47 +1,53 @@
 #!/bin/bash
 
-cd $(dirname $0)
-cd ../src/prog
+BOOKNAME="プログラマが知るべき 97 のこと"
+PREFIX="prog"
+TEMPLATE="$PREFIX.pandoctemp"
+OUTDIR="../../docs/${PREFIX}_ja"
+OUTINDEX="$OUTDIR/index.html"
+NUMBERS="$(seq 1 97) $(seq 101 110)"
+METAFILE="meta.txt"
 
-rm -rf ../../docs/prog_ja
-mkdir ../../docs/prog_ja
+cd $(dirname $0)
+cd "../src/$PREFIX"
+
+rm -rf "$OUTDIR"
+mkdir "$OUTDIR"
 
 export LANG="ja_JP.UTF-8"
 
-outindex="../../docs/prog_ja/index.html"
+sed -ne '1,/<!-- body -->/p' < index.html > "$OUTINDEX"
 
-sed -ne '1,/<!-- body -->/p' < index.html > $outindex
-
-for NUM in $(seq 1 97) $(seq 101 110)
+for NUM in $NUMBERS
 do
-    echo "" > meta.txt
-    infile=$(printf "prog%03d.md" $NUM)
-    outfile=$(printf "prog%03d.htm" $NUM)
+    INFILE=$(printf "%s%03d.md" $PREFIX $NUM)
+    OUTFILE=$(printf "%s%03d.htm" $PREFIX $NUM)
 
-    title="$(head -1 $infile | sed -e 's/^# *//' -e 's/{#[0-9a-z]*}$//')"
-    author="$(grep -F '<div class="author">' $infile | sed -e 's/<[^>]*>//g')"
+    TITLE="$(head -1 $INFILE | sed -e 's/^# *//' -e 's/{#[0-9a-z]*}$//')"
+    AUTHOR="$(grep -F '<div class="author">' $INFILE | sed -e 's/<[^>]*>//g')"
 
     (
         echo "---"
-        echo "pagetitle: '$title'"
-        echo "sitetitle: 'プログラマが知るべき 97 のこと'"
-        echo "---" >> meta.txt
-    ) > meta.txt
+        echo "pagetitle: '$TITLE'"
+        echo "sitetitle: '$BOOKNAME'"
+        echo "---"
+    ) > "$METAFILE"
 
     pandoc -f markdown -t html \
-        --template prog.pandoctemp \
-        -o "../../docs/prog_ja/$outfile" \
-        -V lang=ja \
+        --template "$TEMPLATE" \
+        -o "$OUTDIR/$OUTFILE" \
+        -V lang="ja" \
         -V locale="ja_JP" \
-        -V outfile="$outfile" \
-        "$infile" meta.txt
+        -V outfile="$OUTFILE" \
+        "$INFILE" "$METAFILE"
 
-    echo "<li><a href=\"$outfile\">$title</a> by $author</li>" >> $outindex
+    # TODO escape
+    echo "<li><a href=\"$OUTFILE\">$TITLE</a> by $AUTHOR</li>" >> "$OUTINDEX"
 
 done
 
-sed -ne '/<!-- body -->/,$p' < index.html >> $outindex
+sed -ne '/<!-- body -->/,$p' < index.html >> "$OUTINDEX"
 
-cp -p prog045.png ../../docs/prog_ja/
+rm -f "$METAFILE"
 
-rm -f meta.txt
+cp -p prog045.png "$OUTDIR"

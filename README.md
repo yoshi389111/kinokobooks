@@ -21,6 +21,8 @@
 * [プログラマが知るべき 97 のこと](https://yoshi389111.github.io/kinokobooks/prog_ja/)
 * [ソフトウェアアーキテクトが知るべき 97 のこと](https://yoshi389111.github.io/kinokobooks/soft_ja/)
 * [プロジェクト・マネジャーが知るべき 97 のこと](https://yoshi389111.github.io/kinokobooks/mngr_ja/)
+* [ゲームクリエイターが知るべき 97 のこと](https://yoshi389111.github.io/kinokobooks/game1/)
+* [ゲームクリエイターが知るべき 97 のこと 2](https://yoshi389111.github.io/kinokobooks/game2/)
 
 【英語版のコピー】
 

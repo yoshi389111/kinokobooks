@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" lang="ja" xml:lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../css/style_ja.css"/>
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>【1-19】チケット駆動開発と自動化 - ゲームクリエイターが知るべき 97 のこと</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<article>
+<h1 id="チケット駆動開発と自動化">【1-19】チケット駆動開発と自動化</h1>
+<div class="author">
+粉川 貴至
+</div>
+<p>　チケット駆動開発では、開発で行う作業の 1 つ 1 つをチケットとしてバグ管理システムに登録し、作業工程を管理します。これはゲーム開発に限った話ではありませんが、頻繁な変更が起こるゲーム開発では重要な技術となります。</p>
+<p>　バグ管理システムには、作業は時間とともに状態が変わっていく事を前提に、それらの状態の管理を行う機能があります。これにより、作業の発生から完了までの間に何が起こり、どういう変更がされたのかを把握する事ができます。その時々の担当者と状態をひと目で把握できる事も大きなメリットです。</p>
+<p>　さらに、バグ管理システムを Subversion や Git、Perforce といったソフトウェア構成管理ツールと連携させると、ソースコードやデザインリソース、仕様書など開発中に随時変更していくものすべてを構成管理し、チケットと紐づける事ができます。そうすれば、そのプロジェクトの中でどういった作業・問題が起こり、その結果どういう変更が行われたかを一カ所で管理する事ができます。よく知られているバグ管理システムには Trac や Mantis、有償のものでは JIRA などがありますが、私は複数プロジェクトの管理ができ、プラグイン拡張が可能で、WebAPI がある Redmine を好んで使用しています。</p>
+<p>　こういったシステムの導入では、開発者からチケットを更新するのが面倒だという意見が出たりします。しかし、プロジェクトに様々な人が関わり、時間とともに状況が変わる中で、自分が行った実装や修正が正しい事を証明するために使う事ができます。例えばそのソースコードが、誰のどの時点の決定、議論に基づいて実装されているかという情報をシステムから引き出す事ができるのです。これは単なる「管理システム」ではなく、開発支援ツールなのです。</p>
+<p>　チケット作成を自動化することで、開発の効果をより高めることができます。もちろん、全てのチケット作成を自動化する事はできません。要件定義など新しい機能を実装する作業をチケットに落とし込む部分は人が考えて行う必要があります。しかし、それ以外に自動化できる部分は多くあります。自動ビルドのエラーをチケットとして扱い、どこに問題があってどう修正されたのかを記録したり、（自動）テスト時のエラーをスクリーンショットやログと一緒にチケットに添付する等があります。全体の構成の見直しなど、定期的に確認するべき内容を自動で担当者を割り当てて発行されるチケットにする事で、忘れずに確認を行う事ができます。</p>
+<p>　私はこの仕組みを Redmine と自動化フレームワークである Jenkins を組み合わせて実現しています。Jenkins から Redmine の WebAPI を呼び出し、Jenkins の結果をうけてチケットを作成します。現状ではソースコードのコミット後のレビューチケットの作成や、静的解析の結果の登録、定期リリース作業の管理用のチケットの自動生成まで行っています。一度フローが決まったものは、作業手順そのものを自動化するか、作業を管理するチケットを自動作成する事で、工程管理の効率を大きく向上させる事ができます。実装例を github で公開していますので参照してみて下さい。<br />
+https://github.com/KokawaTakashi/redmine-posttask-plugin</p>
+<p>　まだ実例の少ないこれからの取り組みですが、これを読んで興味を持たれた方は是非トライしてみて下さい。</p>
+</article>
+<footer>
+<p class="license">このエッセイは <a href="https://creativecommons.org/licenses/by/3.0/" class="external text" title="https://creativecommons.org/licenses/by/3.0/" rel="nofollow">CC-by-3.0</a> でライセンスされています。</p>
+</footer>
+</body>
+</html>
