@@ -28,6 +28,8 @@
 
 英語版は書籍ベースではなく、以前公開されていた wiki ベースの内容です。
 
+またエッセイの番号は、英語版と日本語版で違っているものがあります、ご注意ください。
+
 * [97 Things Every Programmer Should Know](https://yoshi389111.github.io/kinokobooks/prog_en/)
 * [97 Things Every Software Architect Should Know](https://yoshi389111.github.io/kinokobooks/soft_en/)
 * [97 Things Every Project Manager Should Know](https://yoshi389111.github.io/kinokobooks/mngr_en/)
