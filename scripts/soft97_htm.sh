@@ -24,7 +24,7 @@ do
     (
         echo "---"
         echo "pagetitle: '$title'"
-        echo "sitetitle: 'プログラマが知るべき 97 のこと'"
+        echo "sitetitle: 'ソフトウェアアーキテクトが知るべき 97 のこと'"
         echo "---" >> meta.txt
     ) > meta.txt
 
