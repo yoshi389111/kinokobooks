@@ -26,7 +26,7 @@
 
 　ただし、以下の講演動画でもあるように、
 
-　「ジェイ・ウォーカーが語る世界の英語熱」（http://www.ted.com/talks/lang/ja/jay_walker_on_the_world_s_english_mania.html）
+　「ジェイ・ウォーカーが語る世界の英語熱」（ `http://www.ted.com/talks/lang/ja/jay_walker_on_the_world_s_english_mania.html` ）
 
 　一歩世界に出て、何らかの問題解決をするときは必ず英語です。英語圏でなくても英語で問題解決をします。いくら日本人が日本語をプッシュしてもこれは揺るがない事実です。
 
