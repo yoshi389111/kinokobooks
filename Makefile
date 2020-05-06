@@ -16,3 +16,6 @@ web:
 
 ogp_images:
 	scripts/ogp_images.sh
+
+test-web:
+	cd docs ; python3 -m http.server 8000
