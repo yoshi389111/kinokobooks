@@ -79,7 +79,7 @@ $endfor$
 <nav>
 <ul class="nav-links">
 <li class="prev-article">$if(prevfile)$<a href="$prevfile$">&lt; 前のエッセイ</a>$else$<span class="disable">&lt; 前のエッセイ</span>$endif$</li>
-<li class="return-index"><a href="index.html">インデックス</a></li>
+<li class="return-index"><a href="index.html">一覧</a></li>
 <li class="next-article">$if(nextfile)$<a href="$nextfile$">次のエッセイ &gt;</a>$else$<span class="disable">次のエッセイ &gt;</span>$endif$</li>
 </ul>
 </nav>

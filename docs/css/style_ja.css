@@ -360,6 +360,10 @@ ul.label_9_7 li {
 ul.label_9_7 li:before {
   content: "9.7";
 }
+.essays {
+  list-style: none;
+  padding-left: 0;
+}
 nav {
   width: 100%;
 }
@@ -371,7 +375,7 @@ nav {
   text-align: center;
 }
 .nav-links li {
-  margin: 0.5em 2em;
+  margin: 0.5em;
   display: inline-block;
 }
 .nav-links li a {

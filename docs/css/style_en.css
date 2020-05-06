@@ -332,3 +332,23 @@ td.right, th.right { text-align: right; }
 td.left, th.left { text-align: left; }
 img.half { width: 50%; }
 p.author { color: #666; }
+nav {
+  width: 100%;
+}
+.nav-links {
+  list-style: none;
+  padding-left: 0;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+}
+.nav-links li {
+  margin: 0.5em;
+  display: inline-block;
+}
+.nav-links li a {
+  text-decoration: none;
+}
+.nav-links li .disable {
+  color: darkgray;
+}
