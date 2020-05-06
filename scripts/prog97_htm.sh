@@ -24,6 +24,16 @@ function create_a_page_and_index() {
 
     INFILE=$(printf "%s%03d.md" $PREFIX $NUM)
     OUTFILE=$(printf "%s%03d.htm" $PREFIX $NUM)
+    if [ $START_NUM -eq $NUM ] ; then
+        PREVFILE=""
+    else
+        PREVFILE=$(printf "%s%03d.htm" $PREFIX $(($NUM - 1)))
+    fi
+    if [ $END_NUM -eq $NUM ] ; then
+        NEXTFILE=""
+    else
+        NEXTFILE=$(printf "%s%03d.htm" $PREFIX $(($NUM + 1)))
+    fi
 
     TITLE="$(head -1 $INFILE | sed -e 's/^# *//' -e 's/{#[0-9a-z]*}$//')"
     AUTHOR="$(grep -F '<div class="author">' $INFILE | sed -e 's/<[^>]*>//g')"
@@ -41,6 +51,8 @@ function create_a_page_and_index() {
         -V lang="ja" \
         -V locale="ja_JP" \
         -V outfile="$OUTFILE" \
+        -V prevfile="$PREVFILE" \
+        -V nextfile="$NEXTFILE" \
         "$INFILE" "$METAFILE"
 
     # TODO escape

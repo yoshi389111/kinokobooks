@@ -360,3 +360,23 @@ ul.label_9_7 li {
 ul.label_9_7 li:before {
   content: "9.7";
 }
+nav {
+  width: 100%;
+}
+.nav-links {
+  list-style: none;
+  padding-left: 0;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+}
+.nav-links li {
+  margin: 0.5em 2em;
+  display: inline-block;
+}
+.nav-links li a {
+  text-decoration: none;
+}
+.nav-links li .disable {
+  color: darkgray;
+}
