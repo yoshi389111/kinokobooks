@@ -9,6 +9,9 @@ web:
 	scripts/game197_htm.sh
 	scripts/game297_htm.sh
 
+ogp_images:
+	scripts/ogp_images.sh
+
 clean:
 	rm -f $(EPUBS)
 
