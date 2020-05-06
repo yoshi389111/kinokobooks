@@ -1,4 +1,4 @@
-all: epubs books ogp_images
+all: books web ogp_images
 
 books:
 	scripts/prog97.sh
