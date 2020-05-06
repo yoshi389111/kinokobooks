@@ -1,4 +1,4 @@
-# 【2-73】遊び続けるために：遊戯と GAME と PLAY と再生
+# 【2-73】遊び続けるために：遊戯と GAME と PLAY と再生{#j73}
 
 <div class="author">犬飼 博士</div>
 
