@@ -1,4 +1,4 @@
-# 【1-50】テクニカルアートの魂（soul）{#j50}
+# 【50】テクニカルアートの魂（soul）{#j50}
 
 <div class="author">Steve Theodore</div>
 

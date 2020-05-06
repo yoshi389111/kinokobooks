@@ -1,4 +1,4 @@
-# 【1-94】GDC の歩き方{#j94}
+# 【94】GDC の歩き方{#j94}
 
 <div class="author">林 洋人</div>
 

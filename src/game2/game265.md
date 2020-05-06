@@ -1,4 +1,4 @@
-# 【2-65】ゲーム業界誌 GameBusiness.jp の 3 年{#j65}
+# 【65】ゲーム業界誌 GameBusiness.jp の 3 年{#j65}
 
 <div class="author">土本 学</div>
 

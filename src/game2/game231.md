@@ -1,4 +1,4 @@
-# 【2-31】SIGGRAPH Asia の楽しみ方{#j31}
+# 【31】SIGGRAPH Asia の楽しみ方{#j31}
 
 <div class="author">立福 寛</div>
 
