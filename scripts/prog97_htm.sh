@@ -5,7 +5,6 @@ PREFIX="prog"
 TEMPLATE="$PREFIX.pandoctemp"
 OUTDIR="../../docs/${PREFIX}_ja"
 OUTINDEX="$OUTDIR/index.html"
-NUMBERS="$(seq 1 97) $(seq 101 110)"
 METAFILE="meta.txt"
 
 cd $(dirname $0)
@@ -16,10 +15,13 @@ mkdir "$OUTDIR"
 
 export LANG="ja_JP.UTF-8"
 
-sed -ne '1,/<!-- body -->/p' < index.html > "$OUTINDEX"
+# usage: create_a_page_and_index START_NUM END_NUM NUM
+function create_a_page_and_index() {
 
-for NUM in $NUMBERS
-do
+    START_NUM="$1"
+    END_NUM="$2"
+    NUM="$3"
+
     INFILE=$(printf "%s%03d.md" $PREFIX $NUM)
     OUTFILE=$(printf "%s%03d.htm" $PREFIX $NUM)
 
@@ -44,10 +46,24 @@ do
     # TODO escape
     echo "<li><a href=\"$OUTFILE\">$TITLE</a> by $AUTHOR</li>" >> "$OUTINDEX"
 
-done
+}
 
-sed -ne '/<!-- body -->/,$p' < index.html >> "$OUTINDEX"
+# usage: create_pages_and_indices START_NUM END_NUM
+function create_pages_and_indices() {
+    START_NUM="$1"
+    END_NUM="$2"
 
+    for NUM in $(seq $START_NUM $END_NUM)
+    do
+        create_a_page_and_index $START_NUM $END_NUM $NUM
+    done
+}
+
+sed -ne '1,/<!-- body1 -->/p' < index.html > "$OUTINDEX"
+create_pages_and_indices 1 97
+sed -ne '/<!-- body1 -->/,/<!-- body2 -->/p' < index.html >> "$OUTINDEX"
+create_pages_and_indices 101 110
+sed -ne '/<!-- body2 -->/,$p' < index.html >> "$OUTINDEX"
 rm -f "$METAFILE"
 
 cp -p prog045.png "$OUTDIR"
