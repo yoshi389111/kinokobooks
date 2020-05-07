@@ -14,6 +14,8 @@
 * [ゲームクリエイターが知るべき97のこと](https://github.com/yoshi389111/kinokobooks/blob/master/epub/game197.epub?raw=true) 【epub】 表紙未設定
 * [ゲームクリエイターが知るべき97のこと 2](https://github.com/yoshi389111/kinokobooks/blob/master/epub/game297.epub?raw=true) 【epub】 表紙未設定
 
+まだ見直し中のものもあるため、頻繁に差し替えが発生する可能性があります。また、誤字・脱字や問題などあった場合には、詳細をプルリクなどで指摘いただけると助かります。
+
 ## Web 版
 
 【日本語版】
