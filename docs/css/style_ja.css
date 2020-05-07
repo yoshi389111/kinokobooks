@@ -360,6 +360,44 @@ ul.label_9_7 li {
 ul.label_9_7 li:before {
   content: "9.7";
 }
+.with_round_brackets ol {
+  margin-left: 2em;
+  counter-reset: cnt_round;
+}
+.with_round_brackets ol li {
+  list-style-type: none;
+  counter-increment: cnt_round;
+  position: relative;
+}
+.with_round_brackets ol li:before {
+  content: "(" counter(cnt_round) ")";
+  display: inline-block;
+  margin-left: -2em;
+  width: 1.5em;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.with_square_brackets ol {
+  margin-left: 2em;
+  counter-reset: cnt_square;
+}
+.with_square_brackets ol li {
+  list-style-type: none;
+  counter-increment: cnt_square;
+  position: relative;
+}
+.with_square_brackets ol li:before {
+  content: "[" counter(cnt_square) "]";
+  display: inline-block;
+  margin-left: -2em;
+  width: 1.5em;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .essays {
   list-style: none;
   padding-left: 0;

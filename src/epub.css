@@ -95,3 +95,22 @@ ul.label_9_7 li {
 ul.label_9_7 li:before {
     content: "9.7";
 }
+.with_round_brackets ol {
+    margin-left: 2em;
+    counter-reset: cnt;
+}
+.with_round_brackets ol li {
+    list-style-type: none;
+    counter-increment: cnt;
+    position: relative;
+}
+.with_round_brackets ol li:before {
+    content: "(" counter(cnt) ")";
+    display: inline-block;
+    margin-left: -2em;
+    width: 1.5em;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
