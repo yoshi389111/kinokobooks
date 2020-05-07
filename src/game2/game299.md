@@ -23,6 +23,12 @@
 
 * https://creativecommons.org/licenses/by/3.0/
 
+　また、前述の底本の内容を基に、誤記と思われる以下の内容を修正しています。
+
+* 【04】注記の「USATODAY.com **2003** 年」→「USATODAY.com **2013** 年」
+* 【21】注記の「（ダイナミクス）」→「（ダイナミクス）**：**」
+* 【37】注記の「J.Wheeler **,**、R.Dawkins」→「J.Wheeler、R.Dawkins」
+
 ## 表紙のライセンス{-}
 
 　（未作成）
