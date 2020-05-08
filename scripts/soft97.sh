@@ -10,5 +10,5 @@ pandoc -f markdown -t epub3-auto_identifiers \
  --epub-cover-image=./soft.png \
  --css=../epub.css \
  -o ../../epub/soft97.epub \
- soft000.txt soft*.md
+ soft000.txt <(date "+%% %Y-%m-%d") soft*.md
 

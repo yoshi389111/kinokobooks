@@ -9,7 +9,7 @@ pandoc -f markdown -t epub3-auto_identifiers \
  --toc-depth=1 \
  --css=../epub.css \
  -o ../../epub/game297.epub \
- game200.txt game2*.md
+ game200.txt <(date "+%% %Y-%m-%d") game2*.md
 
 # --epub-cover-image=./game2.png \
 

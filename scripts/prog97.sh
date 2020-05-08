@@ -10,5 +10,5 @@ pandoc -f markdown -t epub3-auto_identifiers \
  --epub-cover-image=./prog.png \
  --css=../epub.css \
  -o ../../epub/prog97.epub \
- prog000.txt prog*.md
+ prog000.txt <(date "+%% %Y-%m-%d") prog*.md
 
