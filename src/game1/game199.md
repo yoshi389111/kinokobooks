@@ -25,7 +25,11 @@
 
 ## 表紙のライセンス{-}
 
-　（未作成）
+　表紙に使用している画像は、Wikipedia の「エリンギ」の項から借用し、加工しました。
+この画像はパブリックドメインです。
+
+* https://commons.wikimedia.org/wiki/File:Pleurotus_eryngii.jpg
+* Author: Lemon-s
 
 ## 最後に{-}
 

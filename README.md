@@ -2,7 +2,7 @@
 
 通称「きのこ本」とよばれるオライリー発行の書籍群があります。
 
-これらの書籍は CC-by-3.0 などでライセンスされており、著者名を明記すればコピー/配布や改変が自由にできることになっています（商用利用も可能）。
+これらの書籍は CC-by-3.0 などでライセンスされており、著者名を明記すればコピー/配布や改変が自由にできます（商用利用も可能）。
 
 そこで、勝手に電子書籍化をやっています。
 
@@ -11,10 +11,11 @@
 * [プログラマが知るべき97のこと](https://github.com/yoshi389111/kinokobooks/blob/master/epub/prog97.epub?raw=true) 【epub】
 * [ソフトウェアアーキテクトが知るべき97のこと](https://github.com/yoshi389111/kinokobooks/blob/master/epub/soft97.epub?raw=true) 【epub】
 * [プロジェクト・マネジャーが知るべき97のこと](https://github.com/yoshi389111/kinokobooks/blob/master/epub/mngr97.epub?raw=true) 【epub】
-* [ゲームクリエイターが知るべき97のこと](https://github.com/yoshi389111/kinokobooks/blob/master/epub/game197.epub?raw=true) 【epub】 表紙未設定
-* [ゲームクリエイターが知るべき97のこと 2](https://github.com/yoshi389111/kinokobooks/blob/master/epub/game297.epub?raw=true) 【epub】 表紙未設定
+* [ゲームクリエイターが知るべき97のこと](https://github.com/yoshi389111/kinokobooks/blob/master/epub/game197.epub?raw=true) 【epub】
+* [ゲームクリエイターが知るべき97のこと 2](https://github.com/yoshi389111/kinokobooks/blob/master/epub/game297.epub?raw=true) 【epub】
 
-まだ見直し中のものもあるため、頻繁に差し替えが発生する可能性があります。また、誤字・脱字や問題などあった場合には、詳細をプルリクなどで指摘いただけると助かります。
+まだ見直し中のものもあるため、頻繁に差し替えが発生する可能性があります。
+また、誤字・脱字や問題などあった場合には、詳細をプルリクなどで指摘いただけると助かります。
 
 ## Web 版
 

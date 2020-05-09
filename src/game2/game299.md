@@ -31,7 +31,12 @@
 
 ## 表紙のライセンス{-}
 
-　（未作成）
+　表紙に使用している画像は、Wikipedia の「ヒラタケ」の項から借用し、加工しました。
+この画像は CC0-1.0（1.0 全世界）でライセンスされています。
+
+* https://commons.wikimedia.org/wiki/File:Pleurotus_ostreatus,_Japan_1.JPG
+* Author: Qwert1234
+* https://creativecommons.org/publicdomain/zero/1.0/
 
 ## 最後に{-}
 
