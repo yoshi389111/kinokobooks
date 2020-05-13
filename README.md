@@ -6,6 +6,8 @@
 
 　そこで、勝手に電子書籍化をやっています。
 
+![mandelbrot](https://raw.githubusercontent.com/wiki/yoshi389111/kinokobooks/images/kinokobooks-logo.png)
+
 ## 日本語版
 
 * [プログラマが知るべき 97 のこと](https://yoshi389111.github.io/kinokobooks/prog_ja/)
