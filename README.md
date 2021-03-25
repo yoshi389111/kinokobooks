@@ -6,7 +6,7 @@
 
 　そこで、勝手に電子書籍化をやっています。
 
-![mandelbrot](https://raw.githubusercontent.com/wiki/yoshi389111/kinokobooks/images/kinokobooks-logo.png)
+![cover images](https://raw.githubusercontent.com/wiki/yoshi389111/kinokobooks/images/kinokobooks-logo.png)
 
 ## 日本語版
 
