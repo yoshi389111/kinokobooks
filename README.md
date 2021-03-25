@@ -70,3 +70,32 @@
   * 文字起こしに使用した底本：2012 年 11 月 27 日 初版第 2 刷
 * 書籍情報 [ゲームクリエイターが知るべき97のこと 2](https://www.oreilly.co.jp/books/9784873116228/)
   * 文字起こしに使用した底本：2013 年 8 月 23 日 初版第 1 刷
+
+## 表紙に使用している画像について
+
+「プログラマが知るべき97のこと」（非公式版）の表紙に使用した画像は、Wikipedia の「シイタケ」の項から借用し、加工しました。 この画像は [CC-by-2.0（表示 2.0 一般）](https://creativecommons.org/licenses/by/2.0/)でライセンスされています。
+
+* https://commons.wikimedia.org/wiki/File:Shiitakegrowing.jpg
+  * Author: frankenstoen from Portland, Oregon
+
+「ソフトウェアアーキテクトが知るべき97のこと」（非公式版）の表紙に使用した画像は、Wikipedia の「ササクレヒトヨタケ」の項から借用し、加工しました。この画像は [CC-by-3.0(表示 3.0 非移植)](https://creativecommons.org/licenses/by/3.0/) でライセンスされています。
+
+* https://commons.wikimedia.org/wiki/File:Coprin-chevelu-20080831.jpg
+  * Author: Thierryyyyyyy
+
+「プロジェクト・マネジャーの知るべき97のこと」（非公式版）の表紙に使用した画像は、Wikipedia の「カラカサタケ」の項から借用し、加工しました。この画像はパブリックドメインです。
+
+* https://commons.wikimedia.org/wiki/File:Macrolepiota_procera_2013_G1.jpg
+  * Author: George Chernilevsky
+
+
+「ゲームクリエイターが知るべき97のこと」（非公式版）の表紙に使用した画像は、Wikipedia の「エリンギ」の項から借用し、加工しました。この画像はパブリックドメインです。
+
+* https://commons.wikimedia.org/wiki/File:Pleurotus_eryngii.jpg
+  * Author: Lemon-s
+
+
+「ゲームクリエイターが知るべき97のこと 2」（非公式版）の表紙に使用した画像は、Wikipedia の「ヒラタケ」の項から借用し、加工しました。この画像は [CC0-1.0(1.0 全世界)](https://creativecommons.org/publicdomain/zero/1.0/) でライセンスされています。
+
+* https://commons.wikimedia.org/wiki/File:Pleurotus_ostreatus,_Japan_1.JPG
+  * Author: Qwert1234
