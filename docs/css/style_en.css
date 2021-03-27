@@ -1,8 +1,14 @@
+@media (prefers-color-scheme: dark) {
+  html {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}
 
 body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  color: #24292e;
+  background-color: #f7f8f9;
+  color: #191817;
   font-family: "Helvetica",Arial,sans-serif;
   font-size: 12pt;
   font-weight: normal;
@@ -70,11 +76,10 @@ body * {
 
 body hr {
   background: transparent;
-  background-color: #e1e4e8;
-  border-bottom: 1px solid #eee;
+  background-color: #c1c2c3;
   overflow: hidden;
   border: 0;
-  height: .25em;
+  height: 2px;
   margin: 18pt 0;
   padding: 0;
 }
@@ -114,13 +119,13 @@ body h6 {
 
 body h1 {
   font-size: 2em;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid #c1c2c3;
   padding-bottom: .3em;
 }
 
 body h2 {
   font-size: 1.5em;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid #c1c2c3;
   padding-bottom: .3em;
 }
 
@@ -152,8 +157,8 @@ body dd {
 
 body blockquote {
   margin: 0 0 12pt 0;
-  border-left: .25em solid #dfe2e5;
-  color: #6a737d;
+  border-left: .25em solid #c1c2c3;
+  color: #3a3b3c;
   padding: 0 1em;
 }
 
@@ -173,7 +178,7 @@ body pre {
 
 body pre {
   word-wrap: normal;
-  background-color: #f6f8fa;
+  background-color: #e7e8e9;
   border-radius: 2.25pt;
   font-size: 85%;
   line-height: 1.45;
@@ -283,26 +288,25 @@ body table {
 
 body table th {
   font-weight: bold;
+  background-color: #d8d9da;
 }
 
 body table td,
 body table th {
-  border: 1px solid #dfe2e5;
+  border: 1px solid #c6cbd1;
   padding: 4.5pt 9.8pt;
 }
 
 body table tr {
-  background-color: #fff;
-  border-top: 1px solid #c6cbd1;
+  background-color: #ffffff;
 }
 
 body table tr:nth-child(2n) {
-  background-color: #f6f8fa;
+  background-color: #f1f2f3;
 }
 
 body img {
   border-style: none;
-  background-color: #fff;
   max-width: 100%;
 }
 
@@ -324,7 +328,7 @@ header {
 }
 
 footer {
-  border-top: 1px solid #ccc;
+  border-top: 2px solid #c1c2c3;
   margin-top: 12pt;
 }
 
@@ -350,5 +354,5 @@ nav {
   text-decoration: none;
 }
 .nav-links li .disable {
-  color: darkgray;
+  color: #a9a9a9;
 }
