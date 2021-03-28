@@ -11,15 +11,15 @@
 ## 日本語版
 
 * [プログラマが知るべき 97 のこと](https://yoshi389111.github.io/kinokobooks/prog_ja/)
-【 [epub版](https://github.com/yoshi389111/kinokobooks/blob/master/epub/prog97.epub?raw=true) 】
+【 [epub版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/prog97.epub?raw=true) 】
 * [ソフトウェアアーキテクトが知るべき 97 のこと](https://yoshi389111.github.io/kinokobooks/soft_ja/)
-【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/master/epub/soft97.epub?raw=true) 】
+【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/soft97.epub?raw=true) 】
 * [プロジェクト・マネジャーが知るべき 97 のこと](https://yoshi389111.github.io/kinokobooks/mngr_ja/)
-【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/master/epub/mngr97.epub?raw=true) 】
+【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/mngr97.epub?raw=true) 】
 * [ゲームクリエイターが知るべき 97 のこと](https://yoshi389111.github.io/kinokobooks/game1/)
-【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/master/epub/game197.epub?raw=true) 】
+【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/game197.epub?raw=true) 】
 * [ゲームクリエイターが知るべき 97 のこと 2](https://yoshi389111.github.io/kinokobooks/game2/)
-【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/master/epub/game297.epub?raw=true) 】
+【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/game297.epub?raw=true) 】
 
 　まだ見直し中のものもあるため、頻繁に差し替えが発生する可能性があります。
 
