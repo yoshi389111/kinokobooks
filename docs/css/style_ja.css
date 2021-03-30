@@ -1,8 +1,17 @@
-
-@media (prefers-color-scheme: dark) {
-  html {
-    filter: invert(1) hue-rotate(180deg);
-  }
+html[data-color-scheme='dark'] {
+  filter: invert(1) hue-rotate(180deg);
+}
+html[data-color-scheme='dark'] img.cover {
+  filter: invert(1) hue-rotate(180deg);
+}
+#color-scheme {
+  float: right;
+}
+html[data-color-scheme='dark'] #color-scheme::before {
+  content: "\01f319"
+}
+html:not([data-color-scheme='dark']) #color-scheme::before {
+  content: "\01f31e"
 }
 
 body {

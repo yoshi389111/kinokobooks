@@ -1,7 +1,17 @@
-@media (prefers-color-scheme: dark) {
-  html {
-    filter: invert(1) hue-rotate(180deg);
-  }
+html[data-color-scheme='dark'] {
+  filter: invert(1) hue-rotate(180deg);
+}
+html[data-color-scheme='dark'] img.cover {
+  filter: invert(1) hue-rotate(180deg);
+}
+#color-scheme {
+  float: right;
+}
+html[data-color-scheme='dark'] #color-scheme::before {
+  content: "\01f319"
+}
+html:not([data-color-scheme='dark']) #color-scheme::before {
+  content: "\01f31e"
 }
 
 body {
@@ -118,7 +128,7 @@ body h6 {
 }
 
 body h1 {
-  font-size: 2em;
+  font-size: 1.9em;
   border-bottom: 2px solid #c1c2c3;
   padding-bottom: .3em;
 }
