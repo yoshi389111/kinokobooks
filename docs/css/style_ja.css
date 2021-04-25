@@ -128,19 +128,19 @@ body h6 {
 }
 
 body h1 {
-  font-size: 2em;
+  font-size: 1.6em;
   border-bottom: 2px solid #c1c2c3;
-  padding-bottom: .3em;
+  padding: 1em 0 1em 0;
 }
 
 body h2 {
-  font-size: 1.5em;
+  font-size: 1.3em;
   border-bottom: 2px solid #c1c2c3;
   padding-bottom: .3em;
 }
 
 body h3 {
-  font-size: 1.25em;
+  font-size: 1.15em;
 }
 
 body h4 {
