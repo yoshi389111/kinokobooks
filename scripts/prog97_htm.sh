@@ -55,6 +55,8 @@ function create_a_page_and_index() {
         -V nextfile="$NEXTFILE" \
         "$INFILE" "$METAFILE"
 
+    sed -i -e 's/<\/h1>/<span id="color-scheme"><\/span><\/h1>/' "$OUTDIR/$OUTFILE"
+
     # TODO escape
     echo "<li><a href=\"$OUTFILE\">$TITLE</a> by $AUTHOR</li>" >> "$OUTINDEX"
 

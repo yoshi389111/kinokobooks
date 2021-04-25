@@ -1,14 +1,13 @@
-html[data-color-scheme='dark'] {
-  filter: invert(1) hue-rotate(180deg);
-}
-html[data-color-scheme='dark'] img.cover {
+html[data-color-scheme='dark'],
+html[data-color-scheme='dark'] img.cover,
+html[data-color-scheme='dark'] #color-scheme::before {
   filter: invert(1) hue-rotate(180deg);
 }
 #color-scheme {
   float: right;
 }
 html[data-color-scheme='dark'] #color-scheme::before {
-  content: "\01f319"
+  content: "\01f31b"
 }
 html:not([data-color-scheme='dark']) #color-scheme::before {
   content: "\01f31e"

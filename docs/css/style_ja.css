@@ -1,14 +1,13 @@
-html[data-color-scheme='dark'] {
-  filter: invert(1) hue-rotate(180deg);
-}
-html[data-color-scheme='dark'] img.cover {
+html[data-color-scheme='dark'],
+html[data-color-scheme='dark'] img.cover,
+html[data-color-scheme='dark'] #color-scheme::before {
   filter: invert(1) hue-rotate(180deg);
 }
 #color-scheme {
   float: right;
 }
 html[data-color-scheme='dark'] #color-scheme::before {
-  content: "\01f319"
+  content: "\01f31b"
 }
 html:not([data-color-scheme='dark']) #color-scheme::before {
   content: "\01f31e"
@@ -128,13 +127,13 @@ body h6 {
 }
 
 body h1 {
-  font-size: 1.6em;
+  font-size: 1.3em;
   border-bottom: 2px solid #c1c2c3;
   padding: 1em 0 1em 0;
 }
 
 body h2 {
-  font-size: 1.3em;
+  font-size: 1.2em;
   border-bottom: 2px solid #c1c2c3;
   padding-bottom: .3em;
 }
@@ -435,4 +434,21 @@ nav {
 }
 .nav-links li .disable {
   color: #a9a9a9;
+}
+
+.sns-button {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin: 0 6px;
+}
+
+.sns-logo:hover {
+  transform: scale(1.2, 1.2);
+  transition: .3s all;
+}
+
+.sns-logo:active {
+  transform: scale(0.95, 0.95);
+  transition: .1s all;
 }
