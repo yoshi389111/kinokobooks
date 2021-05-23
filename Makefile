@@ -14,6 +14,18 @@ web:
 	scripts/game197_htm.sh
 	scripts/game297_htm.sh
 
+zenn:
+	misc/zenn/zenn-create-cover.sh
+	misc/zenn/zenn-prog-097-org.sh
+	misc/zenn/zenn-prog-097-jpn.sh
+	misc/zenn/zenn-soft-097-org.sh
+	misc/zenn/zenn-soft-097-jpn.sh
+	misc/zenn/zenn-mngr-097-org.sh
+	misc/zenn/zenn-mngr-097-jpn.sh
+	misc/zenn/zenn-game-097-one.sh
+	misc/zenn/zenn-game-097-two.sh
+	# misc/zenn/zenn-publish.sh
+
 ogp_images:
 	scripts/ogp_images.sh
 
