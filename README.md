@@ -10,16 +10,11 @@
 
 ## 日本語版
 
-* [プログラマが知るべき 97 のこと](https://yoshi389111.github.io/kinokobooks/prog_ja/)
-【 [epub版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/prog97.epub?raw=true) 】
-* [ソフトウェアアーキテクトが知るべき 97 のこと](https://yoshi389111.github.io/kinokobooks/soft_ja/)
-【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/soft97.epub?raw=true) 】
-* [プロジェクト・マネジャーが知るべき 97 のこと](https://yoshi389111.github.io/kinokobooks/mngr_ja/)
-【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/mngr97.epub?raw=true) 】
-* [ゲームクリエイターが知るべき 97 のこと](https://yoshi389111.github.io/kinokobooks/game1/)
-【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/game197.epub?raw=true) 】
-* [ゲームクリエイターが知るべき 97 のこと 2](https://yoshi389111.github.io/kinokobooks/game2/)
-【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/game297.epub?raw=true) 】
+* プログラマが知るべき 97 のこと【[web版](https://yoshi389111.github.io/kinokobooks/prog_ja/)】/【 [epub版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/prog97.epub?raw=true) 】
+* ソフトウェアアーキテクトが知るべき 97 のこと【[web版](https://yoshi389111.github.io/kinokobooks/soft_ja/)】/【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/soft97.epub?raw=true) 】
+* プロジェクト・マネジャーが知るべき 97 のこと【[web版](https://yoshi389111.github.io/kinokobooks/mngr_ja/)】/【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/mngr97.epub?raw=true) 】
+* ゲームクリエイターが知るべき 97 のこと【[web版](https://yoshi389111.github.io/kinokobooks/game1/)】/【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/game197.epub?raw=true) 】
+* ゲームクリエイターが知るべき 97 のこと 2【[web版](https://yoshi389111.github.io/kinokobooks/game2/)】/【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/game297.epub?raw=true) 】
 
 　まだ見直し中のものもあるため、頻繁に差し替えが発生する可能性があります。
 
@@ -30,9 +25,9 @@
 
 ## 英語版
 
-* [97 Things Every Programmer Should Know](https://yoshi389111.github.io/kinokobooks/prog_en/)
-* [97 Things Every Software Architect Should Know](https://yoshi389111.github.io/kinokobooks/soft_en/)
-* [97 Things Every Project Manager Should Know](https://yoshi389111.github.io/kinokobooks/mngr_en/)
+* 97 Things Every Programmer Should Know【[web版](https://yoshi389111.github.io/kinokobooks/prog_en/)】
+* 97 Things Every Software Architect Should Know【[web版](https://yoshi389111.github.io/kinokobooks/soft_en/)】
+* 97 Things Every Project Manager Should Know【[web版](https://yoshi389111.github.io/kinokobooks/mngr_en/)】
 
 　英語版は書籍ベースではなく、以前オライリーで公開されていた wiki ベースの内容です。
 
