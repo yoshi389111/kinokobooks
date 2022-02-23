@@ -8,26 +8,24 @@
 
 ![cover images](https://raw.githubusercontent.com/wiki/yoshi389111/kinokobooks/images/kinokobooks-logo.png)
 
-## 日本語版
+## 日本語版(Japanese version)
 
-* プログラマが知るべき 97 のこと【[web版](https://yoshi389111.github.io/kinokobooks/prog_ja/)】/【 [epub版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/prog97.epub?raw=true) 】
-* ソフトウェアアーキテクトが知るべき 97 のこと【[web版](https://yoshi389111.github.io/kinokobooks/soft_ja/)】/【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/soft97.epub?raw=true) 】
-* プロジェクト・マネジャーが知るべき 97 のこと【[web版](https://yoshi389111.github.io/kinokobooks/mngr_ja/)】/【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/mngr97.epub?raw=true) 】
-* ゲームクリエイターが知るべき 97 のこと【[web版](https://yoshi389111.github.io/kinokobooks/game1/)】/【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/game197.epub?raw=true) 】
-* ゲームクリエイターが知るべき 97 のこと 2【[web版](https://yoshi389111.github.io/kinokobooks/game2/)】/【 [epub 版](https://github.com/yoshi389111/kinokobooks/blob/main/epub/game297.epub?raw=true) 】
+* プログラマが知るべき 97 のこと【[web](https://yoshi389111.github.io/kinokobooks/prog_ja/)】/【 [epub](https://github.com/yoshi389111/kinokobooks/blob/main/epub/prog97.epub?raw=true) 】
+* ソフトウェアアーキテクトが知るべき 97 のこと【[web](https://yoshi389111.github.io/kinokobooks/soft_ja/)】/【 [epub](https://github.com/yoshi389111/kinokobooks/blob/main/epub/soft97.epub?raw=true) 】
+* プロジェクト・マネジャーが知るべき 97 のこと【[web](https://yoshi389111.github.io/kinokobooks/mngr_ja/)】/【 [epub](https://github.com/yoshi389111/kinokobooks/blob/main/epub/mngr97.epub?raw=true) 】
+* ゲームクリエイターが知るべき 97 のこと【[web](https://yoshi389111.github.io/kinokobooks/game1/)】/【 [epub](https://github.com/yoshi389111/kinokobooks/blob/main/epub/game197.epub?raw=true) 】
+* ゲームクリエイターが知るべき 97 のこと 2【[web](https://yoshi389111.github.io/kinokobooks/game2/)】/【 [epub](https://github.com/yoshi389111/kinokobooks/blob/main/epub/game297.epub?raw=true) 】
 
-　まだ見直し中のものもあるため、頻繁に差し替えが発生する可能性があります。
-
-　また、誤字・脱字や問題などがあった場合には、詳細を `Issues` や `Pull requests` などで指摘いただけると助かります。
+　誤字・脱字や問題などがあった場合には、詳細を `Issues` や `Pull requests` などで指摘いただけると助かります。
 
 　底本に含まれる前書き、監修注、著者の詳細、写真などは、本書には含まれていません。特に監修注は参考となる情報へのリンクが多数含まれています。
 これらの情報が読みたい方は（あるいは底本・原本の関係者に敬意を表したい方は）オライリー本の購入を検討すると良いと思います。紙の本だけでなく、電子書籍もあるようです。pdf のみのもの、pdf/epub/mobi があるものなど書籍ごとに異なります。後述の書籍情報を見てください。
 
-## 英語版
+## 英語版(English version)
 
-* 97 Things Every Programmer Should Know【[web版](https://yoshi389111.github.io/kinokobooks/prog_en/)】
-* 97 Things Every Software Architect Should Know【[web版](https://yoshi389111.github.io/kinokobooks/soft_en/)】
-* 97 Things Every Project Manager Should Know【[web版](https://yoshi389111.github.io/kinokobooks/mngr_en/)】
+* 97 Things Every Programmer Should Know【[web](https://yoshi389111.github.io/kinokobooks/prog_en/)】
+* 97 Things Every Software Architect Should Know【[web](https://yoshi389111.github.io/kinokobooks/soft_en/)】
+* 97 Things Every Project Manager Should Know【[web](https://yoshi389111.github.io/kinokobooks/mngr_en/)】
 
 　英語版は書籍ベースではなく、以前オライリーで公開されていた wiki ベースの内容です。
 
