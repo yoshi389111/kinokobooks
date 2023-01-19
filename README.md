@@ -6,6 +6,10 @@
 
 　そこで、勝手に電子書籍化（非公式版）を作っています。
 
+　再利用しやすいように元データもマークダウン形式で置いてあるので、ライセンスの範囲内でご自由にご利用ください。pandoc の書式を使っているところもあるので、pandoc でお好みの形式に変換してから使うと良いかと思います。
+ 
+ 　また、[zenn のサイト](https://zenn.dev/yoshi389111?tab=books)で同じ内容を公開していますので、見やすい方をお使いください（ページ数の関係で日本語版での追加分は別のブック扱いになっています）。
+
 ![cover images](https://raw.githubusercontent.com/wiki/yoshi389111/kinokobooks/images/kinokobooks-logo.png)
 
 ## 日本語版(Japanese version)
