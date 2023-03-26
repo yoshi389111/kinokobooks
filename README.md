@@ -25,6 +25,17 @@
 　底本に含まれる前書き、監修注、著者の詳細、写真などは、本書には含まれていません。特に監修注は参考となる情報へのリンクが多数含まれています。
 これらの情報が読みたい方は（あるいは底本・原本の関係者に敬意を表したい方は）オライリー本の購入を検討すると良いと思います。紙の本だけでなく、電子書籍もあるようです。pdf のみのもの、pdf/epub/mobi があるものなど書籍ごとに異なります。後述の書籍情報を見てください。
 
+　また、底本の誤字・誤訳と思われるものは修正しています。修正内容は epub 版のあとがきに記載しています。
+本来は Web 版や Zenn 版にも含めるべきだと思うのですが、現状含めることができていません。お手数ですが、以下のマークダウンファイルを直接見てください。
+GitHub Flavored Markdown ではなく pandoc の拡張書式を使用したマークダウンになっているので、GitHub 上で見た場合に見た目がおかしい箇所があるかもしれませんが、ご了承願います。
+
+* 「プログラマが知るべき 97 のこと」非公式版の[あとがき](https://github.com/yoshi389111/kinokobooks/blob/main/src/prog/prog999.md)
+* 「ソフトウェアアーキテクトが知るべき 97 のこと」非公式版の[あとがき](https://github.com/yoshi389111/kinokobooks/blob/main/src/soft/soft999.md)
+* 「プロジェクト・マネジャーが知るべき 97 のこと」非公式版の[あとがき](https://github.com/yoshi389111/kinokobooks/blob/main/src/mngr/mngr999.md)
+* 「ゲームクリエイターが知るべき 97 のこと」非公式版の[あとがき](https://github.com/yoshi389111/kinokobooks/blob/main/src/game1/game199.md)
+* 「ゲームクリエイターが知るべき 97 のこと 2」非公式版の[あとがき](https://github.com/yoshi389111/kinokobooks/blob/main/src/game2/game299.md)
+
+
 ## 英語版(English version)
 
 * 97 Things Every Programmer Should Know【[web](https://yoshi389111.github.io/kinokobooks/prog_en/)】
@@ -44,22 +55,22 @@
 * 書籍情報 [プログラマが知るべき97のこと](https://www.oreilly.co.jp/books/9784873114798/) 日本語版
   * 文字起こしに使用した底本：2013 年 4 月 19 日 初版第 8 刷
 * 書籍情報 [97 Things Every Programmer Should Know](http://oreilly.com/catalog/9780596809492/) 英語版
-* 英語版 Wiki(リンク切れ) `http://programmer.97things.oreilly.com/`
+  * 英語版 Wiki(リンク切れ) `http://programmer.97things.oreilly.com/`
 
 【ソフトウェアアーキテクトが知るべき97のこと】
 
 * 書籍情報 [ソフトウェアアーキテクトが知るべき97のこと](https://www.oreilly.co.jp/books/9784873114293/) 日本語版
   * 文字起こしに使用した底本：2009 年 10 月 2 日 初版第 1 刷
 * 書籍情報 [97 Things Every Software Architect Should Know](http://oreilly.com/catalog/9780596522704/) 英語版
-* 英語版 Wiki(リンク切れ) `http://softarch.97things.oreilly.com/`
-* 英語版 Wiki2(リンク切れ) `http://architect.97things.oreilly.com/`
+  * 英語版 Wiki(リンク切れ) `http://softarch.97things.oreilly.com/`
+  * 英語版 Wiki2(リンク切れ) `http://architect.97things.oreilly.com/`
 
 【プロジェクト・マネジャーが知るべき97のこと】
 
 * 書籍情報 [プロジェクト・マネジャーが知るべき97のこと](https://www.oreilly.co.jp/books/9784873115108/) 日本語版
   * 文字起こしに使用した底本：2016 年 5 月 16 日 初版第 3 刷
 * 書籍情報 [97 Things Every Project Manager Should Know](http://oreilly.com/catalog/9780596804152/) 英語版
-* 英語版 Wiki(リンク切れ) `http://pm.97things.oreilly.com/`
+  * 英語版 Wiki(リンク切れ) `http://pm.97things.oreilly.com/`
 
 【ゲームクリエイターが知るべき97のこと】
 
