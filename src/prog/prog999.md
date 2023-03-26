@@ -42,7 +42,7 @@
 * 【87】「「自分たちの邪魔をする敵」**と**などと」→「「自分たちの邪魔をする敵」などと」
 
 また、【45】の「van Emde Boas 木検索には、O(log(n)) やキャッシュが有効ではないことが多い。」は、誤訳ではないかと判断しました。
-原文（Web 版）では「Search of a van Emde Boas tree is O(log(n)) and cache-oblivious.」なので「van Emde Boas 木検索は O(log(n)) で、キャッシュが効きやすい。」としました。
+原文（Web 版）では「Search of a van Emde Boas tree is O(log(n)) and cache-oblivious.」なので「van Emde Boas 木検索は O(log(n)) で、キャッシュに依存しないアルゴリズムである。」としました。
 
 ## 表紙のライセンス{-}
 
