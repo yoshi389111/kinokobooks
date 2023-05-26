@@ -8,7 +8,7 @@
 
 　再利用しやすいように元データもマークダウン形式で置いてあるので、ライセンスの範囲内でご自由にご利用ください。ただ、標準のマークダウン書式ではなく pandoc の拡張書式を使っているところもあるので、pandoc でお好みの形式に変換してから使うと良いかと思います。
  
- 　また、[zenn のサイト](https://zenn.dev/yoshi389111?tab=books)で同じ内容を公開していますので、見やすい方をお使いください（章数の関係で日本語版での追加分は別のブック扱いになっています）。
+ 　また、[zenn のサイト](https://zenn.dev/yoshi389111?tab=books)で同じ内容を公開していますので、見やすい方をお使いください（zenn では、章数の関係で日本語版での追加分は別のブック扱いになっています）。
 
 ![cover images](https://raw.githubusercontent.com/wiki/yoshi389111/kinokobooks/images/kinokobooks-logo.png)
 
@@ -20,7 +20,7 @@
 * ゲームクリエイターが知るべき 97 のこと【[web](https://yoshi389111.github.io/kinokobooks/game1/)】/【 [epub](https://github.com/yoshi389111/kinokobooks/blob/main/epub/game197.epub?raw=true) 】
 * ゲームクリエイターが知るべき 97 のこと 2【[web](https://yoshi389111.github.io/kinokobooks/game2/)】/【 [epub](https://github.com/yoshi389111/kinokobooks/blob/main/epub/game297.epub?raw=true) 】
 
-　誤字・脱字や問題などがあった場合には、詳細を `Issues` や `Pull requests` などで指摘いただけると助かります。
+　誤字・脱字や問題などがあった場合には、詳細を `Issues` や `Pull requests` などで指摘いただけると助かります（もし修正する場合には `src` の下の markdown ファイルを対象としてください。 `docs` や `epub` の下のファイルは markdown からの生成物になります）。
 
 　底本に含まれる前書き、監修注、著者の詳細、写真などは、本書には含まれていません。特に監修注は参考となる情報へのリンクが多数含まれています。
 これらの情報が読みたい方は（あるいは底本・原本の関係者に敬意を表したい方は）オライリー本の購入を検討すると良いと思います。紙の本だけでなく、電子書籍もあるようです。pdf のみのもの、pdf/epub/mobi があるものなど書籍ごとに異なります。後述の書籍情報を見てください。
