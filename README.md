@@ -4,11 +4,13 @@
 
 　これらの書籍は CC-by-3.0 などでライセンスされており、著者名を明記すればコピー/配布や改変が自由にできます（商用利用も可能）。
 
-　そこで、勝手に電子書籍（非公式版）を作っています。
+　そこで、勝手に電子書籍（非公式版）を作っています。もちろん無料で利用可能です。
 
 　再利用しやすいように元データもマークダウン形式で置いてあるので、ライセンスの範囲内でご自由にご利用ください。ただ、標準のマークダウン書式ではなく pandoc の拡張書式を使っているところもあるので、pandoc でお好みの形式に変換してから使うと良いかと思います。
- 
- 　また、[zenn のサイト](https://zenn.dev/yoshi389111?tab=books)で同じ内容を公開していますので、見やすい方をお使いください（zenn では、章数の関係で日本語版での追加分は別のブック扱いになっています）。
+
+　また、[zenn のサイト](https://zenn.dev/yoshi389111?tab=books)で同じ内容を公開していますので、見やすい方をお使いください（zenn では、章数の関係で日本語版での追加分は別のブック扱いになっています）。
+
+　もし「元データをこうしたら、あるいはこのような形式データでも公開されていると、もっと使いやすいのだけど（例えば社内/学校/グループで利用するときとか、音声化する場合などの元データとして）」みたいな要望があれば [Discussions](https://github.com/yoshi389111/kinokobooks/discussions) にお気軽にコメントしてください。要望のすべてを対応する/できるというわけではありませんが、みんなの役に立ちそうな内容なら検討をしたいと思います。あるいはこんな風に利用しているので他の人にも教えてあげたい、みたいな活用情報も歓迎です。別形式に加工したデータを公開しているといった内容でも問題ありません（ただし、宣伝効果はほぼないと思ってください）。
 
 ![cover images](https://raw.githubusercontent.com/wiki/yoshi389111/kinokobooks/images/kinokobooks-logo.png)
 
@@ -34,7 +36,6 @@ GitHub Flavored Markdown ではなく pandoc の拡張書式を使用したマ�
 * 「プロジェクト・マネジャーが知るべき 97 のこと」非公式版の[あとがき](https://github.com/yoshi389111/kinokobooks/blob/main/src/mngr/mngr999.md)
 * 「ゲームクリエイターが知るべき 97 のこと」非公式版の[あとがき](https://github.com/yoshi389111/kinokobooks/blob/main/src/game1/game199.md)
 * 「ゲームクリエイターが知るべき 97 のこと 2」非公式版の[あとがき](https://github.com/yoshi389111/kinokobooks/blob/main/src/game2/game299.md)
-
 
 ## 英語版(English version)
 
@@ -81,6 +82,8 @@ GitHub Flavored Markdown ではなく pandoc の拡張書式を使用したマ�
 
 ## 非公式版の表紙に使用している画像について
 
+　多くのオライリーの書籍は、主に動物の細密線画を表紙に使用していますが、「きのこ本」の公式版に関してはエッセイの著者の写真群が使われています（実際の表紙は、上記の書籍情報から確認してください）。せっかく「きのこ本」という愛称があるので、非公式版の表紙はキノコの画像を加工してなんとか線画っぽくして使用しています。
+
 「プログラマが知るべき97のこと」（非公式版）の表紙に使用した画像は、Wikipedia の「シイタケ」の項から借用し、加工しました。 この画像は [CC-by-2.0（表示 2.0 一般）](https://creativecommons.org/licenses/by/2.0/)でライセンスされています。
 
 * https://commons.wikimedia.org/wiki/File:Shiitakegrowing.jpg
@@ -96,12 +99,10 @@ GitHub Flavored Markdown ではなく pandoc の拡張書式を使用したマ�
 * https://commons.wikimedia.org/wiki/File:Macrolepiota_procera_2013_G1.jpg
   * Author: George Chernilevsky
 
-
 「ゲームクリエイターが知るべき97のこと」（非公式版）の表紙に使用した画像は、Wikipedia の「エリンギ」の項から借用し、加工しました。この画像はパブリックドメインです。
 
 * https://commons.wikimedia.org/wiki/File:Pleurotus_eryngii.jpg
   * Author: Lemon-s
-
 
 「ゲームクリエイターが知るべき97のこと 2」（非公式版）の表紙に使用した画像は、Wikipedia の「ヒラタケ」の項から借用し、加工しました。この画像は [CC0-1.0(1.0 全世界)](https://creativecommons.org/publicdomain/zero/1.0/) でライセンスされています。
 
